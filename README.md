@@ -1,1 +1,9 @@
 # travel-project-hci
+Our service offers assessments about beautiful and famous places to travel in Southeast Asia. Through the service, users are able to get an overview and easily make the decision to choose the most suitable destination. We observed that factors affecting users satisfaction are objective comments and reliable information about travel tour. How might we improve quality of reviews so that users are more successful based on our service?
+
+We strongly believe that our service’s assessments in general, photos and video in particular for users, who wants to find the beautiful or famous places to travel in Southeast Asia, will achieve some impersonal comments and detailed, reliable information about tourism, what they provide in their services such as food, hotel, etc... We will know this is true when we see increasement in the number of contributions and the number of users get their trip from here.
+
+----------------------
+Dịch vụ của chúng tôi cung cấp các đánh giá về những địa điểm du lịch nổi tiếng tại Đông Nam Á. Người dùng có thể có được cái nhìn tổng quan và dễ dàng đưa ra sự lựa chọn cho địa điểm phù hợp nhất. Chúng tôi quan sát được các nhân tố ảnh hưởng tới sự hài lòng của người dùng là các đánh giá khách quan và thông tin đáng tin cậy về các tour du lịch. Làm cách nào chúng tôi có thể cải thiện chất lượng đánh giá để hỗ trợ người dùng hơn dựa trên dịch vụ này? Làm cách nào để ta có thể nâng cao chất lượng để giúp người dùng có được trải nghiệm tốt hơn khi sử dụng dịch vụ
+
+Chúng tôi tin tưởng rằng những nhận xét đánh giá về dịch vụ nói chung và các hình ảnh, video nói riêng sẽ cung cấp cho người dùng các đánh giá khách quan, thông tin chi tiết đáng tin cậy về các dịch vụ du lịch và các dịch vụ liên quan như thức ăn, khách sạn,... Chúng tôi sẽ biết điều này là đúng khi chúng tôi thấy sự gia tăng về lượng thông tin được đóng góp và số lượng người dùng cảm thấy có ích.
