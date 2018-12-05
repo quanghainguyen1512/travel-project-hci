@@ -6,17 +6,21 @@
     background-color: rgb(235, 232, 232);
 }
 
-.relativePeople {
-    
+.relativePeople img {
+    max-width: 3em;
+    max-height: 3em;
 }
 
-.imageCheckIn {
-
+.imageCheckIn img {
+    max-width: auto;
+    max-height: 10em;
 }
 
 .review {
     background-color: lightyellow;
     border: 0.001em solid;
+    padding: 1em 1em 1em 1em;
+    text-align: justify;
 }
 
 .comment {
@@ -27,4 +31,9 @@
 
 .author {
     font-size: 0.6em;
+}
+
+.author img {
+    max-width: 3em;
+    max-height: 3em;
 }
