@@ -9,13 +9,14 @@ const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
-    { path: 'review', component: ReviewComponent },
+    // { path: 'review', component: ReviewComponent },
+    { path: '', component: ReviewComponent },
     { path: 'overview', component: OverviewComponent }
   ]
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class PagesRoutingModule { }
