@@ -19,6 +19,6 @@ button {
     margin-bottom: 1em;
     border: none;
     background-color: darkorange;
-    float: right;
+    /* float: right; */
     margin-right: 1em;
 }

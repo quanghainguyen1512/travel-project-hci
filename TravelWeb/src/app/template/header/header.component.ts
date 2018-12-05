@@ -12,4 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  public showSignIn() {
+    console.log("Popup");
+  }
 }
