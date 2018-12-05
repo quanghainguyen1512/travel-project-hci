@@ -1,5 +1,5 @@
 .main {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .relative {
@@ -15,9 +15,16 @@
 }
 
 .review {
-    background-color: palegreen;
+    background-color: lightyellow;
+    border: 0.001em solid;
 }
 
 .comment {
-    background-color: yellow;
+    background-color:rgb(235, 232, 232);
+    border: 0.001em solid;
+
+}
+
+.author {
+    font-size: 0.6em;
 }
