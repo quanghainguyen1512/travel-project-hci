@@ -26,7 +26,17 @@
 .comment {
     background-color:rgb(235, 232, 232);
     border: 0.001em solid;
+    padding: 1em 1em 1em 1em;
 
+}
+
+.comment img {
+    max-width: 3em;
+    max-height: 3em;
+}
+
+.comment span {
+    color: blue;
 }
 
 .author {
@@ -36,4 +46,8 @@
 .author img {
     max-width: 3em;
     max-height: 3em;
+}
+
+textarea {
+    width: 100%;
 }
