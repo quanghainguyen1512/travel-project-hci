@@ -9,9 +9,13 @@ import { OverviewModule } from './overview/overview.module';
 import { TemplateModule } from '../template/template.module';
 
 import { PagesRoutingModule } from './pages-routing.module';
+import { ProfileComponent } from './profile/profile.component';
+import { BookinghomeComponent } from './bookinghome/bookinghome.component';
+import { BookingComponent } from './booking/booking.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [PagesComponent],
+  declarations: [PagesComponent, ProfileComponent, BookinghomeComponent, BookingComponent, HomeComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
