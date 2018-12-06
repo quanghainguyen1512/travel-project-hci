@@ -1,9 +1,10 @@
 .main {
-    /* background-color: aqua; */
+    /* width: 80%; */
 }
 
 .relative {
     background-color: rgb(235, 232, 232);
+    /* width: 20%; */
 }
 
 .relativePeople img {
@@ -13,7 +14,7 @@
 
 .imageCheckIn img {
     max-width: auto;
-    max-height: 10em;
+    max-height: 16em;
 }
 
 .review {
