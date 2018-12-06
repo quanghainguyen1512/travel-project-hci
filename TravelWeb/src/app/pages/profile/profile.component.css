@@ -1,0 +1,12 @@
+.overview {
+    width: 20%;
+}
+.overview img {
+    width: 100%;
+    height: auto;
+}
+
+.detail {
+    width: 80%;
+    padding-left: 3em;
+}
