@@ -1,5 +1,6 @@
 .overview {
     width: 20%;
+    
 }
 .overview img {
     width: 100%;
@@ -9,4 +10,5 @@
 .detail {
     width: 80%;
     padding-left: 3em;
+    background-color: aliceblue;
 }

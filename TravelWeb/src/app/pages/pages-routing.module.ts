@@ -5,13 +5,15 @@ import { ReviewComponent } from './review/review.component';
 import { OverviewComponent } from './overview/overview.component';
 import { PagesComponent } from './pages.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    { path: '', component: HomeComponent},
     { path: 'review', component: ReviewComponent },
-    { path: '', component: ProfileComponent },
+    { path: 'profile', component: ProfileComponent },
     { path: 'overview', component: OverviewComponent }
   ]
 }];
