@@ -59,3 +59,23 @@ hr {
 span {
     text-align: justify;
 }
+
+.gallery img {
+    width: 20%;
+}
+
+/* .gallery {
+    white-space: nowrap;
+}
+
+.gallery li {
+float: left
+}
+.gallery li img {
+float: left;
+background: #EFEFEF;
+padding: 5px;
+margin: 5px;
+border: 1px solid #AAA;
+width: 20%;
+} */
