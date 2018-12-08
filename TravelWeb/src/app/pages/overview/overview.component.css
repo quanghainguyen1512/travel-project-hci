@@ -1,0 +1,7 @@
+.overviewImage {
+    background-image: url(src/assets/overview.jpg);
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
