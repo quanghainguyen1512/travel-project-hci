@@ -13,8 +13,8 @@ const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
-    { path: '', component: HomeComponent},
-    { path: 'review', component: ReviewComponent },
+    // { path: '', component: HomeComponent},
+    { path: '', component: ReviewComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'overview', component: OverviewComponent },
     { path: 'bookinghome', component: BookinghomeComponent},
