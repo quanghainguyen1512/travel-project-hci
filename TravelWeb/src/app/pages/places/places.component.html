@@ -1,0 +1,191 @@
+<!-- overview image -->
+<div class="overviewImage">
+  <div class="title">
+    <h1>
+      <strong>Bitexco</strong>
+    </h1>
+  </div>
+</div>
+<div class="subMenu">
+  <div class="row">
+    <span (click)='scroll(gallery)' class="col-md-4"><strong>Gallery</strong></span>
+    <span (click)='scroll(article)' class="col-md-4"><strong>Articles</strong></span>
+    <span (click)='scroll(review)' class="col-md-4"><strong>Reviews</strong></span>
+  </div>
+</div>
+
+<!-- overview content -->
+<div class="overview">
+  <!-- <h1>Ho Chi Minh City</h1> -->
+  <p>
+    Bitexco Financial Tower (Vietnamese: Tháp Tài chính Bitexco) is a skyscraper in Ho Chi Minh City, Vietnam. At its completion in 2010, it became the tallest building in Vietnam and kept this status until January 2011.
+  </p>
+  <hr/>
+</div>
+
+<!-- image -->
+<h1>Gallery</h1>
+<div class="container" #gallery>
+  <div class="gallery">
+      <img src="../../../assets/gallery.jpg"/>
+      <img src="../../../assets/gallery1.jpg"/>
+      <img src="../../../assets/gallery.jpg"/>
+      <img src="../../../assets/gallery1.jpg"/>
+      <img src="../../../assets/gallery.jpg"/>
+      <img src="../../../assets/gallery1.jpg"/>
+      <img src="../../../assets/gallery.jpg"/>
+      <img src="../../../assets/gallery1.jpg"/>
+      <img src="../../../assets/gallery.jpg"/>
+      <img src="../../../assets/gallery1.jpg"/>
+  </div>
+</div>
+
+<hr/>
+
+<!-- link article -->
+<h1>Articles</h1>
+<div class="article" #article>
+
+  <div class="container">
+    <div class="row">
+      <div class="image">
+        <a href='/pages/review'>
+          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+        </a>
+      </div>
+      
+      <div class="content">
+        <a href="/pages/review">
+          <h4>Hồ Con Rùa</h4>
+        </a>
+        <a href="/pages/profile">
+          <span style="font-size: 0.6em;">Author: Johnny</span>
+        </a>
+        <br/>
+        <span>
+          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="container">
+    <div class="row">
+      <div class="content">
+        <a href="/pages/review">
+          <h4>Hồ Con Rùa</h4>
+        </a>
+        <a href="/pages/profile">
+          <span style="font-size: 0.6em;">Author: Johnny</span>
+        </a>
+        <br/>
+        <span>
+          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+        </span>
+      </div>
+
+      <div class="image">
+        <a href='/pages/review'>
+          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="container">
+    <div class="row">
+      <div class="image">
+        <a href='/pages/review'>
+          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+        </a>
+      </div>
+      
+      <div class="content">
+        <a href="/pages/review">
+          <h4>Hồ Con Rùa</h4>
+        </a>
+        <a href="/pages/profile">
+          <span style="font-size: 0.6em;">Author: Johnny</span>
+        </a>
+        <br/>
+        <span>
+          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- pager article -->
+<!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+    </li>
+    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+    </li>
+</ul> -->
+<!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
+<div class="list">
+    <!-- <ul>
+      <li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
+    </ul> -->
+
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+</div>
+
+<hr/>
+
+<!-- review -->
+<div #review class="container">
+    <h1>Reviews</h1>
+  <div class="review">
+    <img src="../../../assets/avatar.png"/>
+    <span> Vote: 12   Down vote: 1</span>
+    <p>
+      bla bla bla bla bla bla bla bla. 
+    </p>
+    <hr/>
+  </div>
+
+  <div class="review">
+    <img src="../../../assets/avatar.png"/>
+    <span> Vote: 12   Down vote: 1</span>
+    <p>
+      bla bla bla bla bla bla bla bla. 
+    </p>
+    <hr/>
+  </div>
+
+  <div class="review">
+    <img src="../../../assets/avatar.png"/>
+    <span> Vote: 12   Down vote: 1</span>
+    <p>
+      bla bla bla bla bla bla bla bla. 
+    </p>
+    <hr/>
+  </div>
+
+  <div class="review">
+    <img src="../../../assets/avatar.png"/>
+    <span> Vote: 12   Down vote: 1</span>
+    <p>
+      bla bla bla bla bla bla bla bla. 
+    </p>
+    <hr/>
+  </div>
+</div>

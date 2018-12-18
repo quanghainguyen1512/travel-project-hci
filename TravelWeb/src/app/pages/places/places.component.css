@@ -1,5 +1,5 @@
 .overviewImage {
-    background-image: url(src/assets/overview.jpg);
+    background-image: url(src/assets/place.jpg);
     height: 15em;
     width: 100%;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ hr {
     margin-right: 3em;
 }
 
-.review {
+.article {
     margin-bottom: 1em;
 }
 
@@ -62,7 +62,32 @@ span {
 
 .gallery img {
     width: 20%;
-    
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.review img {
+    max-width: 3em;
+    max-height: 3em;
+}
+
+.review span {
+    color: blue;
+}
+
+.list {
+max-width: 550px;
+margin: auto;
+}
+  
+li {
+margin-bottom: 5px;
+}
+
+.subMenu span {
+    text-align: center;
+    background-color: antiquewhite;
+    cursor: pointer;
+    color: blue;
 }
 
 /* .gallery {

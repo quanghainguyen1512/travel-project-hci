@@ -13,9 +13,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { BookinghomeComponent } from './bookinghome/bookinghome.component';
 import { BookingComponent } from './booking/booking.component';
 import { HomeComponent } from './home/home.component';
+import { PlacesComponent } from './places/places.component';
 
 @NgModule({
-  declarations: [PagesComponent, ProfileComponent, BookinghomeComponent, BookingComponent, HomeComponent],
+  declarations: [PagesComponent, ProfileComponent, BookinghomeComponent, BookingComponent, HomeComponent, PlacesComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
