@@ -65,18 +65,29 @@ span {
     
 }
 
-/* .gallery {
-    white-space: nowrap;
+.subMenu span {
+    text-align: center;
+    background-color: antiquewhite;
+    cursor: pointer;
+    color: blue;
 }
 
-.gallery li {
-float: left
-}
-.gallery li img {
-float: left;
-background: #EFEFEF;
-padding: 5px;
-margin: 5px;
-border: 1px solid #AAA;
-width: 20%;
-} */
+#myBtn {
+    /* display: none; */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
