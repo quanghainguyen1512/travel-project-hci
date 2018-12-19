@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacesComponent implements OnInit {
   collection = [];
+  p: number = 1;
   
   constructor() {  }
 

@@ -1,5 +1,5 @@
 <!-- overview image -->
-<div class="overviewImage">
+<div #top class="overviewImage">
   <div class="title">
     <h1>
       <strong>Bitexco</strong>
@@ -151,8 +151,8 @@
 <hr/>
 
 <!-- review -->
+<h1>Reviews</h1>
 <div #review class="container">
-    <h1>Reviews</h1>
   <div class="review">
     <img src="../../../assets/avatar.png"/>
     <span> Vote: 12   Down vote: 1</span>
@@ -189,3 +189,5 @@
     <hr/>
   </div>
 </div>
+
+<button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>

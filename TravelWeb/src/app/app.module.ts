@@ -13,7 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NgxPaginationModule
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
