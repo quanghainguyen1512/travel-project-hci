@@ -105,10 +105,6 @@ margin-bottom: 5px;
     padding: 15px;
     border-radius: 50%;
   }
-  
-  #myBtn:hover {
-    background-color: #555;
-  }
 
   mat-paginator {
       background-color: rgb(235, 232, 232);
