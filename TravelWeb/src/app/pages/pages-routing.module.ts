@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { BookinghomeComponent } from './bookinghome/bookinghome.component';
 import { BookingComponent } from './booking/booking.component';
+import { PlacesComponent } from './places/places.component';
 
 const routes: Routes = [{
   path: '',
@@ -18,7 +19,8 @@ const routes: Routes = [{
     { path: 'profile', component: ProfileComponent },
     { path: 'overview', component: OverviewComponent },
     { path: 'bookinghome', component: BookinghomeComponent},
-    { path: 'booking', component: BookingComponent}
+    { path: 'booking', component: BookingComponent},
+    { path: 'places', component: PlacesComponent }
   ]
 }];
 

@@ -12,4 +12,7 @@ export class OverviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  scroll(el) {
+    el.scrollIntoView({behavior:"smooth"});
+  }
 }

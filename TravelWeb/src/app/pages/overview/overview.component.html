@@ -1,9 +1,18 @@
 <!-- overview image -->
-<div class="overviewImage">
+<div #top class="overviewImage">
   <div class="title">
     <h1>
       <strong>Ho Chi Minh City</strong>
     </h1>
+  </div>
+</div>
+<div class="subMenu">
+  <div class="row">
+    <span (click)='scroll(gallery)' class="col-md-4"><strong>Gallery</strong></span>
+    <span (click)='scroll(article)' class="col-md-4"><strong>Interesting Places</strong></span>
+    <span (click)='scroll(article)' class="col-md-4"><strong>Articles</strong></span>
+    <span (click)='scroll(article)' class="col-md-4"><strong>Activities</strong></span>
+    <span (click)='scroll(review)' class="col-md-4"><strong>Reviews</strong></span>
   </div>
 </div>
 
@@ -31,8 +40,16 @@
 
 <hr/>
 
+<!-- interestin places -->
+<h1>Interesting Places</h1>
+<div>
+    <!-- slide -->
+</div>
+
+<hr/>
+
 <!-- link review -->
-<h1>Related Posts</h1>
+<h1>Articles</h1>
 <div class="review">
   <div class="container">
     <div class="row">
@@ -82,3 +99,5 @@
     </div>
   </div>
 </div>
+
+<button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>
