@@ -14,6 +14,9 @@ import { BookinghomeComponent } from './bookinghome/bookinghome.component';
 import { BookingComponent } from './booking/booking.component';
 import { HomeComponent } from './home/home.component';
 import { PlacesComponent } from './places/places.component';
+import { MatTabsModule } from '@angular/material';
+
+import { MaterialModule } from '../material.module'
 
 @NgModule({
   declarations: [PagesComponent, ProfileComponent, BookinghomeComponent, BookingComponent, HomeComponent, PlacesComponent],
@@ -22,7 +25,8 @@ import { PlacesComponent } from './places/places.component';
     PagesRoutingModule,
     ReviewModule,
     OverviewModule, 
-    TemplateModule
+    TemplateModule, 
+    MaterialModule,
   ]
 })
 export class PagesModule { }

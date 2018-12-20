@@ -12,3 +12,9 @@
     padding-left: 3em;
     background-color: aliceblue;
 }
+
+.photo img {
+    max-width: auto;
+    max-height: 15em;
+    padding: 1em 1em 1em 1em;
+}
