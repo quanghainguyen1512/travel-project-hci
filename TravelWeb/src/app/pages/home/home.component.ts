@@ -17,6 +17,8 @@ export interface State {
 })
 export class HomeComponent implements OnInit {
 
+  slogan:string = 'TRAVELING'
+
   stateCtrl = new FormControl();
   filteredStates: Observable<State[]>;
 
