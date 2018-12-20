@@ -14,9 +14,9 @@ import { BookinghomeComponent } from './bookinghome/bookinghome.component';
 import { BookingComponent } from './booking/booking.component';
 import { HomeComponent } from './home/home.component';
 import { PlacesComponent } from './places/places.component';
-import { MatTabsModule } from '@angular/material';
 
-import { MaterialModule } from '../material.module'
+import { MaterialModule } from '../material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PagesComponent, ProfileComponent, BookinghomeComponent, BookingComponent, HomeComponent, PlacesComponent],
@@ -27,6 +27,7 @@ import { MaterialModule } from '../material.module'
     OverviewModule, 
     TemplateModule, 
     MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class PagesModule { }

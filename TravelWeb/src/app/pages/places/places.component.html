@@ -122,71 +122,60 @@
 </div>
 
 <!-- pager article -->
-<!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-    <li [ngClass]="{disabled:pager.currentPage === 1}">
-        <a (click)="setPage(1)">First</a>
-    </li>
-    <li [ngClass]="{disabled:pager.currentPage === 1}">
-        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-    </li>
-    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-        <a (click)="setPage(page)">{{page}}</a>
-    </li>
-    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-        <a (click)="setPage(pager.currentPage + 1)">Next</a>
-    </li>
-    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-        <a (click)="setPage(pager.totalPages)">Last</a>
-    </li>
-</ul> -->
-<!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
-<div class="list">
-    <!-- <ul>
-      <li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
-    </ul> -->
 
-    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-</div>
 
 <hr/>
 
 <!-- review -->
 <h1>Reviews</h1>
 <div #review class="container">
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
-  </div>
+  
+  <mat-paginator [length]="length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      (page)="pageEvent = $event">
+  </mat-paginator>
 
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
-  </div>
+  <div *ngIf="pageEvent">
+    <div *ngIf="pageEvent.pageIndex==0">
+      <div class="review">
+        <img src="../../../assets/avatar.png"/>
+        <span> Vote: 12   Down vote: 1</span>
+        <p>
+        bla bla bla bla bla bla bla bla. 
+        </p>
+        <hr/>
+      </div>
 
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
-  </div>
+      <div class="review">
+        <img src="../../../assets/avatar.png"/>
+        <span> Vote: 12   Down vote: 1</span>
+        <p>
+        bla bla bla bla bla bla bla bla. 
+        </p>
+        <hr/>
+      </div>
+    </div>
 
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
+    <div *ngIf="pageEvent.pageIndex==1">
+      <div class="review">
+        <img src="../../../assets/avatar.png"/>
+        <span> Vote: 12   Down vote: 1</span>
+        <p>
+          Heloooooooooooooooooo 
+        </p>
+        <hr/>
+      </div>
+
+      <div class="review">
+        <img src="../../../assets/avatar.png"/>
+        <span> Vote: 12   Down vote: 1</span>
+        <p>
+          Hellooooooooooooooo
+        </p>
+        <hr/>
+      </div>
+    </div>
   </div>
 </div>
 

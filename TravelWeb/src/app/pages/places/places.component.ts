@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {PageEvent} from '@angular/material';
 
 @Component({
   selector: 'app-places',
@@ -7,16 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./places.component.css']
 })
 export class PlacesComponent implements OnInit {
-  collection = [];
-  p: number = 1;
+  
+  // MatPaginator Inputs
+  length = 4;
+  pageSize = 2;
+  pageIndex = 0;
+  // pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
   
   constructor() {  }
 
   ngOnInit() { 
-    for (let i = 1; i <= 100; i++) {
-      this.collection.push(`item ${i}`);
-    }
-  }
+    
+   }
+
+  // setPageSizeOptions(setPageSizeOptionsInput: string) {
+  //   this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  // }
 
   scroll(el) {
     el.scrollIntoView({behavior:"smooth"});
