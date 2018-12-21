@@ -169,26 +169,3 @@
 </div>
 
 <button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>
-
-<div class="app-carousel">
-  <div #appCarouselBody class="app-carousel-body">
-    <div #appCarouselInner class="app-carousel-inner">
-      <div #appCarouselItem *ngFor="let item of items" class="app-carousel-item">
-        <div class="app-carousel-comment">{{item.comment}}</div>
-        <div class="app-carousel-person">
-          <div class="app-carousel-person-image">
-            <img src="{{item.person.image}}" />
-          </div>
-          <div class="app-carousel-person-info">
-            <div class="app-carousel-person-position">{{item.person.position}}</div>
-            <div class="app-carousel-person-full-name">{{item.person.fullName}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="app-carousel-dots">
-    <div #appCarouselDots *ngFor="let page of pages" (click)="changePage(page)" [ngClass]="{'app-carousel-dot-active': page === currentPage}"></div>
-  </div>
-</div>
