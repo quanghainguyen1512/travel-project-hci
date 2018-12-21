@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
 
   public showSignIn() {
     const dialogRef = this.dialog.open(SignInComponent, {
-      // signInAction = false;
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -35,12 +34,17 @@ export class HeaderComponent implements OnInit {
 
   public showSignOut() {
     const dialogRef = this.dialog.open(SignOutComponent, {
-      // signInAction = false;
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.isSignIn = result;
+    });
+  }
+
+  public openNewsFeed() {
+    const dialogRef = this.dialog.open(NewsFeedComponent, {
+      height: '75%'
     });
   }
 }
@@ -66,5 +70,17 @@ export class SignOutComponent {
 
   constructor(
     public dialogRef: MatDialogRef<SignOutComponent>,
+    @Inject(MAT_DIALOG_DATA) public isSignIn: boolean) {}
+}
+
+@Component({
+  selector: 'news-feed',
+  templateUrl: './news-feed.html',
+  styleUrls: ['./news-feed.css']
+})
+export class NewsFeedComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<NewsFeedComponent>,
     @Inject(MAT_DIALOG_DATA) public isSignIn: boolean) {}
 }

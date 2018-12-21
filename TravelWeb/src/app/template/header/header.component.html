@@ -19,8 +19,8 @@
             <button mat-menu-item (click)="showSignOut()">Sign out</button>
           </mat-menu>
           <!-- <a routerLink='/pages/bookinghome' routerLinkActive='active'>Booking</a> -->
-          <a href="#"><mat-icon *ngIf="!isSignIn" matBadge="0" matBadgeColor="warn">notifications</mat-icon></a>
-          <a href="#"><mat-icon *ngIf="isSignIn" matBadge="15" matBadgeColor="warn">notifications</mat-icon></a>
+          <mat-icon *ngIf="!isSignIn" matBadge="0" matBadgeColor="warn" (click)="openNewsFeed()">notifications</mat-icon>
+          <mat-icon *ngIf="isSignIn" matBadge="15" matBadgeColor="warn" (click)="openNewsFeed()" style="cursor: pointer">notifications</mat-icon>
       </div>
     </div>
   </div>
