@@ -161,3 +161,7 @@ span {
 .app-carousel-dot-active {
     background: #CECECE !important;
 }
+
+mat-paginator {
+    background-color: rgb(235, 232, 232);
+}

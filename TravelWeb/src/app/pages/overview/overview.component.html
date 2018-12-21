@@ -41,7 +41,7 @@
 
 <!-- interestin places -->
 <h1>Interesting Places</h1>
-<div #place>
+<div #place class="container">
     <!-- slide -->
 </div>
 
@@ -49,25 +49,32 @@
 
 <!-- link review -->
 <h1>Articles</h1>
-<div #article class="review">
+<div class="review">
+  <div #article class="container">
+    <mat-paginator  [length]="length" 
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    (page)="onPageChangedArticle($event)">
+  </mat-paginator>
+
   <div class="container">
     <div class="row">
       <div class="image">
         <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+          <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
       </div>
       
       <div class="content">
         <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
+          <h4>{{listArticle.title}}</h4>
         </a>
         <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
         </a>
         <br/>
         <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+          {{listArticle.content}}
         </span>
       </div>
     </div>
@@ -79,29 +86,29 @@
     <div class="row">
       <div class="content">
         <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
+          <h4>{{listArticle.title}}</h4>
         </a>
         <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
         </a>
         <br/>
         <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+          {{listArticle.content}}
         </span>
       </div>
 
       <div class="image">
         <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+          <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
       </div>
     </div>
-  </div>
+  </div> 
 </div>
 
 <h1>Activities</h1>
-<div #activity>
-  <div class="container">
+<div>
+  <div #activity class="container">
     <mat-tab-group class="detail">
       <mat-tab label="Food">
         <div class="container">
