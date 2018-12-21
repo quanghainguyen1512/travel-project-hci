@@ -92,6 +92,8 @@ span {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 25%;
+    padding: 1em 1em 1em 1em;
+    background-color: rgb(235, 232, 232);
   }
   
   .card:hover {
