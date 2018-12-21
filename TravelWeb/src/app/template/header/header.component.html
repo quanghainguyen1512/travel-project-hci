@@ -13,7 +13,11 @@
       
       <div class="col-md-2 user">
           <button *ngIf="!isSignIn" (click)="showSignIn()">Sign in</button>
-          <button *ngIf="isSignIn" (click)="showSignIn()">Winny</button>
+          <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">Winny</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>Profile</button>
+            <button mat-menu-item (click)="showSignOut()">Sign out</button>
+          </mat-menu>
           <!-- <a routerLink='/pages/bookinghome' routerLinkActive='active'>Booking</a> -->
           <a href="#"><mat-icon *ngIf="!isSignIn" matBadge="0" matBadgeColor="warn">notifications</mat-icon></a>
           <a href="#"><mat-icon *ngIf="isSignIn" matBadge="15" matBadgeColor="warn">notifications</mat-icon></a>

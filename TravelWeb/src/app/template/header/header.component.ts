@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   noti : number = 0;
 
   resultFromDialog: string;
-  isSignIn = false;
+  isSignIn: boolean;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,6 +24,17 @@ export class HeaderComponent implements OnInit {
 
   public showSignIn() {
     const dialogRef = this.dialog.open(SignInComponent, {
+      // signInAction = false;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.isSignIn = result;
+    });
+  }
+
+  public showSignOut() {
+    const dialogRef = this.dialog.open(SignOutComponent, {
       // signInAction = false;
     });
 
@@ -43,5 +54,17 @@ export class SignInComponent {
 
   constructor(
     public dialogRef: MatDialogRef<SignInComponent>,
+    @Inject(MAT_DIALOG_DATA) public isSignIn: boolean) {}
+}
+
+@Component({
+  selector: 'sign-out',
+  templateUrl: './sign-out.html',
+  styleUrls: ['./sign-out.css']
+})
+export class SignOutComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<SignOutComponent>,
     @Inject(MAT_DIALOG_DATA) public isSignIn: boolean) {}
 }
