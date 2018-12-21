@@ -1,9 +1,19 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+
 export interface DialogData {
   animal: string;
   name: string;
+}
+
+export interface State {
+  flag: string;
+  name: string;
+  capital: string;
 }
 
 @Component({
@@ -17,7 +27,45 @@ export class HeaderComponent implements OnInit {
   resultFromDialog: string;
   isSignIn: boolean;
 
-  constructor(public dialog: MatDialog) { }
+  states: State[] = [
+    {
+      name: 'Vietnam',
+      capital: 'Hanoi',
+      flag: 'assets/VietnamFlag.png'
+    },
+    {
+      name: 'Thailand',
+      capital: 'Bangkok',
+      flag: 'assets/ThailandFlag.png'
+    },
+    {
+      name: 'Singapore',
+      capital: 'Singapore',
+      flag: 'assets/SingaporeFlag.png'
+    },
+    {
+      name: 'Laos',
+      capital: 'Vientiane',
+      flag: 'assets/LaosFlag.png'
+    }
+  ];
+
+  stateCtrl = new FormControl();
+  filteredStates: Observable<State[]>;
+
+  private _filterStates(value: string): State[] {
+    const filterValue = value.toLowerCase();
+
+    return this.states.filter(state => state.name.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  constructor(public dialog: MatDialog) {
+    this.filteredStates = this.stateCtrl.valueChanges
+      .pipe(
+        startWith(''),
+        map(state => state ? this._filterStates(state) : this.states.slice())
+      );
+  }
 
   ngOnInit() {
   }

@@ -5,7 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent, SignInComponent, SignOutComponent, NewsFeedComponent } from './header/header.component';
 
 import { RouterModule } from '@angular/router';
-import { MatBadgeModule, MatIconModule, MatDialogModule, MatMenuModule, MatButtonModule } from '@angular/material';
+import { MatBadgeModule, MatIconModule, MatDialogModule, MatMenuModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, SignInComponent, SignOutComponent, NewsFeedComponent],
@@ -17,6 +18,8 @@ import { MatBadgeModule, MatIconModule, MatDialogModule, MatMenuModule, MatButto
     MatDialogModule,
     MatMenuModule,
     MatButtonModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent,
