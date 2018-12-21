@@ -12,9 +12,11 @@
       </div>
       
       <div class="col-md-2 user">
-          <button (click)="showSignIn()">Sign in</button>
+          <button *ngIf="!isSignIn" (click)="showSignIn()">Sign in</button>
+          <button *ngIf="isSignIn" (click)="showSignIn()">Winny</button>
           <!-- <a routerLink='/pages/bookinghome' routerLinkActive='active'>Booking</a> -->
-          <a href="#"><mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon></a>
+          <a href="#"><mat-icon *ngIf="!isSignIn" matBadge="0" matBadgeColor="warn">notifications</mat-icon></a>
+          <a href="#"><mat-icon *ngIf="isSignIn" matBadge="15" matBadgeColor="warn">notifications</mat-icon></a>
       </div>
     </div>
   </div>
