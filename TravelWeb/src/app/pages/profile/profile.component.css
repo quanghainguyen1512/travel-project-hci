@@ -18,3 +18,9 @@
     max-height: auto;
     padding: 1em 1em 1em 1em;
 }
+
+button {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
+}

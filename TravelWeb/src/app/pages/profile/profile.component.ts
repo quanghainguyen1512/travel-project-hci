@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  follower: number = 89;
+  isFollow: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  follow() {
+    this.follower+=1;
+    this.isFollow = true;
+  }
+
+  unfollow() {
+    this.follower-=1;
+    this.isFollow = false;
   }
 
 }

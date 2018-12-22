@@ -7,8 +7,10 @@
       <ul>
         <strong>Johnny</strong>
         <li>Number of posts: <strong>12</strong></li>
-        <li>Follower: <strong>89</strong></li>
+        <li>Follower: <strong>{{follower}}</strong></li>
         <li>Following: <strong>89</strong></li>
+        <button *ngIf='!isFollow' (click)='follow()'>+ Follow</button>
+        <button *ngIf='isFollow' (click)='unfollow()'>- Unfollow</button>
       </ul>
       <br/>
     </div>
