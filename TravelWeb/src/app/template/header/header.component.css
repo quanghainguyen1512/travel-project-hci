@@ -1,5 +1,5 @@
 .header {
-    background-color: darkorange;
+    background-color: #ff0000;
 }
 
 .chooseDestination {
@@ -10,6 +10,7 @@
 input {
     background-color: transparent;
     border-width: 0.001em;
+    color: white;
 }
 
 img {
@@ -21,8 +22,9 @@ img {
 
 button {
     border: none;
-    background-color: darkorange;
+    background-color: #ff0000;
     margin-right: 1em;
+    color: white;
 }
 
 .user {
