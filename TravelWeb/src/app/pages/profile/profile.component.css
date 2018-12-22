@@ -14,7 +14,7 @@
 }
 
 .photo img {
-    max-width: auto;
-    max-height: 15em;
+    max-width: 17em;
+    max-height: auto;
     padding: 1em 1em 1em 1em;
 }
