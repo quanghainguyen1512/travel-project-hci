@@ -6,8 +6,8 @@
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
               <img class="option-img" aria-hidden [src]="state.flag" height="15"/>
-              <span>{{state.name}}</span> |
-              <small>{{state.capital}}</small>
+              <span>{{state.capital}}</span> |
+              <small>{{state.name}}</small>
             </mat-option>
           </mat-autocomplete>
           <a routerLink='/pages/overview' routerLinkActive='active'><img src="../../../../../assets/iconsearch.png" height="25"/></a>
