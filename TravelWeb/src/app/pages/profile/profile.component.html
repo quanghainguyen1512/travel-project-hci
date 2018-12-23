@@ -5,12 +5,12 @@
       <br/>
       <img src="../../../assets/avatar.png" alt="avatar" title="avatar"/>
       <ul>
-        <strong>Johnny</strong>
-        <li>Number of posts: <strong>12</strong></li>
-        <li>Follower: <strong>{{follower}}</strong></li>
-        <li>Following: <strong>89</strong></li>
-        <button *ngIf='!isFollow' (click)='follow()'>+ Follow</button>
-        <button *ngIf='isFollow' (click)='unfollow()'>- Unfollow</button>
+        <strong>{{name}}</strong>
+        <li>{{numOfPost}}<strong>12</strong></li>
+        <li>{{follower}}<strong>{{numOfFollower}}</strong></li>
+        <li>{{following}}<strong>89</strong></li>
+        <button *ngIf='!isFollow' (click)='follow()'>{{btnFollow}}</button>
+        <button *ngIf='isFollow' (click)='unfollow()'>{{btnUnfollow}}</button>
       </ul>
       <br/>
     </div>
@@ -18,25 +18,25 @@
     <mat-tab-group class="detail">
 
         <mat-tab label="Introduction">
-          <h4><strong>Johnny</strong></h4>
+          <h4><strong>{{name}}</strong></h4>
           <p>
-            <strong style="color:cornflowerblue">Joined:</strong> March 14 2012
+            <strong style="color:cornflowerblue">{{joined}}</strong> {{joinTime}}
           </p>
           <p>
-            A personal diary of all the adventures in the rockies and travels to explore new sights.
+            {{describe}}
           </p>
         </mat-tab>
 
       <mat-tab label="Articles">
         <div>
           <br/>
-          <a routerLink='/pages/review' routerLinkActive='active'><h5>Hồ Con Rùa</h5></a>
-          <span>Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta...</span>
+          <a routerLink='/pages/review' routerLinkActive='active'><h5>{{title}}</h5></a>
+          <span>{{overviewArticle}}</span>
           <br/>
     
           <br/>
-          <a routerLink='/pages/review' routerLinkActive='active'><h5>Hồ Con Rùa</h5></a>
-          <span>Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta...</span>
+          <a routerLink='/pages/review' routerLinkActive='active'><h5>{{title}}</h5></a>
+          <span>{{overviewArticle}}</span>
           <br/>
         </div>
       </mat-tab>

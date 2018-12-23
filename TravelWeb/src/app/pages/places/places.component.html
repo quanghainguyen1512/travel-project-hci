@@ -8,9 +8,10 @@
 </div>
 <div class="subMenu">
   <div class="row">
-    <span (click)='scroll(gallery)' class="col-md-4"><strong>Gallery</strong></span>
-    <span (click)='scroll(article)' class="col-md-4"><strong>Related Articles</strong></span>
-    <span (click)='scroll(review)' class="col-md-4"><strong>Reviews</strong></span>
+    <span (click)='scroll(gallery)' class="col-md-3"><strong>Gallery</strong></span>
+    <span (click)='scroll(article)' class="col-md-3"><strong>Related Articles</strong></span>
+    <span (click)='scroll(review)' class="col-md-3"><strong>Reviews</strong></span>
+    <span (click)='scroll(service)' class="col-md-3"><strong>Services</strong></span>
   </div>
 </div>
 
@@ -115,17 +116,81 @@
 
   <div class="review" *ngFor="let reviewDetail of listReview">
     <img [src]="reviewDetail.avatar"/>
-    <span> Vote: {{reviewDetail.vote}}   Down vote: {{reviewDetail.downVote}}</span>
-    <p>
+    <span><strong>{{reviewDetail.title}}</strong></span>
+    <br/>
+    <span>
       {{reviewDetail.comment}}
-    </p>
+    </span>
+    <span class="vote">
+      <mat-icon matBadge='{{reviewDetail.vote}}' matBadgeColor="warn">thumb_up</mat-icon>  
+      <mat-icon matBadge='{{reviewDetail.downVote}}' matBadgeColor="warn">thumb_down</mat-icon> 
+    </span>
     <hr/>
+  </div>
+
+  <!-- add comment -->
+  <div class="container  addComment">
+    Add comment
+    <br/> 
+    <textarea></textarea>
+    <input type="submit" style="margin-left: 1em;" title="Cancel" value="Cancel">
+    <input type="reset" title="Post" value="Post">
   </div>
 </div>
 
+<hr/>
+
 <h1>Services</h1>
-<div>
-  
+<div #service class="container">
+  <div class="row">
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>

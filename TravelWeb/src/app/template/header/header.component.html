@@ -20,16 +20,16 @@
       </div>
       
       <div class="col-md-2 user">
-          <button *ngIf="!isSignIn" (click)="showSignIn()">Sign in</button>
-          <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">Winny</button>
+          <button *ngIf="!isSignIn" (click)="showSignIn()">{{signin}}</button>
+          <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>Profile</button>
-            <button mat-menu-item >Post Article/Review</button>
-            <button mat-menu-item (click)="showSignOut()">Sign out</button>
+            <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>{{profile}}</button>
+            <button mat-menu-item>{{post}}</button>
+            <button mat-menu-item (click)="showSignOut()">{{signout}}</button>
           </mat-menu>
           <!-- <a routerLink='/pages/bookinghome' routerLinkActive='active'>Booking</a> -->
           <mat-icon *ngIf="!isSignIn" matBadge="0" matBadgeColor="accent" color='primary'>notifications</mat-icon>
-          <mat-icon *ngIf="isSignIn" matBadge="15" matBadgeColor="warn" (click)="openNewsFeed()" style="cursor: pointer">notifications</mat-icon>
+          <mat-icon *ngIf="isSignIn" matBadge="15" matBadgeColor="accent" color='primary' (click)="openNewsFeed()" style="cursor: pointer">notifications</mat-icon>
       </div>
     </div>
   </div>

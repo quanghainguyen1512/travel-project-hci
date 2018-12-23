@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface ReviewDetail {
   avatar: string;
+  title: string;
   vote: number;
   downVote: number;
   comment: string;
@@ -26,24 +27,28 @@ export class PlacesComponent implements OnInit {
   reviewDetail: ReviewDetail[] = [
     {
       avatar: 'assets/avatar.png',
+      title: 'Bitexco Building',
       vote: 1,
       downVote:1,
-      comment: 'bla bla bla bla bla',
+      comment: 'bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla n;a bla bla bla',
     },
     {
       avatar: 'assets/avatar.png',
+      title: 'Bitexco! Hello Viet Nam',
       vote: 1,
       downVote:1,
-      comment: 'hellooooooooooooooooo',
+      comment: 'hellooooooooooooooooo00000000000000000000000000000000000000000',
     },
     {
       avatar: 'assets/avatar.png',
+      title: 'Toa nha cao thu nhi Tp HCM - Bitexco',
       vote: 1,
       downVote:1,
-      comment: 'xin chao',
+      comment: 'xin chao xin chao ',
     },
     {
       avatar: 'assets/avatar.png',
+      title: 'Bitexco',
       vote: 1,
       downVote:1,
       comment: 'good job',
