@@ -25,21 +25,26 @@
 </div>
 
 <!-- image -->
-<h1>Gallery</h1>
-<div #gallery class="container">
-  <div class="gallery">
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-  </div>
+<div class="heading">
+  <h1>Gallery</h1>
+</div>
+<div #gallery>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <hr/>
 
 <!-- interestin places -->
-<h1>Popular Places</h1>
+<div class="heading">
+  <h1>Popular Places</h1>
+</div>
 <div #place class=" place container">
   <div class="row">
     <div class="card">
@@ -95,7 +100,9 @@
 <hr/>
 
 <!-- link review -->
-<h1>Related Articles</h1>
+<div class="heading">
+  <h1>Related Articles</h1>
+</div>
 <div class="review">
   <div #article class="container">
     <mat-paginator  [length]="length" 
@@ -155,7 +162,9 @@
 
 <hr/>
 
-<h1>Things To Do</h1>
+<div class="heading">
+  <h1>Things To Do</h1>
+</div>
 <div>
   <div #activity class="container">
     <mat-tab-group class="detail">
@@ -174,18 +183,6 @@
               </a>
             </div> 
     
-            <div class="card">
-              <a href="/pages/places">
-                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-              </a>
-              <a href="/pages/places">
-                <div class="container">
-                  <h4><b>Bitexco</b></h4> 
-                  <p>Address: bla bla</p> 
-                </div>
-              </a>
-            </div>
-            
             <div class="card">
               <a href="/pages/places">
                 <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
@@ -267,7 +264,9 @@
 
 <hr/>
 
-<h1>Nearby Destinations</h1>
+<div class="heading">
+  <h1>Nearby Destinations</h1>
+</div>
 <div class="container">
   <div class="row">
     <div class="card">
@@ -287,18 +286,6 @@
         <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
       </a>
       <a href="/pages/overview">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/overview">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
         <div class="container">
           <h4><b>Bitexco</b></h4> 
           <p>Address: bla bla</p> 

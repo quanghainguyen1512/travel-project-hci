@@ -17,12 +17,12 @@
     background-color: transparent;
 }
 
-h1 {
+.heading {
     text-align: center;
     color: white;
     background-color: lightsalmon;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 .overview p {
@@ -68,9 +68,19 @@ span {
     text-align: justify;
 }
 
+mat-grid-list {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.gallery {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
 .gallery img {
-    width: 20%;
-    
+    width: 0px;
+    height: 200px;
 }
 
 .subMenu span {

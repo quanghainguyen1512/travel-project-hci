@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OverviewComponent } from './overview.component';
-import { MatTabsModule, MatPaginatorModule } from '@angular/material';
+import { MatTabsModule, MatPaginatorModule, MatGridListModule } from '@angular/material';
 import { NguCarouselModule } from '@ngu/carousel';
 
 @NgModule({
@@ -11,7 +11,8 @@ import { NguCarouselModule } from '@ngu/carousel';
     CommonModule,
     MatTabsModule,
     MatPaginatorModule,
-    NguCarouselModule
+    NguCarouselModule,
+    MatGridListModule,
   ],
   exports: [
     OverviewComponent,
