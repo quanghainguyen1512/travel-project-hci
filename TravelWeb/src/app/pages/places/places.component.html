@@ -19,32 +19,34 @@
 <div class="overview">
   <!-- <h1>Ho Chi Minh City</h1> -->
   <p>
-    Bitexco Financial Tower (Vietnamese: Tháp Tài chính Bitexco) is a skyscraper in Ho Chi Minh City, Vietnam. At its completion in 2010, it became the tallest building in Vietnam and kept this status until January 2011.
+    Bitexco Financial Tower is a skyscraper in Ho Chi Minh City, Vietnam.
   </p>
-  <hr/>
+  <p style="color:blue" (click)='scroll(gallery)'><strong>More...</strong></p>
 </div>
 
+<hr/>
+
 <!-- image -->
-<h1>Gallery</h1>
-<div class="container" #gallery>
-  <div class="gallery">
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-  </div>
+<div class="heading">
+  <h1>Gallery</h1>
+</div>
+<div #gallery>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <hr/>
 
 <!-- link article -->
-<h1>Related Articles</h1>
+<div class="heading">
+  <h1>Related Articles</h1>
+</div>
 <div class="article container" #article>
 
   <mat-paginator  [length]="length" 
@@ -55,7 +57,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="image">
+      <div style="padding-right:1em" class="image">
         <a href='/pages/review'>
           <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
@@ -93,7 +95,7 @@
         </span>
       </div>
 
-      <div class="image">
+      <div style="padding-left:1em" class="image">
         <a href='/pages/review'>
           <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
@@ -105,7 +107,9 @@
 <hr/>
 
 <!-- review -->
-<h1>Reviews</h1>
+<div class="heading">
+  <h1>Reviews</h1>
+</div>
 <div #review class="container">
 
   <mat-paginator  [length]="length" 
@@ -129,10 +133,9 @@
   </div>
 
   <!-- add comment -->
-  <div class="container  addComment">
-    Add comment
+  <div class="addComment">
     <br/> 
-    <textarea></textarea>
+    <textarea placeholder="Add comment..."></textarea>
     <input type="submit" style="margin-left: 1em;" title="Cancel" value="Cancel">
     <input type="reset" title="Post" value="Post">
   </div>
@@ -140,7 +143,9 @@
 
 <hr/>
 
-<h1>Services</h1>
+<div class="heading">
+  <h1>Services</h1>
+</div>
 <div #service class="container">
   <div class="row">
     <div class="card">

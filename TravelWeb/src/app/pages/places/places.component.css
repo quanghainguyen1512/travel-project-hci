@@ -18,18 +18,8 @@
     color: white;
 }
 
-h1 {
-    text-align: center;
-    color: white;
-    background-color: lightsalmon;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.overview p {
-    text-align: justify;
-    padding-left: 1em;
-    padding-right: 1em;
+.overview {
+    padding-top: 1em;
     border: 0.02em solid gray;
     margin-left: 3em;
     margin-right: 3em;
@@ -37,6 +27,11 @@ h1 {
     margin-bottom: 2em;
     background-color: salmon;
     border-radius: 20px;;
+}
+
+.overview p {
+    text-align: center;
+
 }
 
 hr {
@@ -77,6 +72,10 @@ span {
 .review img {
     max-width: 3em;
     max-height: 3em;
+}
+
+.review {
+    margin-right: 1em;
 }
 
 .list {
@@ -144,8 +143,22 @@ margin-bottom: 5px;
 
 .addComment input {
     float: right;
+    background-color: salmon;
 }
 
 textarea {
     width: 100%;
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    background-color: lightsalmon;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+mat-grid-list {
+    margin-left: 3em;
+    margin-right: 3em;
 }

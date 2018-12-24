@@ -17,6 +17,7 @@ import { PlacesComponent } from './places/places.component';
 
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material';
 
 @NgModule({
   declarations: [PagesComponent, ProfileComponent, BookinghomeComponent, BookingComponent, HomeComponent, PlacesComponent],
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TemplateModule, 
     MaterialModule,
     ReactiveFormsModule,
+    MatGridListModule
   ]
 })
 export class PagesModule { }
