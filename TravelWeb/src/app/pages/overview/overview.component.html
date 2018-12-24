@@ -17,12 +17,29 @@
 
 <!-- overview content -->
 <div class="overview">
-  <!-- <h1>Ho Chi Minh City</h1> -->
-  <p>
-    Vietnam (UK: /ˌvjɛtˈnæm, -ˈnɑːm/, US: /ˌviːət-/ (About this soundlisten); Vietnamese: Việt Nam pronounced [vîət nāːm] (About this soundlisten)), officially the Socialist Republic of Vietnam (Vietnamese: Cộng hòa xã hội chủ nghĩa Việt Nam), is the easternmost country on the Indochina Peninsula. With an estimated 94.6 million inhabitants as of 2016, it is the world's 15th-most-populous country, and the ninth-most-populous Asian country. Vietnam is bordered by China to the north, Laos to the northwest, Cambodia to the southwest, Thailand across the Gulf of Thailand to the southwest, and the Philippines, Malaysia and Indonesia across the South China Sea to the east and southeast. Its capital city has been Hanoi since the reunification of North and South Vietnam in 1976, with Ho Chi Minh City as the most populous city.
-  </p>
-  <hr/>
+  <div class="row">
+    <div class="col-md-4">
+      <h6><strong>Weather</strong></h6>
+      <span>
+        30<sup>o</sup>C<span style="color: gray">28<sup>o</sup>C</span>
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h6><strong>Time</strong></h6>
+      <span>GMT +07:00</span>
+    </div>
+    <div class="col-md-4">
+      <h6><Strong>Currency</Strong></h6>
+      <span>Vietnam dong (VND)</span>
+    </div>
+  </div>
+  <br/>
+  <p>Located in southeast Vietnam, the metropolis surrounds the Saigon River and covers about 2,061 square kilometres</p>
+  <p (click)='scroll(gallery)' style="color:blue"><strong>More...</strong></p>
 </div>
+
+
+<hr/>
 
 <!-- image -->
 <div class="heading">
@@ -113,7 +130,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="image">
+      <div style="padding-right:1em;" class="image">
         <a href='/pages/review'>
           <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
@@ -135,6 +152,7 @@
   </div>
 
   <br/>
+  <br/>
 
   <div class="container">
     <div class="row">
@@ -151,7 +169,7 @@
         </span>
       </div>
 
-      <div class="image">
+      <div style="padding-left:1em;" class="image">
         <a href='/pages/review'>
           <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
