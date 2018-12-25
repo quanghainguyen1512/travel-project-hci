@@ -12,3 +12,15 @@
     padding-left: 3em;
     background-color: aliceblue;
 }
+
+.photo img {
+    max-width: 17em;
+    max-height: auto;
+    padding: 1em 1em 1em 1em;
+}
+
+button {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
+}

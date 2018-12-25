@@ -8,96 +8,334 @@
 </div>
 <div class="subMenu">
   <div class="row">
-    <span (click)='scroll(gallery)' class="col-md-4"><strong>Gallery</strong></span>
-    <span (click)='scroll(article)' class="col-md-4"><strong>Interesting Places</strong></span>
-    <span (click)='scroll(article)' class="col-md-4"><strong>Articles</strong></span>
-    <span (click)='scroll(article)' class="col-md-4"><strong>Activities</strong></span>
-    <span (click)='scroll(review)' class="col-md-4"><strong>Reviews</strong></span>
+    <span (click)='scroll(gallery)' class="col-md-3"><strong>Gallery</strong></span>
+    <span (click)='scroll(place)' class="col-md-3"><strong>Popular Places</strong></span>
+    <span (click)='scroll(article)' class="col-md-3"><strong>Related Articles</strong></span>
+    <span (click)='scroll(activity)' class="col-md-3"><strong>Things To Do</strong></span>
   </div>
 </div>
 
 <!-- overview content -->
 <div class="overview">
-  <!-- <h1>Ho Chi Minh City</h1> -->
-  <p>
-    Ho Chi Minh City (Vietnamese: Thành phố Hồ Chí Minh), also known by its former name of Saigon (Vietnamese: Sài Gòn), is the largest city in Vietnam by population. It was known as Prey Nokor (Khmer: ព្រៃនគរ)  prior to annexation by the Vietnamese in the 17th century. Under the name Saigon, it was the capital of the French colony of Cochinchina and later of the independent republic of South Vietnam 1955–75. On 2 July 1976, Saigon merged with the surrounding Gia Định Province and was officially renamed Ho Chi Minh City after revolutionary leader Hồ Chí Minh (although the name Sài Gòn is still widely used).
-  </p>
-  <hr/>
+  <div class="row">
+    <div class="col-md-4">
+      <h6><strong>Weather</strong></h6>
+      <span>
+        30<sup>o</sup>C<span style="color: gray">28<sup>o</sup>C</span>
+      </span>
+    </div>
+    <div class="col-md-4">
+      <h6><strong>Time</strong></h6>
+      <span>GMT +07:00</span>
+    </div>
+    <div class="col-md-4">
+      <h6><Strong>Currency</Strong></h6>
+      <span>Vietnam dong (VND)</span>
+    </div>
+  </div>
+  <br/>
+  <p>Located in southeast Vietnam, the metropolis surrounds the Saigon River and covers about 2,061 square kilometres</p>
+  <p (click)='scroll(gallery)' style="color:blue"><strong>More...</strong></p>
 </div>
 
+
+<hr/>
+
 <!-- image -->
-<h1>Gallery</h1>
-<div class="container">
-  <div class="gallery">
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-  </div>
+<div class="heading">
+  <h1>Gallery</h1>
+</div>
+<div #gallery>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <hr/>
 
 <!-- interestin places -->
-<h1>Interesting Places</h1>
-<div>
-    <!-- slide -->
+<div class="heading">
+  <h1>Popular Places</h1>
+</div>
+<div #place class=" place container">
+  <div class="row">
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <hr/>
 
 <!-- link review -->
-<h1>Articles</h1>
+<div class="heading">
+  <h1>Related Articles</h1>
+</div>
 <div class="review">
+  <div #article class="container">
+    <mat-paginator  [length]="length" 
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    (page)="onPageChangedArticle($event)">
+  </mat-paginator>
+
   <div class="container">
     <div class="row">
-      <div class="image">
+      <div style="padding-right:1em;" class="image">
         <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+          <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
       </div>
       
       <div class="content">
         <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
+          <h4>{{listArticle.title}}</h4>
         </a>
         <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
         </a>
         <br/>
         <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+          {{listArticle.content}}
         </span>
       </div>
     </div>
   </div>
 
   <br/>
+  <br/>
 
   <div class="container">
     <div class="row">
       <div class="content">
         <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
+          <h4>{{listArticle.title}}</h4>
         </a>
         <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
         </a>
         <br/>
         <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
+          {{listArticle.content}}
         </span>
       </div>
 
-      <div class="image">
+      <div style="padding-left:1em;" class="image">
         <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
+          <img [src]="listArticle.image" title="image" alt="image"/>
         </a>
       </div>
+    </div>
+  </div> 
+</div>
+
+<hr/>
+
+<div class="heading">
+  <h1>Things To Do</h1>
+</div>
+<div>
+  <div #activity class="container">
+    <mat-tab-group class="detail">
+      <mat-tab label="Must Eat">
+        <div class="container">
+          <div class="row">
+            <div class="card">
+              <a href="/pages/places">
+                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+              </a>
+              <a href="/pages/places">
+                <div class="container">
+                  <h4><b>Bitexco</b></h4> 
+                  <p>Address: bla bla</p> 
+                </div>
+              </a>
+            </div> 
+    
+            <div class="card">
+              <a href="/pages/places">
+                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+              </a>
+              <a href="/pages/places">
+                <div class="container">
+                  <h4><b>Bitexco</b></h4> 
+                  <p>Address: bla bla</p> 
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a href="/pages/places">
+                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+              </a>
+              <a href="/pages/places">
+                <div class="container">
+                  <h4><b>Bitexco</b></h4> 
+                  <p>Address: bla bla</p> 
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a href="/pages/places">
+                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+              </a>
+              <a href="/pages/places">
+                <div class="container">
+                  <h4><b>Bitexco</b></h4> 
+                  <p>Address: bla bla</p> 
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    
+      <mat-tab label="Rest">
+        <div class="container">
+          <div class="row">
+            <div class="card">
+              <a href="/pages/places">
+                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+              </a>
+              <a href="/pages/places">
+                <div class="container">
+                  <h4><b>Bitexco</b></h4> 
+                  <p>Address: bla bla</p> 
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    
+      <mat-tab label="Sightseeing">
+        <div class="container">
+          <div class="row">
+            <div class="card">
+              <a href="/pages/places">
+                <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+              </a>
+              <a href="/pages/places">
+                <div class="container">
+                  <h4><b>Bitexco</b></h4> 
+                  <p>Address: bla bla</p> 
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    
+    </mat-tab-group>
+  </div>
+</div>
+
+<hr/>
+
+<div class="heading">
+  <h1>Nearby Destinations</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/overview">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/overview">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/overview">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
     </div>
   </div>
 </div>
 
 <button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>
+
+<!-- <ngu-carousel #carousel
+    [inputs]="carouselTile"
+    (carouselLoad)="carouselTileLoad($event)">
+
+          <ngu-tile NguCarouselItem *ngFor="let Tile of carouselTileItems">
+              <h1>{{Tile + 1}}</h1>
+          </ngu-tile>
+
+        <button NguCarouselPrev class='leftRs'>&lt;</button>
+        <button NguCarouselNext class='rightRs'>&gt;</button>
+  </ngu-carousel>
+<button (click)="resetFn()">Reset</button> -->

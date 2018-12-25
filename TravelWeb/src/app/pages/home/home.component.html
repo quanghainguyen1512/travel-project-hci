@@ -1,11 +1,20 @@
 <div class="background">
   <div class="container">
       <div class="title">
-        <h1><strong>TRAVELING</strong></h1>
+        <h1><strong>{{slogan}}</strong></h1>
       </div>
       <div class="search">
-          <input type="text" placeholder="Search destination"/>
-          <a routerLink='/pages/overview' routerLinkActive='active'><img src="../../../../../assets/iconsearch.png"/></a>
+        <!-- <mat-form-field> -->
+            <input type="text" placeholder="Search destination" [matAutocomplete]="auto" [formControl]="stateCtrl"/>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                <img class="option-img" aria-hidden [src]="state.flag" height="25"/>
+                <span>{{state.capital}}</span> |
+                <small>{{state.name}}</small>
+              </mat-option>
+            </mat-autocomplete>
+            <a routerLink='/pages/overview' routerLinkActive='active'><img src="../../../../../assets/iconsearch.png"/></a>
+        <!-- </mat-form-field> -->
       </div>
     </div>
 </div>

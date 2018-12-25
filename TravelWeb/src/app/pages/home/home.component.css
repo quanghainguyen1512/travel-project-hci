@@ -13,7 +13,7 @@ input {
     padding-right: 100px;
     height: 60px;
     border-radius: 4px;
-    background: orange;
+    background: #ff0000;
     overflow: hidden;
     position: relative;
     top:40%;
@@ -24,10 +24,14 @@ input {
     width: 100px;
     height: 100%;
     text-align: center;
-    background: orange;
+    background: #ff0000;
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.search a img {
+    margin-top: 5px;
 }
 
 .background {
@@ -42,8 +46,18 @@ input {
 }
 
 .title {
-    color: white;
+    color: #ff0000;
     text-align: center;
     top: 30%;
     position: relative;
+}
+
+.option-img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+[dir='rtl'] .option-img {
+    margin-right: 0;
+    margin-left: 8px;
 }

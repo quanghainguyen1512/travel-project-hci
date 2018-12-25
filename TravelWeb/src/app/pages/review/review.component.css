@@ -15,6 +15,7 @@
 .imageCheckIn img {
     max-width: auto;
     max-height: 16em;
+    padding-bottom: 1em;
 }
 
 .review {
@@ -22,6 +23,14 @@
     border: 0.001em solid;
     padding: 1em 1em 1em 1em;
     text-align: justify;
+}
+
+h1 {
+    /* color: red; */
+}
+
+.author {
+    color: darkorange;
 }
 
 .comment {
@@ -36,8 +45,13 @@
     max-height: 3em;
 }
 
-.comment span {
-    color: blue;
+.vote {
+    float: right;
+}
+
+mat-icon {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .author {
@@ -59,4 +73,16 @@ textarea {
 
 .addComment input {
     float: right;
+}
+
+.img1 {
+    width: 75%;
+    height: auto;
+    padding-left: 12em;
+}
+
+.img2 {
+    width: 50%;
+    height: auto;
+    padding: 0.5em 0.5em 0.5em 0.5em;
 }

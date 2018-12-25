@@ -8,9 +8,10 @@
 </div>
 <div class="subMenu">
   <div class="row">
-    <span (click)='scroll(gallery)' class="col-md-4"><strong>Gallery</strong></span>
-    <span (click)='scroll(article)' class="col-md-4"><strong>Articles</strong></span>
-    <span (click)='scroll(review)' class="col-md-4"><strong>Reviews</strong></span>
+    <span (click)='scroll(gallery)' class="col-md-3"><strong>Gallery</strong></span>
+    <span (click)='scroll(article)' class="col-md-3"><strong>Related Articles</strong></span>
+    <span (click)='scroll(review)' class="col-md-3"><strong>Reviews</strong></span>
+    <span (click)='scroll(service)' class="col-md-3"><strong>Services</strong></span>
   </div>
 </div>
 
@@ -18,175 +19,182 @@
 <div class="overview">
   <!-- <h1>Ho Chi Minh City</h1> -->
   <p>
-    Bitexco Financial Tower (Vietnamese: Tháp Tài chính Bitexco) is a skyscraper in Ho Chi Minh City, Vietnam. At its completion in 2010, it became the tallest building in Vietnam and kept this status until January 2011.
+    Bitexco Financial Tower is a skyscraper in Ho Chi Minh City, Vietnam.
   </p>
-  <hr/>
+  <p style="color:blue" (click)='scroll(gallery)'><strong>More...</strong></p>
 </div>
 
+<hr/>
+
 <!-- image -->
-<h1>Gallery</h1>
-<div class="container" #gallery>
-  <div class="gallery">
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-      <img src="../../../assets/gallery.jpg"/>
-      <img src="../../../assets/gallery1.jpg"/>
-  </div>
+<div class="heading">
+  <h1>Gallery</h1>
+</div>
+<div #gallery>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <hr/>
 
 <!-- link article -->
-<h1>Articles</h1>
-<div class="article" #article>
-
-  <div class="container">
-    <div class="row">
-      <div class="image">
-        <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
-        </a>
-      </div>
-      
-      <div class="content">
-        <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
-        </a>
-        <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
-        </a>
-        <br/>
-        <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <br/>
-
-  <div class="container">
-    <div class="row">
-      <div class="content">
-        <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
-        </a>
-        <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
-        </a>
-        <br/>
-        <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
-        </span>
-      </div>
-
-      <div class="image">
-        <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <br/>
-
-  <div class="container">
-    <div class="row">
-      <div class="image">
-        <a href='/pages/review'>
-          <img src="../../../assets/image.jpg" title="image" alt="image"/>
-        </a>
-      </div>
-      
-      <div class="content">
-        <a href="/pages/review">
-          <h4>Hồ Con Rùa</h4>
-        </a>
-        <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: Johnny</span>
-        </a>
-        <br/>
-        <span>
-          Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa, lịch sử đã từng chứng kiến vô số sự kiện sôi nổi của lịch sử nước ta. Vào năm 1878 ngay tại khoảnh đất rộng bao la này, người Pháp đã cho xây một tháp nước khá kiên cố có tên là Công trường Tháp nước, sau đó đến...
-        </span>
-      </div>
-    </div>
-  </div>
-
+<div class="heading">
+  <h1>Related Articles</h1>
 </div>
+<div class="article container" #article>
 
-<!-- pager article -->
-<!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-    <li [ngClass]="{disabled:pager.currentPage === 1}">
-        <a (click)="setPage(1)">First</a>
-    </li>
-    <li [ngClass]="{disabled:pager.currentPage === 1}">
-        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-    </li>
-    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-        <a (click)="setPage(page)">{{page}}</a>
-    </li>
-    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-        <a (click)="setPage(pager.currentPage + 1)">Next</a>
-    </li>
-    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-        <a (click)="setPage(pager.totalPages)">Last</a>
-    </li>
-</ul> -->
-<!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
-<div class="list">
-    <!-- <ul>
-      <li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
-    </ul> -->
+  <mat-paginator  [length]="length" 
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    (page)="onPageChangedArticle($event)">
+  </mat-paginator>
 
-    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+  <div class="container">
+    <div class="row">
+      <div style="padding-right:1em" class="image">
+        <a href='/pages/review'>
+          <img [src]="listArticle.image" title="image" alt="image"/>
+        </a>
+      </div>
+      
+      <div class="content">
+        <a href="/pages/review">
+          <h4>{{listArticle.title}}</h4>
+        </a>
+        <a href="/pages/profile">
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
+        </a>
+        <br/>
+        <span>
+          {{listArticle.content}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="container">
+    <div class="row">
+      <div class="content">
+        <a href="/pages/review">
+          <h4>{{listArticle.title}}</h4>
+        </a>
+        <a href="/pages/profile">
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
+        </a>
+        <br/>
+        <span>
+          {{listArticle.content}}
+        </span>
+      </div>
+
+      <div style="padding-left:1em" class="image">
+        <a href='/pages/review'>
+          <img [src]="listArticle.image" title="image" alt="image"/>
+        </a>
+      </div>
+    </div>
+  </div> 
 </div>
 
 <hr/>
 
 <!-- review -->
-<h1>Reviews</h1>
+<div class="heading">
+  <h1>Reviews</h1>
+</div>
 <div #review class="container">
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
+
+  <mat-paginator  [length]="length" 
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    (page)="onPageChangedReview($event)">
+  </mat-paginator>
+
+  <div class="review" *ngFor="let reviewDetail of listReview">
+    <img [src]="reviewDetail.avatar"/>
+    <span><strong>{{reviewDetail.title}}</strong></span>
+    <br/>
+    <span>
+      {{reviewDetail.comment}}
+    </span>
+    <span class="vote">
+      <mat-icon matBadge='{{reviewDetail.vote}}' matBadgeColor="warn">thumb_up</mat-icon>  
+      <mat-icon matBadge='{{reviewDetail.downVote}}' matBadgeColor="warn">thumb_down</mat-icon> 
+    </span>
     <hr/>
   </div>
 
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
+  <!-- add comment -->
+  <div class="addComment">
+    <br/> 
+    <textarea placeholder="Add comment..."></textarea>
+    <input type="submit" style="margin-left: 1em;" title="Cancel" value="Cancel">
+    <input type="reset" title="Post" value="Post">
   </div>
+</div>
 
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
-  </div>
+<hr/>
 
-  <div class="review">
-    <img src="../../../assets/avatar.png"/>
-    <span> Vote: 12   Down vote: 1</span>
-    <p>
-      bla bla bla bla bla bla bla bla. 
-    </p>
-    <hr/>
+<div class="heading">
+  <h1>Services</h1>
+</div>
+<div #service class="container">
+  <div class="row">
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="/pages/places">
+        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+      </a>
+      <a href="/pages/places">
+        <div class="container">
+          <h4><b>Bitexco</b></h4> 
+          <p>Address: bla bla</p> 
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 
