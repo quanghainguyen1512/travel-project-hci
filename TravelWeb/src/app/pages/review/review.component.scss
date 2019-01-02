@@ -32,6 +32,10 @@
 
         .content {
             text-align: justify;
+
+            .card-img-top {
+                height: 15em;
+            }
         }
 
         .review {
@@ -76,6 +80,10 @@
                         cursor: pointer;
                     }
                 }
+            }
+
+            .card-img-top {
+                height: 4em;
             }
         }
     }
