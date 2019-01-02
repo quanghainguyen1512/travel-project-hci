@@ -45,6 +45,7 @@ hr {
 
 .image img {
     width: 100%;
+    height: 100%;
 }
 
 .image {
@@ -161,4 +162,8 @@ textarea {
 mat-grid-list {
     margin-left: 3em;
     margin-right: 3em;
+}
+
+mat-grid-list img {
+    width: 100%;
 }

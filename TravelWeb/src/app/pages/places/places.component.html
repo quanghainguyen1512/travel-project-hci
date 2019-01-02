@@ -32,12 +32,12 @@
 </div>
 <div #gallery>
   <mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/btc1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/btc2.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/btc3.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/btc4.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/btc5.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/btc6.jpg"/></mat-grid-tile>
   </mat-grid-list>
 </div>
 
@@ -68,8 +68,14 @@
           <h4>{{listArticle.title}}</h4>
         </a>
         <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span><br/>
         </a>
+        <span style="font-size: 0.7em;">Ho Chi Minh city - 20/10/2018</span>
+        <div style="font-size: 0.7em;" class="rating">
+          <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
         <br/>
         <span>
           {{listArticle.content}}
@@ -87,8 +93,15 @@
           <h4>{{listArticle.title}}</h4>
         </a>
         <a href="/pages/profile">
-          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span>
+          <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span><br/>
         </a>
+        <span style="font-size: 0.7em;">Ho Chi Minh city - 20/10/2018</span>
+        <div style="font-size: 0.7em;" class="rating">
+          <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+
         <br/>
         <span>
           {{listArticle.content}}
