@@ -89,7 +89,7 @@ margin-bottom: 5px;
 
 .subMenu span {
     text-align: center;
-    background-color: lightsalmon;
+    background-color: orangered;
     cursor: pointer;
     color: white;
     /* border: 0.001em solid gray; */
@@ -143,7 +143,7 @@ margin-bottom: 5px;
 
 .addComment input {
     float: right;
-    background-color: salmon;
+    background-color: #dc3545;
 }
 
 textarea {
