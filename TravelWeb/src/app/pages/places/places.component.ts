@@ -30,28 +30,28 @@ export class PlacesComponent implements OnInit {
       title: 'Bitexco Building',
       vote: 1,
       downVote:1,
-      comment: 'bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla n;a bla bla bla',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
     },
     {
       avatar: 'assets/avatar.png',
       title: 'Bitexco! Hello Viet Nam',
       vote: 1,
       downVote:1,
-      comment: 'hellooooooooooooooooo00000000000000000000000000000000000000000',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
     },
     {
       avatar: 'assets/avatar.png',
       title: 'Toa nha cao thu nhi Tp HCM - Bitexco',
       vote: 1,
       downVote:1,
-      comment: 'xin chao xin chao ',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
     },
     {
       avatar: 'assets/avatar.png',
       title: 'Bitexco',
       vote: 1,
       downVote:1,
-      comment: 'good job',
+      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
     },
   ];
   listReview: ReviewDetail[];

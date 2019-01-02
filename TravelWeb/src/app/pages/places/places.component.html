@@ -71,7 +71,7 @@
           <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span><br/>
         </a>
         <span style="font-size: 0.7em;">Ho Chi Minh city - 20/10/2018</span>
-        <div style="font-size: 0.7em;" class="rating">
+        <div style="font-size: 0.7em; color: #ffc107;" class="rating">
           <i class="fa fa-star"></i> <i class="fa fa-star"></i>
           <i class="fa fa-star"></i> <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
@@ -96,7 +96,7 @@
           <span style="font-size: 0.6em;">Author: {{listArticle.author}}</span><br/>
         </a>
         <span style="font-size: 0.7em;">Ho Chi Minh city - 20/10/2018</span>
-        <div style="font-size: 0.7em;" class="rating">
+        <div style="font-size: 0.7em; color: #ffc107;" class="rating">
           <i class="fa fa-star"></i> <i class="fa fa-star"></i>
           <i class="fa fa-star"></i> <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
@@ -133,16 +133,31 @@
 
   <div class="review" *ngFor="let reviewDetail of listReview">
     <img [src]="reviewDetail.avatar"/>
-    <span><strong>{{reviewDetail.title}}</strong></span>
-    <br/>
+    <span><strong>{{reviewDetail.title}}</strong></span><br/>
+    <span style="font-size: 0.7em;">20/10/2018</span>
+    <div style="font-size: 0.7em; color: #ffc107;" class="rating">
+      <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    </div>
     <span>
       {{reviewDetail.comment}}
     </span>
-    <span class="vote">
+    <!-- <span class="vote">
       <mat-icon matBadge='{{reviewDetail.vote}}' matBadgeColor="warn">thumb_up</mat-icon>  
       <mat-icon matBadge='{{reviewDetail.downVote}}' matBadgeColor="warn">thumb_down</mat-icon> 
-    </span>
+    </span> -->
+    <div class="vote mt-3 pr-5">
+        <mat-icon matBadge="15" matBadgeColor="warn">
+            <i class="fa fa-thumbs-up"></i>
+        </mat-icon>&nbsp;&nbsp;&nbsp;
+        <mat-icon matBadge="15" matBadgeColor="warn">
+            <i class="fa fa-thumbs-down"></i>
+        </mat-icon>
+    </div>
+    <br/>
     <hr/>
+    <br/>
   </div>
 
   <!-- add comment -->
@@ -159,56 +174,61 @@
 <div class="heading">
   <h1>Services</h1>
 </div>
-<div #service class="container">
-  <div class="row">
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-  </div>
+<div #service class="service">
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Bitexco</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/hcmc6.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Ben Thanh Market</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/hcmc10.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Nha Rong Habour</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/hcmc9.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Hồ Con Rùa</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>
