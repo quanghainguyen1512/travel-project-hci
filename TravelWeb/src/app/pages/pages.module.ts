@@ -18,7 +18,6 @@ import {PlacesComponent} from './places/places.component';
 import {MaterialModule} from '../material.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material';
-import { ModalImageComponent } from './modal-image/modal-image.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +27,6 @@ import { ModalImageComponent } from './modal-image/modal-image.component';
         BookingComponent,
         HomeComponent,
         PlacesComponent,
-        ModalImageComponent
     ],
     imports: [
         CommonModule,
@@ -38,7 +36,7 @@ import { ModalImageComponent } from './modal-image/modal-image.component';
         TemplateModule,
         MaterialModule,
         ReactiveFormsModule,
-        MatGridListModule
+        MatGridListModule,
     ]
 })
 export class PagesModule {}
