@@ -35,7 +35,7 @@
   </div>
   <br/>
   <p>Located in southeast Vietnam, the metropolis surrounds the Saigon River and covers about 2,061 square kilometres</p>
-  <p (click)='scroll(activity)' style="color:blue"><strong>More...</strong></p>
+  <p (click)='scroll(activity)' style="color:blue; cursor: pointer;"><strong>More...</strong></p>
 </div>
 
 
@@ -47,12 +47,12 @@
 </div>
 <div #gallery>
   <mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery.jpg"/></mat-grid-tile>
-    <mat-grid-tile><img src="../../../assets/gallery1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/hcmc1.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/hcmc2.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/hcmc3.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/hcmc4.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/hcmc5.jpg"/></mat-grid-tile>
+    <mat-grid-tile><img src="../../../assets/hcmc6.jpg"/></mat-grid-tile>
   </mat-grid-list>
 </div>
 
@@ -62,56 +62,61 @@
 <div class="heading">
   <h1>Popular Places</h1>
 </div>
-<div #place class=" place container">
-  <div class="row">
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-  </div>
+<div #place class="place">
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Bitexco</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Bitexco</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Bitexco</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Bitexco</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <hr/>
