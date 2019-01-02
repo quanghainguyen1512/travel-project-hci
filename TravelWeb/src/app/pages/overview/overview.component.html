@@ -35,6 +35,7 @@
   </div>
   <br/>
   <p>Located in southeast Vietnam, the metropolis surrounds the Saigon River and covers about 2,061 square kilometres</p>
+  <p (click)='scroll(activity)' style="color: gray; cursor: pointer;">Must Eat | Rest | Sightseeing</p>
   <p (click)='scroll(activity)' style="color:blue; cursor: pointer;"><strong>More...</strong></p>
 </div>
 
@@ -80,11 +81,11 @@
     <mat-grid-tile>
       <div class="card">
         <a href="/pages/places">
-          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+          <img src="../../../assets/hcmc6.jpg" alt="Avatar" style="width:100%">
         </a>
         <a href="/pages/places">
           <div class="container">
-            <h4><b>Bitexco</b></h4> 
+            <h4><b>Ben Thanh Market</b></h4> 
             <p>Address: bla bla</p> 
           </div>
         </a>
@@ -93,11 +94,11 @@
     <mat-grid-tile>
       <div class="card">
         <a href="/pages/places">
-          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+          <img src="../../../assets/hcmc10.jpg" alt="Avatar" style="width:100%">
         </a>
         <a href="/pages/places">
           <div class="container">
-            <h4><b>Bitexco</b></h4> 
+            <h4><b>Nha Rong Habour</b></h4> 
             <p>Address: bla bla</p> 
           </div>
         </a>
@@ -106,11 +107,11 @@
     <mat-grid-tile>
       <div class="card">
         <a href="/pages/places">
-          <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
+          <img src="../../../assets/hcmc9.jpg" alt="Avatar" style="width:100%">
         </a>
         <a href="/pages/places">
           <div class="container">
-            <h4><b>Bitexco</b></h4> 
+            <h4><b>Hồ Con Rùa</b></h4> 
             <p>Address: bla bla</p> 
           </div>
         </a>
@@ -290,57 +291,61 @@
 <div class="heading">
   <h1>Nearby Destinations</h1>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/overview">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/places">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/overview">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="/pages/overview">
-        <img src="../../../assets/image.jpg" alt="Avatar" style="width:100%">
-      </a>
-      <a href="/pages/places">
-        <div class="container">
-          <h4><b>Bitexco</b></h4> 
-          <p>Address: bla bla</p> 
-        </div>
-      </a>
-    </div>
-  </div>
+<div class="nearby">
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/nb1.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Đà Nẵng</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/nb2.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Huế</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/nb3.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Nha Trang</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="card">
+        <a href="/pages/places">
+          <img src="../../../assets/nb4.jpg" alt="Avatar" style="width:100%">
+        </a>
+        <a href="/pages/places">
+          <div class="container">
+            <h4><b>Hải Phòng</b></h4> 
+            <p>Address: bla bla</p> 
+          </div>
+        </a>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 <button (click)="scroll(top)" id="myBtn" title="Go to top">^</button>
-
-<!-- <ngu-carousel #carousel
-    [inputs]="carouselTile"
-    (carouselLoad)="carouselTileLoad($event)">
-
-          <ngu-tile NguCarouselItem *ngFor="let Tile of carouselTileItems">
-              <h1>{{Tile + 1}}</h1>
-          </ngu-tile>
-
-        <button NguCarouselPrev class='leftRs'>&lt;</button>
-        <button NguCarouselNext class='rightRs'>&gt;</button>
-  </ngu-carousel>
-<button (click)="resetFn()">Reset</button> -->
