@@ -1,0 +1,156 @@
+<div class="row mod-rating mb-3">
+    <div class="col-4 mod-rating-left">
+        <div>
+
+            <span style="font-size: 48px;">{{percentage}}</span>
+            <span style="font-size: 30px; color: rgba(0,0,0,0.4)">/5</span>
+            <br/>
+            <span style="color: #ffc107; font-size: 30px">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </span>
+            <br/>
+            <span style="font-size: 11px; color: rgba(0,0,0,0.4)">{{totalRatings}} ratings</span>
+        </div>
+    </div>
+
+    <div class="col-8 mod-rating-right">
+        <div class="row">
+            <div class="col-md-4 col-lg-2 p-0">
+                <span style="color: #ffc107">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+
+            <div class="progress col-md-4 col-lg-4 p-0">
+                <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    [ngStyle]="{'width': five + '%'}"></div>
+            </div>
+
+            <div class="col-md-1 col-lg-1 mt-0 pt-0">
+                <span style="font-size: 13px; margin-top: -10px">{{rating.five}}</span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-2 p-0">
+                <span style="color: #ffc107">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+
+                <span style="color: rgba(0,0,0,0.4)">
+
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+
+            <div class="progress col-md-4 col-lg-4 p-0">
+                <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    [ngStyle]="{'width': four + '%'}"></div>
+            </div>
+
+            <div class="col-md-1 col-lg-1 mt-0 pt-0">
+                <span style="font-size: 13px; margin-top: -10px">{{rating.four}}</span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-lg-2 p-0">
+                <span style="color: #ffc107">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </span>
+
+                <span style="color: rgba(0,0,0,0.4)">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+
+            <div class="progress col-md-4 col-lg-4 p-0">
+                <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    [ngStyle]="{'width': three + '%'}"></div>
+            </div>
+
+            <div class="col-md-1 col-lg-1 mt-0 pt-0">
+                <span style="font-size: 13px; margin-top: -10px">{{rating.three}}</span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-lg-2 p-0">
+                <span style="color: #ffc107">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </span>
+
+                <span style="color: rgba(0,0,0,0.4)">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+
+            <div class="progress col-md-4 col-lg-4 p-0">
+                <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    [ngStyle]="{'width': two + '%'}"></div>
+            </div>
+
+            <div class="col-md-1 col-lg-1 mt-0 pt-0">
+                <span style="font-size: 13px; margin-top: -10px">{{rating.two}}</span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-lg-2 p-0">
+                <span style="color: #ffc107">
+                    <i class="fa fa-star"></i>
+
+                </span>
+
+                <span style="color: rgba(0,0,0,0.4)">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+
+            <div class="progress col-md-4 col-lg-4 p-0">
+                <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    [ngStyle]="{'width': one + '%'}"></div>
+            </div>
+
+            <div class="col-md-1 col-lg-1 mt-0 pt-0">
+                <span style="font-size: 13px; margin-top: -10px">{{rating.one}}</span>
+            </div>
+
+        </div>
+    </div>
+</div>

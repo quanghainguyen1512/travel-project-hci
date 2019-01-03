@@ -1,0 +1,37 @@
+<div class="comment">
+    <div class="media profile">
+        <img class="mr-3 avatar" [src]="comment.img" alt="Hồ con rùa"/>
+        <div class="media-body">
+            <div>
+                Johnny
+            </div>
+            <div>
+                <span class="time mr-2">{{comment.time}}</span>
+
+                <span style="color: #ffc107" *ngFor="let rt of rating">
+                    <i class="fa fa-star"></i>
+                </span>
+
+                <span style="color: rgba(0,0,0,0.4)" *ngFor="let rt of ratingDefault">
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+
+            <div class="comment">
+                {{comment.comment}}
+            </div>
+
+            <div class="vote mt-3 pr-5">
+                <mat-icon matBadge="{{like}}" (click)="likeComment(comment.id)" matBadgeColor="warn">
+                    <i id="{{'thump-up-' + comment.id}}" class="fa fa-thumbs-up"></i>
+                </mat-icon>&nbsp;&nbsp;&nbsp;
+                <mat-icon matBadge="{{dislike}}" (click)="dislikeComment(comment.id)" matBadgeColor="warn">
+                    <i id="{{'thump-down-' + comment.id}}" class="fa fa-thumbs-down"></i>
+                </mat-icon>
+            </div>
+        </div>
+
+    </div>
+
+    <hr/>
+</div>

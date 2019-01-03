@@ -1,4 +1,8 @@
 import {Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
+import { IMAGES_FOR_ARTICLE } from '../../mock-data/img-article';
+import { RELATIVE_ARTICLE } from './../../mock-data/relative-article';
+import { COMMENT } from './../../mock-data/comment';
+import { RATING } from 'src/app/mock-data/rating';
 
 @Component({selector: 'app-review', templateUrl: './review.component.html', styleUrls: ['./review.component.scss']})
 export class ReviewComponent implements OnInit, AfterViewInit {
@@ -8,6 +12,11 @@ export class ReviewComponent implements OnInit, AfterViewInit {
     public imageHeight = 0;
     imgSrc = '';
 
+    public imgForArticle = IMAGES_FOR_ARTICLE;
+    public relativeArticles = RELATIVE_ARTICLE;
+    public comments = COMMENT;
+    public rating = RATING;
+
     @HostListener('window:resize', ['$event'])
     onResize(event?) {
         this.resize();
@@ -15,6 +24,7 @@ export class ReviewComponent implements OnInit, AfterViewInit {
 
     constructor() {
         this.onResize();
+        this.imgSrc = this.imgForArticle[0].img;
     }
 
     private resize() {
@@ -41,5 +51,9 @@ export class ReviewComponent implements OnInit, AfterViewInit {
 
     onSubmit() {
         console.log('submit');
+    }
+
+    showImage(id: string) {
+        this.imgSrc = this.imgForArticle[+id-1].img;
     }
 }
