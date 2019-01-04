@@ -1,0 +1,20 @@
+#footer-transparent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid white;
+    font-weight: 400;
+
+    #logo {
+        width: 100px;
+        height: 50px;
+    }
+
+    a {
+        color: white !important;
+
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+}

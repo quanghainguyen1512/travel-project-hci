@@ -18,6 +18,8 @@ import {PlacesComponent} from './places/places.component';
 import {MaterialModule} from '../material.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material';
+import { HeaderTransparentModule } from '../template/header-transparent/header-transparent.module';
+import { FooterTransparentModule } from '../template/footer-transparent/footer-transparent.module';
 
 @NgModule({
     declarations: [
@@ -37,6 +39,8 @@ import {MatGridListModule} from '@angular/material';
         MaterialModule,
         ReactiveFormsModule,
         MatGridListModule,
+        HeaderTransparentModule,
+        FooterTransparentModule
     ]
 })
 export class PagesModule {}

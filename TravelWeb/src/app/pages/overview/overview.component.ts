@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {PageEvent} from '@angular/material';
-import { NguCarousel, NguCarouselConfig, NguCarouselStore } from '@ngu/carousel';
 
 export interface Article {
   image: string;
@@ -12,7 +11,7 @@ export interface Article {
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.css']
+  styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
 

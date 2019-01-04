@@ -1,0 +1,47 @@
+#overview {
+    header {
+        height: 300px;
+        background-image: url(src/assets/overview.jpg);
+        color: white;
+        position: relative;
+
+        #sub-menu{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 1px solid white;
+
+            span {
+                font-size: 13px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    main {
+        .title {
+            margin-top: 90px;
+            margin-bottom: 30px;
+        }
+
+        #relativeArticles {
+            .media {
+                img {
+                    width: 180px !important;
+                    height: 130px !important;
+                }
+
+                .media-body {
+                    p {
+                        margin-bottom: 2px !important;
+                        font-size: 12px;
+                        font-style: italic;
+                        color: rgba(0,0,0,0.4);
+                    }
+                }
+            }
+        }
+    }
+}

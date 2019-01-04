@@ -6,7 +6,6 @@ import {
     SimpleChanges,
     SimpleChange
 } from '@angular/core';
-import {formControlBinding} from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 
 @Component({selector: 'app-relative-article', templateUrl: './relative-article.component.html', styleUrls: ['./relative-article.component.scss']})
 export class RelativeArticleComponent implements OnInit,
