@@ -6,16 +6,38 @@
                 type="text"
                 class="form-control"
                 aria-describedby="Choose your destination"
-                placeholder="Choose your destination"/>
+                placeholder="Choose your destination"
+                [matAutocomplete]="auto"
+                [formControl]="stateCtrl"
+                (keyup)="onKey($event)"/>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                    <img class="option-img" aria-hidden [src]="state.flag" height="15"/>
+                    &nbsp;
+                    <span>{{state.capital}}</span>
+                    |
+                    <small>{{state.name}}</small>
+                </mat-option>
+            </mat-autocomplete>
         </div>
 
         <div class="col text-center">
-            <img id="logo" src="assets/travel.png" alt="Travel"/>
+            <a routerLink='/pages' routerLinkActive='active'>
+                <img id="logo" src="assets/travel.png" alt="Travel"/>
+            </a>
+
         </div>
 
         <div class="col text-right pr-4">
-            <button class="mr-3">Sign in</button>
-            <button>Booking</button>
+            <button *ngIf="!isSignIn" (click)="showSignIn()">{{signin}}</button>
+            <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>{{profile}}</button>
+                <button mat-menu-item>{{post}}</button>
+                <button mat-menu-item (click)="showSignOut()">{{signout}}</button>
+            </mat-menu>
+            
+            <button class="ml-3">Booking</button>
         </div>
     </div>
 </div>

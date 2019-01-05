@@ -7,7 +7,7 @@
 
             <div class="col-12 row py-1" id="sub-menu">
                 <div class="col">
-                    <span>Gallery</span>
+                    <span (click)="scroll(gallery)">Gallery</span>
                 </div>
 
                 <div class="col">
@@ -26,15 +26,15 @@
 
         <main class="px-5">
 
-            <h2 #sumary class="text-center title">Summary</h2>
+            <h2 #sumary class="title">Overview</h2>
 
             <div id="sumary"></div>
 
             <hr/>
 
-            <h2 #galery class="text-center title">Galery</h2>
+            <h2 class="title">Gallery</h2>
 
-            <div id="galery" class="row">
+            <div #gallery id="galery" class="row">
                 <div class="col-2 mt-1">
                     <div class="card">
                         <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
@@ -68,7 +68,7 @@
 
             <hr/>
 
-            <h2 #popularPlaces class="text-center title">Popular Places</h2>
+            <h2 #popularPlaces class="title">Popular Places</h2>
 
             <div id="popularPlaces">
                 <div id="caroulselPopularPlaces" class="carousel slide" data-ride="carousel">
@@ -250,7 +250,7 @@
 
             <hr/>
 
-            <h2 class="text-center title">Related Articles</h2>
+            <h2 class="title">Related Articles</h2>
 
             <div id="relativeArticles">
                 <div class="media">
@@ -299,13 +299,13 @@
 
             <hr/>
 
-            <h2 class="text-center title">Things To Do</h2>
+            <h2 class="title">Things To Do</h2>
 
             <div id="thingsToDo"></div>
 
             <hr/>
 
-            <h2 class="text-center title">Nearby Destination</h2>
+            <h2 class="title">Nearby Destination</h2>
 
             <div id="nearbyDestination" class="mb-3">
                 <div id="caroulselNearbyDestination" class="carousel slide" data-ride="carousel">
