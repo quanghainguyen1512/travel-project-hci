@@ -21,12 +21,18 @@
             height: 50px;
         }
 
+        .title {
+            font-size: 18px;
+            font-weight: 550;
+        }
+
         .comment {
             font-size: 14px;
         }
 
         .vote {
             .fa {
+                font-size: 18px;
                 &:hover {
                     cursor: pointer !important;
                 }

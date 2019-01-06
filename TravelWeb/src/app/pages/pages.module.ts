@@ -20,6 +20,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material';
 import { HeaderTransparentModule } from '../template/header-transparent/header-transparent.module';
 import { FooterTransparentModule } from '../template/footer-transparent/footer-transparent.module';
+import { RatingSumaryModule } from '../template/rating-sumary/rating-sumary.module';
+import { ModalImageModule } from '../template/modal-image/modal-image.module';
+import { CommentModule } from '../template/comment/comment.module';
 
 @NgModule({
     declarations: [
@@ -29,6 +32,7 @@ import { FooterTransparentModule } from '../template/footer-transparent/footer-t
         BookingComponent,
         HomeComponent,
         PlacesComponent,
+        
     ],
     imports: [
         CommonModule,
@@ -40,7 +44,10 @@ import { FooterTransparentModule } from '../template/footer-transparent/footer-t
         ReactiveFormsModule,
         MatGridListModule,
         HeaderTransparentModule,
-        FooterTransparentModule
+        FooterTransparentModule,
+        RatingSumaryModule,
+        ModalImageModule,
+        CommentModule
     ]
 })
 export class PagesModule {}

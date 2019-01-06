@@ -11,7 +11,6 @@ import { RatingSumaryModule } from 'src/app/template/rating-sumary/rating-sumary
 @NgModule({
     declarations: [ReviewComponent],
     imports: [
-
         CommonModule,
         MatIconModule,
         MatBadgeModule,

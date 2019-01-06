@@ -3,7 +3,7 @@
         <img class="mr-3 avatar" [src]="comment.img" alt="Hồ con rùa"/>
         <div class="media-body">
             <div>
-                Johnny
+                {{comment.name}}
             </div>
             <div>
                 <span class="time mr-2">{{comment.time}}</span>
@@ -15,6 +15,10 @@
                 <span style="color: rgba(0,0,0,0.4)" *ngFor="let rt of ratingDefault">
                     <i class="fa fa-star"></i>
                 </span>
+            </div>
+
+            <div class="title">
+                {{comment.title}}
             </div>
 
             <div class="comment">

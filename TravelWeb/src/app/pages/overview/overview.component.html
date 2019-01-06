@@ -1,7 +1,8 @@
 <app-header></app-header>
+<app-modal-image [img]="imgSrc"></app-modal-image>
 
-<div class="container-fluid">
-    <div id="overview">
+<div class="container-fluid" (onload)="loadPage(overview)">
+    <div #main id="overview">
         <header class="row text-center align-items-center">
             <h1 class="mx-auto col-12">HỒ CHÍ MINH</h1>
 
@@ -11,114 +12,121 @@
                 </div>
 
                 <div class="col">
-                    <span>Popular Places</span>
+                    <span (click)="scroll(popularPlaces)">Popular Places</span>
                 </div>
 
                 <div class="col">
-                    <span>Related Articles</span>
+                    <span (click)="scroll(relativeArticles)">Related Articles</span>
                 </div>
 
                 <div class="col">
-                    <span>Things To Do</span>
+                    <span (click)="scroll(thingsToDo)">Things To Do</span>
                 </div>
             </div>
         </header>
 
-        <main class="px-5">
+        <main>
+            <h3 class="title">About Ho Chi Minh City</h3>
 
-            <h2 #sumary class="title">Overview</h2>
-
-            <div id="sumary"></div>
-
-            <hr/>
-
-            <h2 class="title">Gallery</h2>
-
-            <div #gallery id="galery" class="row">
-                <div class="col-2 mt-1">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-                    </div>
+            <div id="about" class="row" style="text-align: justify;">
+                <div class="col-8">
+                    Known as Vietnam's Saigon City, immerse yourself in the rich culture of Ho Chi
+                    Minh City! This Vietnamese city is a trove of historical sights waiting to be
+                    discovered. Spend half a day at the Cu Chi Tunnels and learn about its
+                    significance during the Viet Cong war. Travel like a local and hop on a
+                    Motorbike Adventure tour and visit significant relics such as the Central Post
+                    Office and the Saigon Opera House.
+                    <br/>
+                    <br/>
+                    Experience a different side of the city at the Mekong Delta and encouter the
+                    iconic fishing village filled with stilt houses and rice paddies. Don't forget
+                    to snack on sweet seasonal fruits and coconut candy, freshly made daily!
                 </div>
 
-                <div class="col-2 mt-1">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-                    </div>
-                </div>
-
-                <div class="col-2 mt-1">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-                    </div>
-                </div>
-
-                <div class="col-2 mt-1">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-                    </div>
-                </div>
-
-                <div class="col-2 mt-1">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-                    </div>
+                <div class="col-4">
+                    <div #gmap id="map" class="map"></div>
                 </div>
             </div>
 
             <hr/>
 
-            <h2 #popularPlaces class="title">Popular Places</h2>
+            <h3 class="title">General Information</h3>
 
-            <div id="popularPlaces">
+            <div id="generalInformation" class="row text-center">
+                <div class="col pl-5">
+                    <h6>Time zone</h6>
+                    <h5>GMT +07:00</h5>
+                    <span style="font-size: 14px; color: rgba(0, 0, 0, 0.5)">No time difference</span>
+                </div>
+
+                <div class="col pl-5">
+                    <h6>Currency</h6>
+                    <h5>Vietnamese Dong</h5>
+                    <span style="font-size: 14px; color: rgba(0, 0, 0, 0.5)">1VND = 1.00VND</span>
+                </div>
+
+                <div class="col pl-5">
+                    <h6>Best Time To Visit</h6>
+                    <h5>JAN - FEB</h5>
+                    <span style="font-size: 14px; color: rgba(0, 0, 0, 0.5)">Spring Flowers Festival</span>
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <h3 class="title">Gallery</h3>
+
+            <div #gallery id="gallery" class="row">
+                <div class="col-3 mt-2" *ngFor="let img of imgForDestination">
+                    <div (click)="showImage(img.id)">
+                        <a data-toggle="modal" data-target="#modalImage">
+                            <img class="card-img-top" [src]="img.img" alt="{{img.img}}"/>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr/>
+
+            <h2 class="title">Popular Places</h2>
+
+            <div #popularPlaces id="popularPlaces">
                 <div id="caroulselPopularPlaces" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
+                                <div
+                                    class="col-3 mt-1"
+                                    *ngFor="let item of places"
+                                    (click)="navigateToPlaces()">
+                                    <div class="card bg-light mb-3">
+                                        <div class="card-header">
+                                            <img [src]="item.img" alt="{{item.img}}"/>
+                                            <h5 class="pl-4">{{item.title}}</h5>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <span style="color: orange">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                    <br/>
+                                                    <p style="font-weight: 400;">{{item.reviews}}
+                                                        reviews</p>
+                                                </div>
 
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
+                                                <div class="col text-right" style="font-size: 15px; color: rgba(0, 0, 0, 0.5)">
+                                                    {{item.articles}}
+                                                    articles
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,102 +135,36 @@
 
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
+                                <div
+                                    class="col-3 mt-1"
+                                    *ngFor="let item of places"
+                                    (click)="navigateToPlaces()">
+                                    <div class="card bg-light mb-3">
+                                        <div class="card-header">
+                                            <img [src]="item.img" alt="{{item.img}}"/>
+                                            <h5 class="pl-4">{{item.title}}</h5>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
 
                                         <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <span style="color: orange">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                    <br/>
+                                                    <p style="font-weight: 400;">{{item.reviews}}
+                                                        reviews</p>
+                                                </div>
 
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
+                                                <div class="col text-right" style="font-size: 15px; color: rgba(0, 0, 0, 0.5)">
+                                                    {{item.articles}}
+                                                    articles
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -234,7 +176,9 @@
                         href="#caroulselPopularPlaces"
                         role="button"
                         data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true">
+                            <i class="fa fa-arrow-circle-left"></i>
+                        </span>
                         <span class="sr-only">Previous</span>
                     </a>
                     <a
@@ -242,7 +186,9 @@
                         href="#caroulselPopularPlaces"
                         role="button"
                         data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-next-icon" aria-hidden="true">
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
@@ -252,7 +198,7 @@
 
             <h2 class="title">Related Articles</h2>
 
-            <div id="relativeArticles">
+            <div #relativeArticles id="relativeArticles">
                 <div class="media">
                     <img class="mr-3" src="assets/btc2.jpg" alt="Generic placeholder image"/>
                     <div class="media-body">
@@ -275,7 +221,7 @@
 
                 <hr/>
                 <div class="media">
-                    
+
                     <div class="media-body">
                         <h4 class="mt-0">Hồ con rùa</h4>
                         <p class="author">by Johny</p>
@@ -301,61 +247,28 @@
 
             <h2 class="title">Things To Do</h2>
 
-            <div id="thingsToDo"></div>
+            <div #thingsToDo id="thingsToDo"></div>
 
             <hr/>
 
             <h2 class="title">Nearby Destination</h2>
 
             <div id="nearbyDestination" class="mb-3">
-                <div id="caroulselNearbyDestination" class="carousel slide" data-ride="carousel">
+                <div
+                    id="caroulselNearbyDestination"
+                    class="carousel slide"
+                    data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
+                                <div class="col-3 mt-1" *ngFor="let item of nearbyCitites">
+                                    <div class="card bg-light mb-3">
+                                        <div class="card-header">
+                                            <h6 class="pl-4">Distance:
+                                                {{item.distance}}
+                                                km</h6>
+                                            <img [src]="item.img" alt="{{item.img}}"/>
+                                            <h5 class="pl-4">{{item.cityName}}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -364,102 +277,14 @@
 
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 mt-1">
-                                    <div class="card">
-                                        <img class="card-img-top" src="assets/btc5.jpg" alt="Card image cap"/>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Bitexco</h5>
-                                            <p class="card-text ml-3">Address</p>
-                                            <a href="javascript:void(0)" class="btn btn-primary">View more</a>
+                                <div class="col-3 mt-1" *ngFor="let item of nearbyCitites">
+                                    <div class="card bg-light mb-3">
+                                        <div class="card-header">
+                                            <h6 class="pl-4">Distance:
+                                                {{item.distance}}
+                                                km</h6>
+                                            <img [src]="item.img" alt="{{item.img}}"/>
+                                            <h5 class="pl-4">{{item.cityName}}</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -471,7 +296,9 @@
                         href="#caroulselNearbyDestination"
                         role="button"
                         data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true">
+                            <i class="fa fa-arrow-circle-left"></i>
+                        </span>
                         <span class="sr-only">Previous</span>
                     </a>
                     <a
@@ -479,7 +306,9 @@
                         href="#caroulselNearbyDestination"
                         role="button"
                         data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-next-icon" aria-hidden="true">
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>

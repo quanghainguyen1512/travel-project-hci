@@ -1,88 +1,68 @@
-import { Component, OnInit } from '@angular/core';
-import {PageEvent} from '@angular/material';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+
+import {IMAGES_DESTINATION} from 'src/app/mock-data/img-destination';
+import {NEARBY_CITIES} from 'src/app/mock-data/nearby-cities';
+import {POPULAR_PLACES} from 'src/app/mock-data/popular-places';
+import { Router } from '@angular/router';
+
+declare var ol : any;
 
 export interface Article {
-  image: string;
-  title: string;
-  author: string;
-  content: string;
+    image : string;
+    title : string;
+    author : string;
+    content : string;
 }
 
-@Component({
-  selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
-})
+@Component({selector: 'app-overview', templateUrl: './overview.component.html', styleUrls: ['./overview.component.scss']})
 export class OverviewComponent implements OnInit {
+	@ViewChild("main") MyProp: ElementRef;
+	
+    public imgForDestination = [];
+    public imgSrc = '';
+    public nearbyCitites = [];
+    public places = POPULAR_PLACES;
 
-  // private carouselToken: string;
- 
-  // public carouselTileItems: Array<any>;
-  // public carouselTile: NguCarouselConfig;
-  // @ViewChild('carousel') carousel: NguCarousel<any>;
+    map : any;
 
-  listArticle : Article = 
-    {
-      image: 'assets/image.jpg',
-      title: 'Hồ Con Rùa',
-      author: 'Johnny',
-      content: 'Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa...'
-    };
+    constructor(private router: Router) {
+        this.imgForDestination = IMAGES_DESTINATION;
+		this.nearbyCitites = NEARBY_CITIES;
+		
+    }
 
-  // MatPaginator Inputs
-  length = 4;
-  pageSize = 2;
-  // MatPaginator Output
-  pageEvent: PageEvent;
+    ngOnInit() {
 
-  constructor() { }
+        this.map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol
+                    .layer
+                    .Tile({
+                        source: new ol
+                            .source
+                            .OSM()
+                    })
+            ],
+            view: new ol.View({
+                center: ol
+                    .proj
+                    .fromLonLat([10.771935, 18.5204]),
+                zoom: 8
+            })
+        });
+    }
 
-  ngOnInit() {
-    // this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
- 
-    // this.carouselTile = {
-    //   grid: {xs: 2, sm: 3, md: 3, lg: 5, all: 0},
-    //   slide: 2,
-    //   speed: 400,
-    //   animation: 'lazy',
-    //   point: {
-    //     visible: true
-    //   },
-    //   load: 2,
-    //   touch: true,
-    //   easing: 'ease'
-    // }
-  }
+    scroll(el) {
+        el.scrollIntoView({behavior: "smooth"});
+    }
 
-  scroll(el) {
-    el.scrollIntoView({behavior:"smooth"});
-  }
 
-  onPageChangedArticle(e) {
-    // let firstCut = e.pageIndex * e.pageSize;
-    // let secondCut = firstCut + e.pageSize;
-    // this.listReview = this.reviewDetail.slice(firstCut, secondCut);
-  }
-
-  // initDataFn(key: NguCarouselStore) {
-  //   this.carouselToken = key.token;
-  // }
- 
-  // resetFn() {
-  //   this.carousel.reset(this.carouselToken);
-  // }
- 
-  // moveToSlide() {
-  //   this.carousel.moveToSlide(this.carouselToken, 2, false);
-  // }
- 
-  // public carouselTileLoad(evt: any) {
- 
-  //   const len = this.carouselTileItems.length
-  //   if (len <= 30) {
-  //     for (let i = len; i < len + 10; i++) {
-  //       this.carouselTileItems.push(i);
-  //     }
-  //   }
-  // }
+    showImage(id : string) {
+        this.imgSrc = this.imgForDestination[+ id - 1].img;
+	}
+	
+	navigateToPlaces() {
+		this.router.navigateByUrl('/pages/places');
+	}
 }

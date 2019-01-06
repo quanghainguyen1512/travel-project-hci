@@ -1,94 +1,67 @@
-import { Component, OnInit } from '@angular/core';
-import {PageEvent} from '@angular/material';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {RATING} from 'src/app/mock-data/rating';
+import {IMGAGES_PLACE} from 'src/app/mock-data/img-places';
+import {ABOUT_BITEXCO, GALLERY_PLACES, RELATED_ARTICLES_PLACES, COMMENT, RELATED_PLACES} from 'src/app/mock-data/place-detail';
+declare var ol : any;
 
-export interface ReviewDetail {
-  avatar: string;
-  title: string;
-  vote: number;
-  downVote: number;
-  comment: string;
-}
-
-export interface Article {
-  image: string;
-  title: string;
-  author: string;
-  content: string;
-}
-
-@Component({
-  selector: 'app-places',
-  templateUrl: './places.component.html',
-  styleUrls: ['./places.component.css']
-})
+@Component({selector: 'app-places', templateUrl: './places.component.html', styleUrls: ['./places.component.scss']})
 export class PlacesComponent implements OnInit {
 
-  reviewDetail: ReviewDetail[] = [
-    {
-      avatar: 'assets/avatar.png',
-      title: 'Bitexco Building',
-      vote: 1,
-      downVote:1,
-      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
-    },
-    {
-      avatar: 'assets/avatar.png',
-      title: 'Bitexco! Hello Viet Nam',
-      vote: 1,
-      downVote:1,
-      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
-    },
-    {
-      avatar: 'assets/avatar.png',
-      title: 'Toa nha cao thu nhi Tp HCM - Bitexco',
-      vote: 1,
-      downVote:1,
-      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
-    },
-    {
-      avatar: 'assets/avatar.png',
-      title: 'Bitexco',
-      vote: 1,
-      downVote:1,
-      comment: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.',
-    },
-  ];
-  listReview: ReviewDetail[];
+    public rating = RATING;
+    public imgPlace = IMGAGES_PLACE;
+    public srcImg = '';
 
-  listArticle : Article = 
-    {
-      image: 'assets/image.jpg',
-      title: 'Hồ Con Rùa',
-      author: 'Johnny',
-      content: 'Ròng rã suốt 3 thế kỷ từ thời Pháp thuộc, trước và sau 1975, địa danh Hồ con Rùa được xem là một công trình văn hóa...'
-    };
-  
-  // MatPaginator Inputs
-  length = 4;
-  pageSize = 2;
-  // MatPaginator Output
-  pageEvent: PageEvent;
-  
-  constructor() { 
-    this.listReview = this.reviewDetail.slice(0,this.pageSize);
-  }
+    public aboutBitexco = ABOUT_BITEXCO;
 
-  ngOnInit() {  }
+    public galleryPlaces = GALLERY_PLACES;
+    public galleryImage = '';
 
-  scroll(el) {
-    el.scrollIntoView({behavior:"smooth"});
-  }
+    public relatedArticlesPlace = RELATED_ARTICLES_PLACES;
 
-  onPageChangedReview(e) {
-    let firstCut = e.pageIndex * e.pageSize;
-    let secondCut = firstCut + e.pageSize;
-    this.listReview = this.reviewDetail.slice(firstCut, secondCut);
-  }
+    public comments = COMMENT;
 
-  onPageChangedArticle(e) {
-    // let firstCut = e.pageIndex * e.pageSize;
-    // let secondCut = firstCut + e.pageSize;
-    // this.listReview = this.reviewDetail.slice(firstCut, secondCut);
-  }
+    public relatedPlaces = RELATED_PLACES;
+
+    map : any;
+
+    constructor() {
+        this.srcImg = this.imgPlace[0].img;
+    }
+
+    ngOnInit() {
+        this.map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol
+                    .layer
+                    .Tile({
+                        source: new ol
+                            .source
+                            .OSM()
+                    })
+            ],
+            view: new ol.View({
+                center: ol
+                    .proj
+                    .fromLonLat([10.771935, 18.5204]),
+                zoom: 8
+            })
+        });
+    }
+
+    changeImage(id : string) {
+        this.srcImg = this.imgPlace[+ id].img;
+    }
+
+    showImage(id : string) {
+        this.galleryImage = this.galleryPlaces[+ id - 1].img;
+    }
+
+    onSubmit() {
+        console.log('submit');
+	}
+	
+	scroll(el) {
+		el.scrollIntoView({behavior: "smooth"});
+	}
 }
