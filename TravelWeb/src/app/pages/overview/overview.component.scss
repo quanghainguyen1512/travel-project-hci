@@ -1,3 +1,6 @@
+
+
+
 #overview {
     header {
         height: 300px;
@@ -28,6 +31,7 @@
         .title {
             margin-top: 90px;
             margin-bottom: 30px;
+            font-family: avenir-black;
         }
 
         #gallery {
@@ -39,6 +43,12 @@
                 &:hover {
                     cursor: pointer;
                 }
+            }
+        }
+
+        #generalInformation {
+            h6, h5 {
+                font-family: avenir-black;
             }
         }
 
@@ -113,6 +123,7 @@ a.carousel-control-next {
             position: absolute;
             bottom: 0;
             left: 0;
+            font-family: avenir-black;
         }
     }
 }

@@ -1,6 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@font-face {
+    font-family: avenir-roman;
+    src: url('src/assets/font/avenir_ff/AvenirLTStd-Roman.otf');
+}
+
+@font-face {
+    font-family: avenir-black;
+    src: url('src/assets/font/avenir_ff/AvenirLTStd-Black.otf');
+}
+
+@font-face {
+    font-family: avenir-book;
+    src: url('src/assets/font/avenir_ff/AvenirLTStd-Book.otf');
+}
+
 body,
 html {
     height: 100%;
