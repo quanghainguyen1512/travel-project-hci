@@ -10,7 +10,7 @@
 input {
     background-color: #c82333;
     border-width: 0.001em;
-    color: black;
+    color: white;
 }
 
 img {
@@ -21,14 +21,14 @@ img {
 }
 
 #search {
-    background-color: gray;
+    background-color: #c82333;
 }
 
 button {
     border: none;
     background-color: #c82333;
     margin-right: 1em;
-    color: black;
+    color: white;
 }
 
 .user {
