@@ -135,9 +135,14 @@
                 <div class="media">
                     <img *ngIf="item.left" class="mr-3" [src]="item.img" alt="{{item.title}}"/>
                     <div class="media-body">
-                        <h4 class="mt-0" style="font-family: avenir-black;">{{item.title}}</h4>
-                        <p class="author">by
-                            {{item.name}}</p>
+                        <a routerLink="/pages/review" routerLinkActive="active">
+                            <h4 class="mt-0" style="font-family: avenir-black;">{{item.title}}</h4>
+                        </a>
+                        <a routerLink="/pages/profile" routerLinkActive="active">
+                            <p class="author">by
+                                {{item.name}}
+                            </p>
+                        </a>
                         <p class="time">{{item.postedDate}}</p>
                         <p class="rating" style="color: orange">
                             <i class="fa fa-star"></i>
@@ -337,10 +342,12 @@
         <div id="services" class="row">
             <div class="col-md-6 col-lg-3 mt-2" *ngFor="let item of listServices">
                 <div class="card">
-                    <img
+                    <a routerLink="/pages/places" routerLinkActive="active">
+                        <img
                         class="card-img-top"
                         [src]="item.img"
                         alt="Card image cap"/>
+                    </a>
                     <div class="card-body">
                         <p class="type" style="font-family: avenir-book;">{{item.type}}</p>
                         <h6 class="card-title" style="font-family: avenir-black;">{{item.title}}</h6>

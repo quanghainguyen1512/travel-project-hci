@@ -1,5 +1,5 @@
 .header {
-    background-color: #ff0000;
+    background-color: #c82333;
 }
 
 .chooseDestination {
@@ -8,7 +8,7 @@
 }
 
 input {
-    background-color: transparent;
+    background-color: #c82333;
     border-width: 0.001em;
     color: white;
 }
@@ -20,9 +20,13 @@ img {
     max-height: 3em;
 }
 
+#search {
+    background-color: #c82333;
+}
+
 button {
     border: none;
-    background-color: #ff0000;
+    background-color: #c82333;
     margin-right: 1em;
     color: white;
 }
