@@ -47,6 +47,10 @@ export class ReviewComponent implements OnInit, AfterViewInit {
     
     ngAfterViewInit() {
         this.resize();
+        let top = document.getElementById('top');
+        if(top) {
+            top.scrollIntoView();
+        }
     }
 
     onSubmit() {

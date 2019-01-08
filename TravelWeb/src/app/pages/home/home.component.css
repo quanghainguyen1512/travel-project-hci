@@ -17,7 +17,7 @@ input {
     background: #ff0000;
     overflow: hidden;
     position: relative;
-    top:40%;
+    top: 40%;
 }
 
 .search a {
@@ -36,12 +36,24 @@ input {
 }
 
 .background {
-    background-image: url(src/assets/home.jpg);
+
     background-repeat: no-repeat;
     background-size: 100%;
+    position: relative;
+    /* background-image: url(src/assets/home.jpg); */
 }
 
-.container {
+.background > img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.background .container {
+
     height: 100vh;
     width: 100%;
 }
@@ -61,4 +73,11 @@ input {
 [dir='rtl'] .option-img {
     margin-right: 0;
     margin-left: 8px;
+}
+#explore .card:hover {
+    cursor: pointer;
+    margin-top: -5px;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.75);
 }

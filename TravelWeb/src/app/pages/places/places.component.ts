@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {RATING} from 'src/app/mock-data/rating';
 import {IMGAGES_PLACE} from 'src/app/mock-data/img-places';
 import {ABOUT_BITEXCO, GALLERY_PLACES, RELATED_ARTICLES_PLACES, COMMENT, RELATED_PLACES, SERVICES} from 'src/app/mock-data/place-detail';
 declare var ol : any;
 
 @Component({selector: 'app-places', templateUrl: './places.component.html', styleUrls: ['./places.component.scss']})
-export class PlacesComponent implements OnInit {
+export class PlacesComponent implements OnInit, AfterViewInit {
 
     public rating = RATING;
     public imgPlace = IMGAGES_PLACE;
@@ -49,6 +49,13 @@ export class PlacesComponent implements OnInit {
                 zoom: 8
             })
         });
+    }
+
+    ngAfterViewInit() {
+        let top = document.getElementById('top');
+        if(top) {
+            top.scrollIntoView();
+        }
     }
 
     changeImage(id : string) {

@@ -1,7 +1,7 @@
-
-
 <app-header-transparent></app-header-transparent>
+<div id="top"></div>
 <div class="background">
+    <img src="assets/home.jpg" alt="Home"/>
     <div class="container">
         <div class="title">
             <h1 style="font-family: avenir-black; color: white;">
@@ -27,6 +27,42 @@
             <!-- </mat-form-field> -->
         </div>
     </div>
+    <app-footer-transparent></app-footer-transparent>
 </div>
 
-<app-footer-transparent></app-footer-transparent>
+<div class="container mt-3" id="explore">
+    <h3 style="font-family: avenir-black;">Explore</h3>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="card mt-3 p-1" *ngFor="let item of explore1" (click)="navigateToPlace()">
+                <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+                <p class="card-text mt-3" style="font-family: avenir-book;">{{item.title}}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card mt-3 p-1" *ngFor="let item of explore2" (click)="navigateToPlace()">
+                <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+                <p class="card-text mt-3" style="font-family: avenir-book;">{{item.title}}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card mt-3 p-1" *ngFor="let item of explore3" (click)="navigateToPlace()">
+                <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+                <p class="card-text mt-3" style="font-family: avenir-book;">{{item.title}}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card mt-3 p-1" *ngFor="let item of explore4" (click)="navigateToPlace()">
+                <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+                <p class="card-text mt-3" style="font-family: avenir-book;">{{item.title}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>

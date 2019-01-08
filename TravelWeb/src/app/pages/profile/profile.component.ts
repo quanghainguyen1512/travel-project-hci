@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MatGridTileHeaderCssMatStyler } from '@angular/material';
 
 @Component({selector: 'app-profile', templateUrl: './profile.component.html', styleUrls: ['./profile.component.scss']})
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterViewInit {
 
     numOfFollower : number = 89;
     isFollow : boolean = false;
@@ -13,6 +13,13 @@ export class ProfileComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
+
+    ngAfterViewInit() {
+        let top = document.getElementById('top');
+        if(top) {
+            top.scrollIntoView();
+        }
+    }
 
     follow() {
 		this.isFollow = !this.isFollow;

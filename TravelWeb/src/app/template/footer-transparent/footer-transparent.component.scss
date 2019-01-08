@@ -1,9 +1,10 @@
 #footer-transparent {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     border-top: 1px solid white;
     font-weight: 400;
+    z-index: 1;
 
     #logo {
         width: 100px;

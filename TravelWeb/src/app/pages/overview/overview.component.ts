@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import {IMAGES_DESTINATION} from 'src/app/mock-data/img-destination';
 import {NEARBY_CITIES} from 'src/app/mock-data/nearby-cities';
@@ -15,7 +15,7 @@ export interface Article {
 }
 
 @Component({selector: 'app-overview', templateUrl: './overview.component.html', styleUrls: ['./overview.component.scss']})
-export class OverviewComponent implements OnInit {
+export class OverviewComponent implements OnInit, AfterViewInit {
 	@ViewChild("main") MyProp: ElementRef;
 	
     public imgForDestination = [];
@@ -51,6 +51,13 @@ export class OverviewComponent implements OnInit {
                 zoom: 8
             })
         });
+    }
+
+    ngAfterViewInit() {
+        let top = document.getElementById('top');
+        if(top) {
+            top.scrollIntoView();
+        }
     }
 
     scroll(el) {
