@@ -1,5 +1,5 @@
 .footer {
-    background-color: #ff0000;
+    background-color: transparent;
 }
 
 img {
@@ -15,5 +15,5 @@ img {
 }
 
 a {
-    color: white;
+    color: black;
 }
