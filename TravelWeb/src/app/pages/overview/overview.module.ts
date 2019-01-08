@@ -7,6 +7,7 @@ import { NguCarouselModule } from '@ngu/carousel';
 import { TemplateModule } from 'src/app/template/template.module';
 import { ModalImageModule } from 'src/app/template/modal-image/modal-image.module';
 import { AgmCoreModule } from '@agm/core';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [OverviewComponent],
   imports: [
@@ -16,6 +17,7 @@ import { AgmCoreModule } from '@agm/core';
     NguCarouselModule,
     MatGridListModule,
     TemplateModule,
+    RouterModule,
     ModalImageModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_KEY'

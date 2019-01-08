@@ -23,6 +23,7 @@ import { FooterTransparentModule } from '../template/footer-transparent/footer-t
 import { RatingSumaryModule } from '../template/rating-sumary/rating-sumary.module';
 import { ModalImageModule } from '../template/modal-image/modal-image.module';
 import { CommentModule } from '../template/comment/comment.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import { CommentModule } from '../template/comment/comment.module';
         FooterTransparentModule,
         RatingSumaryModule,
         ModalImageModule,
-        CommentModule
+        CommentModule,
+        RouterModule,
     ]
 })
 export class PagesModule {}
