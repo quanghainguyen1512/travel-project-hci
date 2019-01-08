@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RATING} from 'src/app/mock-data/rating';
 import {IMGAGES_PLACE} from 'src/app/mock-data/img-places';
-import {ABOUT_BITEXCO, GALLERY_PLACES, RELATED_ARTICLES_PLACES, COMMENT, RELATED_PLACES} from 'src/app/mock-data/place-detail';
+import {ABOUT_BITEXCO, GALLERY_PLACES, RELATED_ARTICLES_PLACES, COMMENT, RELATED_PLACES, SERVICES} from 'src/app/mock-data/place-detail';
 declare var ol : any;
 
 @Component({selector: 'app-places', templateUrl: './places.component.html', styleUrls: ['./places.component.scss']})
@@ -21,6 +21,8 @@ export class PlacesComponent implements OnInit {
     public comments = COMMENT;
 
     public relatedPlaces = RELATED_PLACES;
+
+    public listServices = SERVICES;
 
     map : any;
 

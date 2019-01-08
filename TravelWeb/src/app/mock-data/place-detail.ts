@@ -168,20 +168,61 @@ export const RELATED_PLACES = [
         cityName: 'Da Lat',
         distance: 215,
         img: 'assets/dalat.jpg'
-    },
-    {
+    }, {
         cityName: 'Nha Trang',
         distance: 309,
         img: 'assets/nhatrang.jpg'
-    },
-    {
+    }, {
         cityName: 'Phu Quoc',
         distance: 321,
         img: 'assets/phuquoc.jpg'
-    },
-    {
+    }, {
         cityName: 'Hoi An',
         distance: 594,
         img: 'assets/hoian.jpg'
+    }
+];
+
+export const SERVICES = [
+    {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        price: '1,767,442',
+        img: 'assets/service/private-jeep-tour-saigon.jpg'
     }
 ];
