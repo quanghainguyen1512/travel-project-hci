@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Router} from '@angular/router';
+import { SignInComponent, SignOutComponent } from '../header/header.component';
 
 export interface State {
     flag : string;
@@ -101,27 +102,27 @@ export class HeaderTransparentComponent implements OnInit {
     }
 }
 
-@Component({selector: 'sign-in', templateUrl: './sign-in.html', styleUrls: ['./sign-in.css']})
-export class SignInComponent {
+// @Component({selector: 'sign-in', templateUrl: './sign-in.html', styleUrls: ['./sign-in.css']})
+// export class SignInComponent {
 
-    signup : string = 'Sign up';
-    signin1 : string = 'Sign in with';
-    signin2 : string = 'social network';
-    facebook : string = 'Log in with Facebook';
-    twitter : string = 'Log in with Twitter';
-    google : string = 'Log in with Google+';
-    or : string = 'OR';
+//     signup : string = 'Sign up';
+//     signin1 : string = 'Sign in with';
+//     signin2 : string = 'social network';
+//     facebook : string = 'Log in with Facebook';
+//     twitter : string = 'Log in with Twitter';
+//     google : string = 'Log in with Google+';
+//     or : string = 'OR';
 
-    constructor(public dialogRef : MatDialogRef < SignInComponent >, @Inject(MAT_DIALOG_DATA)public isSignIn : boolean) {}
-}
+//     constructor(public dialogRef : MatDialogRef < SignInComponent >, @Inject(MAT_DIALOG_DATA)public isSignIn : boolean) {}
+// }
 
-@Component({selector: 'sign-out', templateUrl: './sign-out.html', styleUrls: ['./sign-out.css']})
-export class SignOutComponent {
+// @Component({selector: 'sign-out', templateUrl: './sign-out.html', styleUrls: ['./sign-out.css']})
+// export class SignOutComponent {
 
-    question : string = 'Do you want to sign out?';
-    yes : string = 'OK';
-    no : string = "No Thanks";
+//     question : string = 'Do you want to sign out?';
+//     yes : string = 'OK';
+//     no : string = "No Thanks";
 
-    constructor(public dialogRef : MatDialogRef < SignOutComponent >, @Inject(MAT_DIALOG_DATA)public isSignIn : boolean) {}
-}
+//     constructor(public dialogRef : MatDialogRef < SignOutComponent >, @Inject(MAT_DIALOG_DATA)public isSignIn : boolean) {}
+// }
 

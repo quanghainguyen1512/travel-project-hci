@@ -14,6 +14,8 @@ import {
     MatAutocompleteModule
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
+import { HeaderTransparentComponent } from './header-transparent/header-transparent.component';
+import { FooterTransparentComponent } from './footer-transparent/footer-transparent.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +23,9 @@ import {ReactiveFormsModule} from '@angular/forms';
         HeaderComponent,
         SignInComponent,
         SignOutComponent,
-        NewsFeedComponent
+        NewsFeedComponent, 
+        HeaderTransparentComponent,
+        FooterTransparentComponent,
     ],
     imports: [
         CommonModule,
@@ -41,7 +45,9 @@ import {ReactiveFormsModule} from '@angular/forms';
         MatIconModule,
         MatDialogModule,
         MatMenuModule,
-        MatButtonModule
+        MatButtonModule, 
+        HeaderTransparentComponent,
+        FooterTransparentComponent,
     ],
     entryComponents: [SignInComponent, SignOutComponent, NewsFeedComponent]
 })
