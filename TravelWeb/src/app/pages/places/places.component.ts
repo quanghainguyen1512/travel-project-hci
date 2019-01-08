@@ -1,14 +1,24 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {RATING} from 'src/app/mock-data/rating';
-import {IMGAGES_PLACE} from 'src/app/mock-data/img-places';
-import {ABOUT_BITEXCO, GALLERY_PLACES, RELATED_ARTICLES_PLACES, COMMENT, RELATED_PLACES, SERVICES} from 'src/app/mock-data/place-detail';
+
+import {
+    ABOUT_BITEXCO,
+    GALLERY_PLACES,
+    RELATED_ARTICLES_PLACES,
+    COMMENT,
+    RELATED_PLACES,
+    SERVICES,
+    PLACE_IMAGES
+} from 'src/app/mock-data/place-detail';
+import {Router} from '@angular/router';
 declare var ol : any;
 
 @Component({selector: 'app-places', templateUrl: './places.component.html', styleUrls: ['./places.component.scss']})
-export class PlacesComponent implements OnInit, AfterViewInit {
+export class PlacesComponent implements OnInit,
+AfterViewInit {
 
     public rating = RATING;
-    public imgPlace = IMGAGES_PLACE;
+    public imgPlace = PLACE_IMAGES;
     public srcImg = '';
 
     public aboutBitexco = ABOUT_BITEXCO;
@@ -26,7 +36,7 @@ export class PlacesComponent implements OnInit, AfterViewInit {
 
     map : any;
 
-    constructor() {
+    constructor(private router : Router) {
         this.srcImg = this.imgPlace[0].img;
     }
 
@@ -53,7 +63,7 @@ export class PlacesComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         let top = document.getElementById('top');
-        if(top) {
+        if (top) {
             top.scrollIntoView();
         }
     }
@@ -68,9 +78,15 @@ export class PlacesComponent implements OnInit, AfterViewInit {
 
     onSubmit() {
         console.log('submit');
-	}
-	
-	scroll(el) {
-		el.scrollIntoView({behavior: "smooth"});
-	}
+    }
+
+    scroll(el) {
+        el.scrollIntoView({behavior: "smooth"});
+    }
+
+    navigateToReview() {
+        this
+            .router
+            .navigateByUrl('/pages/review');
+    }
 }

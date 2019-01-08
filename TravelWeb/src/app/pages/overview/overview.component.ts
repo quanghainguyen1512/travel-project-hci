@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
-import {IMAGES_DESTINATION} from 'src/app/mock-data/img-destination';
 import {NEARBY_CITIES} from 'src/app/mock-data/nearby-cities';
 import {POPULAR_PLACES} from 'src/app/mock-data/popular-places';
 import { Router } from '@angular/router';
+import { IMAGES_DESTINATION } from 'src/app/mock-data/destination-detail';
 
 declare var ol : any;
 
@@ -18,7 +18,7 @@ export interface Article {
 export class OverviewComponent implements OnInit, AfterViewInit {
 	@ViewChild("main") MyProp: ElementRef;
 	
-    public imgForDestination = [];
+    public imgForDestination = IMAGES_DESTINATION;
     public imgSrc = '';
     public nearbyCitites = [];
     public places = POPULAR_PLACES;
@@ -26,9 +26,7 @@ export class OverviewComponent implements OnInit, AfterViewInit {
     map : any;
 
     constructor(private router: Router) {
-        this.imgForDestination = IMAGES_DESTINATION;
 		this.nearbyCitites = NEARBY_CITIES;
-		
     }
 
     ngOnInit() {
@@ -64,12 +62,15 @@ export class OverviewComponent implements OnInit, AfterViewInit {
         el.scrollIntoView({behavior: "smooth"});
     }
 
-
     showImage(id : string) {
         this.imgSrc = this.imgForDestination[+ id - 1].img;
 	}
 	
 	navigateToPlaces() {
 		this.router.navigateByUrl('/pages/places');
-	}
+    }
+    
+    navigateToReview() {
+        this.router.navigateByUrl('/pages/review');
+    }
 }

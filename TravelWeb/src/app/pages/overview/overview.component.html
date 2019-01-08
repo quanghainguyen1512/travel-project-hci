@@ -80,7 +80,7 @@
             <h3 class="title">Gallery</h3>
 
             <div #gallery id="gallery" class="row">
-                <div class="col-3 mt-2" *ngFor="let img of imgForDestination">
+                <div class="col-lg-3 col-md-6 mt-2" *ngFor="let img of imgForDestination">
                     <div (click)="showImage(img.id)">
                         <a data-toggle="modal" data-target="#modalImage">
                             <img class="card-img-top" [src]="img.img" alt="{{img.img}}"/>
@@ -201,7 +201,7 @@
             <h2 class="title">Related Articles</h2>
 
             <div #relativeArticles id="relativeArticles">
-                <div class="media">
+                <div class="media" (click)="navigateToReview()">
                     <img class="mr-3" src="assets/btc2.jpg" alt="Generic placeholder image"/>
                     <div class="media-body">
                         <a routerLink="/pages/review" routerLinkActive="active">
@@ -226,8 +226,7 @@
                 </div>
 
                 <hr/>
-                <div class="media">
-
+                <div class="media" (click)="navigateToReview()">
                     <div class="media-body">
                         <a routerLink="/pages/review" routerLinkActive="active">
                             <h4 class="mt-0" style="font-family: avenir-black;">3 days in Ho Chi Minh City</h4>

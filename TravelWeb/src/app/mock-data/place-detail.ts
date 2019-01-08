@@ -138,28 +138,28 @@ export const ABOUT_BITEXCO = 'Bitexco Financial Tower at a height of 262 meters 
 export const GALLERY_PLACES = [
     {
         id: 1,
-        img: 'assets/hcmc7.jpg'
+        img: 'assets/Gallery-places/1.jpg'
     }, {
         id: 2,
-        img: 'assets/hcmc3.jpg'
+        img: 'assets/Gallery-places/2.jpg'
     }, {
         id: 3,
-        img: 'assets/hcmc8.jpg'
+        img: 'assets/Gallery-places/3.jpg'
     }, {
         id: 4,
-        img: 'assets/hcmc8.jpg'
+        img: 'assets/Gallery-places/4.jpg'
     }, {
         id: 5,
-        img: 'assets/hcmc8.jpg'
+        img: 'assets/Gallery-places/5.jpg'
     }, {
         id: 6,
-        img: 'assets/hcmc8.jpg'
+        img: 'assets/Gallery-places/6.jpg'
     }, {
         id: 7,
-        img: 'assets/hcmc8.jpg'
+        img: 'assets/Gallery-places/7.jpg'
     }, {
         id: 8,
-        img: 'assets/hcmc8.jpg'
+        img: 'assets/Gallery-places/8.jpg'
     }
 ];
 
@@ -226,3 +226,16 @@ export const SERVICES = [
         img: 'assets/service/private-jeep-tour-saigon.jpg'
     }
 ];
+
+export const PLACE_IMAGES = [
+    {
+        id: '0',
+        img: 'assets/Places-Image/0.jpg'
+    }, {
+        id: '1',
+        img: 'assets/Places-Image/1.jpg'
+    }, {
+        id: '2',
+        img: 'assets/Places-Image/2.jpg'
+    }
+]

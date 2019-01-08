@@ -132,7 +132,7 @@
 
         <div id="relatedArticles">
             <div *ngFor="let item of relatedArticlesPlace">
-                <div class="media">
+                <div class="media" (click)="navigateToReview()">
                     <img *ngIf="item.left" class="mr-3" [src]="item.img" alt="{{item.title}}"/>
                     <div class="media-body">
                         <a routerLink="/pages/review" routerLinkActive="active">
