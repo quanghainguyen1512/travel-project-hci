@@ -44,8 +44,6 @@ import { RouterModule } from '@angular/router';
         MaterialModule,
         ReactiveFormsModule,
         MatGridListModule,
-        HeaderTransparentModule,
-        FooterTransparentModule,
         RatingSumaryModule,
         ModalImageModule,
         CommentModule,
