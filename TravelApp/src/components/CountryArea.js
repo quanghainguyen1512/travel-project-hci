@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { Text, H2 } from 'native-base';
+import MyText from './MyText';
 
 const CountryArea = ({ item, style, onPress }) => {
     const { name, cities } = item;
@@ -8,9 +8,9 @@ const CountryArea = ({ item, style, onPress }) => {
     return (
         <View style={style}>
             <View style={header}>
-                <H2 style={{ fontWeight: '500' }}>{name}</H2>
+                <MyText type="black" style={{ fontSize: 25 }}>{name}</MyText>
                 <TouchableOpacity>
-                    <Text style={{ color: '#0084ff', fontSize: 15 }}>More</Text>
+                    <MyText style={{ color: '#0084ff', fontSize: 15 }}>More</MyText>
                 </TouchableOpacity>
                 {/* <Button transparent info>
                     <Text>Explore All</Text>
@@ -20,7 +20,7 @@ const CountryArea = ({ item, style, onPress }) => {
                 {
                     cities.map((city, index) => (
                         <TouchableOpacity key={index} style={cityBox} onPress={onPress}>
-                            <Text style={{ color: 'black' }}>{city}</Text>
+                            <MyText style={{ color: 'black' }}>{city}</MyText>
                         </TouchableOpacity>
                     ))
                 }

@@ -1,7 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 import CityDetail from '../screens/CityDetail/CityDetail';
 import AboutCity from '../screens/CityDetail/AboutCity';
-import See from '../screens/CityDetail/See';
+// import See from '../screens/CityDetail/See';
 import PlaceStack from './PlaceStack';
 
 const CityStack = createStackNavigator(
@@ -9,7 +9,7 @@ const CityStack = createStackNavigator(
         CityDetail: { screen: CityDetail },
         About: { screen: AboutCity },
         PlaceDetail: { screen: PlaceStack },
-        See: { screen: See }
+        // See: { screen: See }
     },
     {
         headerMode: 'none',

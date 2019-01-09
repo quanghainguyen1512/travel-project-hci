@@ -68,6 +68,7 @@ export default class MainTabs extends Component {
           isActive={isActive}
           key={tab.key}
           label={tab.label}
+          labelStyle={{ fontFamily: 'AvenirLTStd-Roman' }}
           renderIcon={this.renderIcon(tab)}
           showBadge={tab.badgeCount > 0}
           renderBadge={this.renderBadge(tab.badgeCount)}
