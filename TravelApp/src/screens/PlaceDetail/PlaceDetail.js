@@ -4,6 +4,7 @@ import {
     Container, Header, Tab, Tabs,
     Left, Icon, Button, Body, Right, Title
 } from 'native-base';
+import { NavigationActions } from 'react-navigation';
 
 import Overview from './Overview';
 import ReviewsTab from './ReviewsTab';
@@ -28,7 +29,7 @@ export default class PlaceDetail extends Component {
             <Container>
                 <Header hasTabs>
                     <Left>
-                        <Button transparent onPress={() => navigation.goBack()}>
+                        <Button transparent onPress={() => navigation.dispatch(NavigationActions.back())}>
                             <Icon name="arrow-back" />
                         </Button>
                     </Left>
