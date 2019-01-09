@@ -70,6 +70,9 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>anson-regular-webfont.ttf</string>
+		<string>AvenirLTStd-Black.otf</string>
+		<string>AvenirLTStd-Book.otf</string>
+		<string>AvenirLTStd-Roman.otf</string>
 	</array>
 </dict>
 </plist>

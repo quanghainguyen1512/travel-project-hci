@@ -1,4 +1,4 @@
-const tintColor = '';
+// const tintColor = '';
 
 export const Theme = {
     LightPrimary: '#3F5378',
@@ -7,3 +7,5 @@ export const Theme = {
 };
 
 export const GrayAlpha = '#d1d1d1bb';
+export const BACKGROUND = '#F5F5F5';
+export const MAIN_COLOR = 'darkgreen';

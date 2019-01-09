@@ -5,32 +5,30 @@ import {
 import {
     Card, CardItem, Left, Text, Right
 } from 'native-base';
-import { AirbnbRating, Rating } from 'react-native-ratings';
+import { AirbnbRating } from 'react-native-ratings';
 import { DEVICE_WIDTH } from '../constants/Layout';
-import { A4_RATIO } from '../constants/Ratios';
+import { A4RATIO } from '../constants/Ratios';
+import { placesImg } from '../constants/Images';
 
 // const img = require('../assets/images/bitexcoOverview.jpg');
-
-const cardWidth = DEVICE_WIDTH * 0.7;
-const cardHeight = cardWidth / A4_RATIO.width;
 
 export default class PlaceCard extends Component {
     render() {
         const { item, style, onPress } = this.props;
         const {
-            uri,
             title,
             reviews,
             rating,
-            articles
+            articles,
+            img
         } = item;
         return (
             <TouchableOpacity
               style={[
                 style,
                 {
-                    height: cardHeight,
-                    width: cardWidth
+                    width: DEVICE_WIDTH * 0.75,
+                    aspectRatio: A4RATIO
                 }
               ]}
               onPress={onPress}
@@ -49,7 +47,7 @@ export default class PlaceCard extends Component {
 
                 </CardItem> */}
                     <ImageBackground
-                      source={uri}
+                      source={placesImg[img]}
                       style={styles.imageBg}
                     //   imageStyle={{ height: 200 }}
                     >

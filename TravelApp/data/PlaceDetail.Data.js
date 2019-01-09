@@ -1,4 +1,4 @@
-const img = require('../src/assets/images/bitexcoOverview.jpg');
+// const img = require('../src/assets/images/bitexcoOverview.jpg');
 
 export const articles = [
     {
@@ -36,6 +36,65 @@ export const articles = [
         postedDate: 'DEC 18, 2018',
         points: '+19',
         percentage: '88%'
+    }
+];
+
+export const featureReviews = [
+    {
+        text: 'observation deck',
+        reviewCount: 168
+    },
+    {
+        text: 'tallest building',
+        reviewCount: 105
+    },
+    {
+        text: 'degree view',
+        reviewCount: 102
+    },
+    {
+        text: 'greate view of the city',
+        reviewCount: 79
+    },
+    {
+        text: 'heneiken tour',
+        reviewCount: 39
+    }
+];
+
+export const recentReviews = [
+    {
+        rating: 2,
+        date: 'Dec 30, 2018',
+        title: 'Not worth the effort',
+        shortenText: 'Nice enough views but not worth the $200vnd per adult entry, my fault but o thought you got to go out on the overhang deck but you..'
+    },
+    {
+        rating: 4,
+        date: 'Dec 30, 2018',
+        title: 'Excellent views',
+        shortenText: 'We visited at sunset and the views from floor 49 were excellent. $10 each and you can stay as long as you like, but if you book in advance...'
+    },
+    {
+        rating: 5,
+        date: 'Dec 28, 2018',
+        title: 'Observation deck with Heineken beer tour',
+        shortenText: 'Apart from visiting the skydeck, it’s worth mentioning that their Heineken beer tour was absolutely great! Make sure to buy the combination...'
+    }
+];
+
+export const recentQuestions = [
+    {
+        ques: 'Hi Am I allowed my drone to get videos and pictures from above',
+        ans: 'As far as I am aware, all windows are sealed and doors alarmed, so in short, no.'
+    },
+    {
+        ques: 'Are tripods allowed on the skydeck?',
+        ans: 'Yes, they are allowed. We look forward to welcoming you there'
+    },
+    {
+        ques: 'I when to the heniken museum today however I broke the customise heniken even before I reach the hotel and I really want another one. Any idea how can I get it without doing the museum and sky deck again?',
+        ans: 'I’m afraid I have no idea about the Heniken museum ? I just did the Skydeck tour and had lunch up there for the views ! '
     }
 ];
 

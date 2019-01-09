@@ -18,6 +18,9 @@ module.exports = {
         "class-methods-use-this": 0,
         "max-len": 1,
         "no-mixed-operators": 1,
-        "curly": 0
+        "curly": 0,
+        "react/destructuring-assignment": 1,
+        "react/no-array-index-key": 1,
+        "global-require": 1
     },
 };

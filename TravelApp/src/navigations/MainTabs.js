@@ -1,83 +1,103 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
-import {
- Container, Content, Footer, FooterTab, Button, Text, Icon
-} from 'native-base';
-import { TabNavigator } from 'react-navigation';
-import BottomNavigation, { FullTab, ShiftingTab } from 'react-native-material-bottom-navigation';
+import { View } from 'react-native';
+import { Icon } from 'native-base';
+import BottomNavigation, { ShiftingTab, Badge } from 'react-native-material-bottom-navigation';
 
-import { LightPrimary, DarkPrimary } from '../constants/Colors';
 import Search from '../screens/Main/Search';
 import Explore from '../screens/Main/Explore';
 import Profile from '../screens/Main/Profile';
+import Activity from '../screens/Main/Activity';
 
 export default class MainTabs extends Component {
+    tabs = [
+        {
+            key: 0,
+            icon: 'ios-search',
+            type: 'Ionicons',
+            label: 'Search',
+            barColor: '#388E3C',
+            pressColor: 'rgba(255, 255, 255, 0.16)',
+            badgeCount: 0
+        },
+        {
+            key: 1,
+            icon: 'compass',
+            type: 'MaterialCommunityIcons',
+            label: 'Explore',
+            barColor: '#436fa8',
+            pressColor: 'rgba(255, 255, 255, 0.16)',
+            badgeCount: 0
+        },
+        {
+            key: 2,
+            icon: 'bell',
+            type: 'Entypo',
+            label: 'Activity',
+            barColor: '#B71C1C',
+            pressColor: 'rgba(255, 255, 255, 0.16)',
+            badgeCount: 12
+        },
+        {
+            key: 3,
+            icon: 'person',
+            type: 'MaterialIcons',
+            label: 'Profile',
+            barColor: '#E64A19',
+            pressColor: 'rgba(255, 255, 255, 0.16)',
+            badgeCount: 0
+        }
+    ];
+
     constructor(props) {
         super(props);
         this.state = { activeIndex: 1 };
     }
 
-    tabs = [
-        {
-            key: 0,
-            icon: 'ios-search',
-            label: 'Search',
-            barColor: '#388E3C',
-            pressColor: 'rgba(255, 255, 255, 0.16)'
-          },
-          {
-            key: 1,
-            icon: 'compass',
-            label: 'Explore',
-            barColor: '#B71C1C',
-            pressColor: 'rgba(255, 255, 255, 0.16)'
-          },
-          {
-            key: 2,
-            icon: 'person',
-            label: 'Profile',
-            barColor: '#E64A19',
-            pressColor: 'rgba(255, 255, 255, 0.16)'
-          }
-    ];
-
     switchScreen(index) {
         this.setState({ activeIndex: index });
     }
 
-    renderIcon = icon => ({ isActive }) => (
-        <Icon active={isActive} color="white" name={icon} />
+    renderIcon = ({ icon, type }) => ({ isActive }) => (
+        <Icon active={isActive} style={{ color: 'white' }} name={icon} type={type} />
     );
 
+    renderBadge = badgeCount => () => <Badge>{badgeCount}</Badge>
+
     renderTab = ({ tab, isActive }) => (
-        <FullTab
+        <ShiftingTab
           isActive={isActive}
           key={tab.key}
           label={tab.label}
-          renderIcon={this.renderIcon(tab.icon)}
+          renderIcon={this.renderIcon(tab)}
+          showBadge={tab.badgeCount > 0}
+          renderBadge={this.renderBadge(tab.badgeCount)}
         />
     );
 
     render() {
-        let AppComponent = null;
+        const { navigation } = this.props;
+
+        let AppComponent = Explore;
         const { activeIndex } = this.state;
         if (activeIndex === 0) {
             AppComponent = Search;
         } else if (activeIndex === 1) {
             AppComponent = Explore;
+        } else if (activeIndex === 2) {
+            AppComponent = Activity;
         } else {
-            console.log(activeIndex);
             AppComponent = Profile;
         }
         return (
             <View style={{ flex: 1 }}>
                 <View style={{ flex: 1 }}>
-                    <AppComponent />
+                    <AppComponent navigation={navigation} />
                 </View>
                 <BottomNavigation
                   onTabPress={newTab => this.switchScreen(newTab.key)}
                   renderTab={this.renderTab}
                   tabs={this.tabs}
+                  activeTab={activeIndex}
                 />
             </View>
         );

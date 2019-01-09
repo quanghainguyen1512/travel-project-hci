@@ -4,15 +4,13 @@ import {
 } from 'react-native';
 import { Card } from 'native-base';
 import { DEVICE_WIDTH } from '../constants/Layout';
-import { A4_RATIO } from '../constants/Ratios';
-
-const cardWidth = DEVICE_WIDTH * 0.4;
-const cardHeight = cardWidth * A4_RATIO.width;
+import { A4RATIO } from '../constants/Ratios';
+import { citiesImg } from '../constants/Images';
 
 export default class CountryCard extends Component {
     render() {
         const { item, style } = this.props;
-        const { distance, cityName, uri } = item;
+        const { distance, cityName, img } = item;
 
         const { top, bottom, distanceContainer } = styles;
 
@@ -21,14 +19,14 @@ export default class CountryCard extends Component {
               style={[
                 style,
                 {
-                    height: cardHeight,
-                    width: cardWidth,
-                    borderRadius: 20
+                    width: DEVICE_WIDTH * 0.4,
+                    aspectRatio: 1 / A4RATIO
                 }
               ]}
             >
                 <ImageBackground
-                  source={uri}
+                //   source={uri}
+                  source={citiesImg[img]}
                   style={{ flex: 1 }}
                 >
                     <View style={top}>

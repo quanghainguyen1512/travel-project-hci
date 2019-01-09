@@ -6,19 +6,25 @@ import {
     Container, Header, Content, Left, Button, Icon, Body, Right, ListItem, Fab, Text
 } from 'native-base';
 import Carousel from 'react-native-snap-carousel';
+import { NavigationActions } from 'react-navigation';
 
 import PlaceCard from '../../components/PlaceCard';
-import { DEVICE_HEIGHT, DEVICE_WIDTH, HORIZONTAL_MARGIN } from '../../constants/Layout';
+import {
+    DEVICE_HEIGHT,
+    DEVICE_WIDTH,
+    HORIZONTAL_MARGIN,
+    HEADER_HEIGHT,
+    STATUS_BAR_HEIGHT
+} from '../../constants/Layout';
 import { places, cities } from '../../../data/CityDetail.Data';
 import CountryCard from '../../components/CountryCard';
-import { GrayAlpha } from '../../constants/Colors';
-
-const uri = require('../../assets/images/hcmabout.jpg');
+import { GrayAlpha, BACKGROUND } from '../../constants/Colors';
+import { hcmabout } from '../../constants/Images';
 
 export default class CityDetail extends Component {
     renderPlacesCard = ({ item }) => (
         <PlaceCard
-          id={item.id}
+          key={item.title}
           item={item}
           style={{ marginRight: 25 }}
           onPress={() => this.props.navigation.navigate('PlaceDetail')}
@@ -32,7 +38,7 @@ export default class CityDetail extends Component {
         />
     );
 
-    keyExtractor = (item, index) => item.id;
+    keyExtractor = (item, index) => `${index}`;
 
     render() {
         const {
@@ -45,7 +51,7 @@ export default class CityDetail extends Component {
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent onPress={() => navigation.goBack()}>
+                        <Button transparent onPress={() => navigation.dispatch(NavigationActions.back())}>
                             <Icon name="arrow-back" />
                         </Button>
                     </Left>
@@ -59,10 +65,11 @@ export default class CityDetail extends Component {
                         </Button>
                     </Right>
                 </Header>
-                <Content style={{ backgroundColor: '#ECEBF3' }}>
+                {/* <Content style={{ backgroundColor: '#ECEBF3' }}> */}
+                <Content style={{ backgroundColor: BACKGROUND }}>
                     <ImageBackground
                       style={imgBGrnd}
-                      source={uri}
+                      source={hcmabout}
                     //   imageStyle={{ blurRadius: 15 }}
                     >
                         <View style={cityIntro}>
@@ -135,7 +142,7 @@ export default class CityDetail extends Component {
                                 <Text>Rests & Relaxes</Text>
                             </Body>
                         </ListItem>
-                        <ListItem icon>
+                        {/* <ListItem icon>
                             <Left>
                                 <Button>
                                     <Icon
@@ -148,23 +155,17 @@ export default class CityDetail extends Component {
                             <Body>
                                 <Text>Activites & Experiences</Text>
                             </Body>
-                        </ListItem>
+                        </ListItem> */}
                     </View>
                     {/* Popular places */}
                     <View style={area}>
                         <Text style={headline}>Popular Places</Text>
-                        {/* <FlatList
-                          horizontal
-                          data={places}
-                          keyExtractor={this.keyExtractor}
-                          renderItem={this.renderPlacesCard}
-                        /> */}
                         <Carousel
                           data={places}
                         //   ref={(c) => { this._carousel = c; }}
                           renderItem={this.renderPlacesCard}
                           sliderWidth={DEVICE_WIDTH}
-                          itemWidth={DEVICE_WIDTH * 0.7}
+                          itemWidth={DEVICE_WIDTH * 0.75}
                         />
                     </View>
                     {/* Related Articles */}
@@ -182,14 +183,8 @@ export default class CityDetail extends Component {
                           data={cities}
                           renderItem={this.renderNearbyCities}
                           style={{ marginLeft: HORIZONTAL_MARGIN }}
+                          keyExtractor={this.keyExtractor}
                         />
-                        {/* <Carousel
-                          data={cities}
-                        //   ref={(c) => { this._carousel = c; }}
-                          renderItem={this.renderNearbyCities}
-                          sliderWidth={DEVICE_WIDTH}
-                          itemWidth={DEVICE_WIDTH * 0.4}
-                        /> */}
                     </View>
                 </Content>
                 <Fab
@@ -207,7 +202,7 @@ export default class CityDetail extends Component {
 
 const styles = StyleSheet.create({
     imgBGrnd: {
-        height: DEVICE_HEIGHT * 0.88,
+        height: DEVICE_HEIGHT - HEADER_HEIGHT - STATUS_BAR_HEIGHT,
         alignSelf: 'stretch',
         // flexDirection: 'column'
     },
@@ -247,7 +242,8 @@ const styles = StyleSheet.create({
     },
     hcmText: {
         fontSize: 50,
-        fontWeight: '600',
+        fontWeight: '700',
+        textAlign: 'center'
         // color: '#222222bb'
     },
     vietnamText: {
