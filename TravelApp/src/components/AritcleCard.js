@@ -9,8 +9,6 @@ const img = require('../assets/images/bitexcoOverview.jpg');
 const ava = require('../assets/images/profilepic.jpg');
 
 const cardWidth = DEVICE_WIDTH - 2 * HORIZONTAL_MARGIN;
-// const cardHeight = cardWidth / A4_RATIO.width;
-const cardHeight = cardWidth;
 
 export default class ArticlesCard extends Component {
     render() {
@@ -23,8 +21,8 @@ export default class ArticlesCard extends Component {
               style={[
                     style,
                     {
-                        height: cardHeight,
-                        width: cardWidth
+                        width: cardWidth,
+                        aspectRatio: 1
                     }
                 ]}
             >

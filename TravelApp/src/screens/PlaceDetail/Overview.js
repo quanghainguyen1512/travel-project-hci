@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet, View, Image, TouchableOpacity, MapView
+    StyleSheet, View, Image, TouchableOpacity,
 } from 'react-native';
 import {
     Text, H2, Button, H3, ListItem, Left, Icon, Body, Right, Toast, List
@@ -12,15 +12,14 @@ import { AirbnbRating } from 'react-native-ratings';
 import { ScrollView } from 'react-native-gesture-handler';
 import ViewMoreText from 'react-native-view-more-text';
 import { DEVICE_WIDTH, HORIZONTAL_MARGIN } from '../../constants/Layout';
-import { A4_RATIO } from '../../constants/Ratios';
 import { places } from '../../../data/CityDetail.Data';
 import PlaceCard from '../../components/PlaceCard';
 import { bitexcoAbout } from '../../../data/PlaceDetail.Data';
+import { A4RATIO } from '../../constants/Ratios';
 
 const bitexcoOverview = require('../../assets/images/bitexcoOverview.jpg');
 
 const imgWidth = DEVICE_WIDTH;
-const imgHeight = imgWidth / A4_RATIO.width;
 
 export default class Overview extends Component {
     renderPlacesCard = ({ item }) => (
@@ -42,24 +41,24 @@ export default class Overview extends Component {
                   showsPagination
                   autoplayDirection
                   width={imgWidth}
-                  height={imgHeight}
+                  height={imgWidth / A4RATIO}
                   style={{ marginBottom: 15 }}
                 >
                     <Image
                       source={bitexcoOverview}
-                      style={{ width: imgWidth, height: imgHeight }}
+                      style={{ width: imgWidth, height: imgWidth / A4RATIO }}
                     />
                     <Image
                       source={bitexcoOverview}
-                      style={{ width: imgWidth, height: imgHeight }}
+                      style={{ width: imgWidth, height: imgWidth / A4RATIO }}
                     />
                     <Image
                       source={bitexcoOverview}
-                      style={{ width: imgWidth, height: imgHeight }}
+                      style={{ width: imgWidth, height: imgWidth / A4RATIO }}
                     />
                     <Image
                       source={bitexcoOverview}
-                      style={{ width: imgWidth, height: imgHeight }}
+                      style={{ width: imgWidth, height: imgWidth / A4RATIO }}
                     />
                 </Swiper>
                 <View style={{ marginHorizontal: HORIZONTAL_MARGIN }}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { Text } from 'native-base';
 import { MAIN_COLOR } from '../constants/Colors';
+import MyText from './MyText';
 
 export default class FilterCountryItem extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ export default class FilterCountryItem extends Component {
               activeOpacity={1}
               onPress={() => this.setState({ isSelected: !isSelected })}
             >
-                <Text style={{ color: isSelected ? 'white' : 'black', fontSize: 13 }}>{cate}</Text>
+                <MyText style={{ color: isSelected ? 'white' : 'black', fontSize: 13 }}>{cate}</MyText>
             </TouchableOpacity>
         );
     }

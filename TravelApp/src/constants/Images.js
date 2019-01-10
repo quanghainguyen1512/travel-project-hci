@@ -19,3 +19,18 @@ export const placesImg = {
     square: require(`${imgRoot}/ho-chi-minh-square.jpg`),
     benthanh: require(`${imgRoot}/ch-m-th-c-du-ng-ph-b.jpg`)
 };
+
+export const otherUsers = {
+    hanhang: require(`${imgRoot}/user-hanhang.jpg`),
+    kieutrinh: require(`${imgRoot}/user-kieutrinh.jpg`),
+    khanhvan: require(`${imgRoot}/user-khanhvan.jpg`)
+};
+
+export const hotDest = {
+    bangkok: require(`${imgRoot}/bangkok.jpg`),
+    singapore: require(`${imgRoot}/singapore.jpg`),
+    phuket: require(`${imgRoot}/phuket.jpg`),
+    pattaya: require(`${imgRoot}/pattaya.jpg`)
+};
+
+export const home = require(`${imgRoot}/home.jpg`);
