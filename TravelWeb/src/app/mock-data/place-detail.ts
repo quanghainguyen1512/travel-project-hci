@@ -186,45 +186,46 @@ export const RELATED_PLACES = [
 export const SERVICES = [
     {
         type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
+        title: 'Private Jeep Tour Saigon by Night Including Dinner',
         price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
+        img: 'assets/service/1.jpg'
+    }, 
+    {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night and Skybar Drink',
+        price: '1,279,070',
+        img: 'assets/service/2.jpg'
+    }, {
+        type: 'VESPA, SCOOTER & MOPED...',
+        title: 'Ho Chi Minh City Night Tour by Vintage Vespa',
+        price: '1,162,791',
+        img: 'assets/service/3.jpg'
     }, {
         type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
+        title: 'Ho Chi Minh City by Night - Dinner on Indochina Queen Junk',
+        price: '651,163',
+        img: 'assets/service/4.jpg'
     }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
+        type: 'STREET FOOD TOURS',
+        title: 'Ho Chi Minh City Street Food Tour with Dinner',
+        price: '744,187',
+        img: 'assets/service/5.jpg'
     }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
+        type: 'DAY CRUISES',
+        title: 'Small-Group Mekong Delta Experience by Speedboat',
+        price: '2,604,652',
+        img: 'assets/service/6.jpg'
     }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
+        type: 'DAY CRUISES',
+        title: 'Mekong Delta Discovery Small Group Adventure Tour from Ho Chi Minh City',
+        price: '1,558,140',
+        img: 'assets/service/7.jpg'
     }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
-    }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
-    }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night  Including Dinner',
-        price: '1,767,442',
-        img: 'assets/service/private-jeep-tour-saigon.jpg'
-    }
+        type: 'DAY CRUISES',
+        title: 'Half-Day Cu Chi Tunnels from Ho Chi Minh City by Luxury Speedboat',
+        price: '1,976,745',
+        img: 'assets/service/8.jpg'
+    }, 
 ];
 
 export const PLACE_IMAGES = [
