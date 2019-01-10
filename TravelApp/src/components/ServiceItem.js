@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import {
     ListItem, Left, Thumbnail, Body, Text, Button
 } from 'native-base';
 import { AirbnbRating } from 'react-native-ratings';
 import MyText from './MyText';
+import { serviceImg } from '../constants/Images';
 
 const ServiceItem = (props) => {
     const { item } = props;
@@ -12,25 +13,32 @@ const ServiceItem = (props) => {
         title,
         rating,
         noReviews,
-        price
+        price,
+        img
     } = item;
     return (
         <ListItem avatar>
             <Left>
-                <Thumbnail large />
+                <Thumbnail large square source={serviceImg[img]} />
             </Left>
             <Body>
-                <MyText>{title}</MyText>
-                <View>
-                    <AirbnbRating />
-                    <Text>{`${noReviews} Reviews`}</Text>
+                <MyText type="black">{title}</MyText>
+                <View style={{ flexDirection: 'row', }}>
+                    <AirbnbRating
+                      showRating={false}
+                      ratingCount={5}
+                      isDisabled
+                      size={15}
+                      defaultRating={rating}
+                    />
+                    <Text note style={{ marginLeft: 10 }}>{`${noReviews} Reviews`}</Text>
                 </View>
-                <View>
-                    <Text>from</Text>
-                    <Text>{`$${price}`}</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text>from </Text>
+                    <Text style={{ fontWeight: '500' }}>{`$${price}`}</Text>
                 </View>
-                <Button warning>
-                    <Text>Book Now</Text>
+                <Button small warning>
+                    <Text style={{ color: 'black' }}>Book Now</Text>
                 </Button>
             </Body>
         </ListItem>

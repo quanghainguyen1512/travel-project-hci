@@ -3,7 +3,7 @@ import {
     StyleSheet, View, Image, TouchableOpacity,
 } from 'react-native';
 import {
-    Text, H2, Button, H3, ListItem, Left, Icon, Body, Right, Toast, List, Spinner
+    Text, H2, Button, H3, ListItem, Left, Icon, Body, Right, Toast, List, Spinner, Root
 } from 'native-base';
 import Carousel from 'react-native-snap-carousel';
 import Swiper from 'react-native-swiper';
@@ -16,6 +16,8 @@ import { places } from '../../../data/CityDetail.Data';
 import PlaceCard from '../../components/PlaceCard';
 import { bitexcoAbout } from '../../../data/PlaceDetail.Data';
 import { A4RATIO } from '../../constants/Ratios';
+import MyText from '../../components/MyText';
+import { MAIN_COLOR } from '../../constants/Colors';
 
 const bitexcoOverview = require('../../assets/images/bitexcoOverview.jpg');
 
@@ -51,6 +53,7 @@ export default class Overview extends Component {
                 </View>
             )
             : (
+            <Root>
             <ScrollView>
                 <Swiper
                   autoplay
@@ -116,7 +119,7 @@ export default class Overview extends Component {
                     <List>
                         <ListItem icon>
                             <Left>
-                                <Icon type="EvilIcons" name="clock" />
+                                <Icon style={{ color: MAIN_COLOR }} type="MaterialCommunityIcons" name="clock" />
                             </Left>
                             <Body>
                                 <Text style={{ fontSize: 13 }}>Suggested duration: 1-2 hours</Text>
@@ -124,7 +127,17 @@ export default class Overview extends Component {
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon type="Entypo" name="location-pin" />
+                                <Icon style={{ color: MAIN_COLOR }} name="ticket" type="FontAwesome" />
+                            </Left>
+                            <Body>
+                                <TouchableOpacity>
+                                    <Text style={{ fontSize: 13 }}>Admission ticket: $9.00</Text>
+                                </TouchableOpacity>
+                            </Body>
+                        </ListItem>
+                        <ListItem icon>
+                            <Left>
+                                <Icon style={{ color: MAIN_COLOR }} type="Entypo" name="location-pin" />
                             </Left>
                             <Body>
                                 <TouchableOpacity>
@@ -142,12 +155,12 @@ export default class Overview extends Component {
                         </ListItem> */}
                         <ListItem icon>
                             <Left>
-                                <Icon type="Entypo" name="phone" />
+                                <Icon style={{ color: MAIN_COLOR }} type="Entypo" name="phone" />
                             </Left>
                             <Body>
                                 <TouchableOpacity
                                   onPress={() => Toast.show({
-                                    text: 'Wrong password!',
+                                    text: 'Calling...',
                                     duration: 2000
                                 })}
                                 >
@@ -157,7 +170,7 @@ export default class Overview extends Component {
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon fontSize={50} type="MaterialCommunityIcons" name="email-outline" />
+                                <Icon style={{ color: MAIN_COLOR }} fontSize={50} type="MaterialCommunityIcons" name="email-outline" />
                             </Left>
                             <Body>
                                 <Text style={{ fontSize: 13 }}>Email</Text>
@@ -169,7 +182,7 @@ export default class Overview extends Component {
                     </List>
                 </View>
                 <View style={{ marginVertical: 20 }}>
-                    <H3 style={{ marginLeft: HORIZONTAL_MARGIN }}>Related Places</H3>
+                    <MyText type="black" style={{ marginLeft: HORIZONTAL_MARGIN, fontSize: 25 }}>Related Places</MyText>
                     <Carousel
                       data={places}
                       renderItem={this.renderPlacesCard}
@@ -180,6 +193,7 @@ export default class Overview extends Component {
                     />
                 </View>
             </ScrollView>
+            </Root>
         ));
     }
 }

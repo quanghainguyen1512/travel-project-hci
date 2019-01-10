@@ -1,10 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import {
- ListItem, Text, Thumbnail, Left, Body
+ ListItem, Text, Thumbnail, Left, Body, Button, Icon
 } from 'native-base';
 import { AirbnbRating } from 'react-native-ratings';
 import { profilepic } from '../constants/Images';
+import MyText from './MyText';
 
 const RecentReview = (item, key) => {
     const {
@@ -32,8 +33,16 @@ const RecentReview = (item, key) => {
                     />
                         <Text note>{date}</Text>
                 </View>
-                <Text style={{ fontWeight: '500' }}>{title}</Text>
+                <MyText type="black">{title}</MyText>
                 <Text style={{ fontSize: 13 }}>{shortenText}</Text>
+                <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignSelf: 'stretch' }}>
+                    <Button icon transparent>
+                        <Icon type="Foundation" name="like" />
+                    </Button>
+                    <Button icon transparent>
+                        <Icon type="Foundation" name="dislike" />
+                    </Button>
+                </View>
             </Body>
         </ListItem>
     );

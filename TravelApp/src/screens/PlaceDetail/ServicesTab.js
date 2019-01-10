@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View, FlatList } from 'react-native';
 import {
- Container, Content, List, ListItem, Left, Thumbnail, Body, Text 
+    ListItem, Left, Thumbnail, Body
 } from 'native-base';
 import { AirbnbRating } from 'react-native-ratings';
+import ServiceItem from '../../components/ServiceItem';
+import { services } from '../../../data/PlaceDetail.Data';
+import { HORIZONTAL_MARGIN } from '../../constants/Layout';
+import MyText from '../../components/MyText';
+
+const bitexcoOverview = require('../../assets/images/bitexcoOverview.jpg');
 
 export default class ServicesTab extends Component {
+    renderService = ({ item }) => (
+        <ServiceItem item={item} />
+    )
+
+    keyExtractor = (item, index) => `${index}`;
+
     render() {
         return (
-            <Container>
-                <Content>
-                    <ListItem>
+            // <Container>
+                <View style={{ flex: 1 }}>
+                    <ListItem avatar>
                         <Left>
-                            <Thumbnail small />
+                            <Thumbnail source={bitexcoOverview} large />
                         </Left>
                         <Body>
-                            <Text>Bitexco Financial Tower - Saigon Skydeck</Text>
+                            <MyText>Bitexco Financial Tower - Saigon Skydeck</MyText>
                             <AirbnbRating
                               showRating={false}
                               ratingColor="#3498db"
@@ -27,16 +39,18 @@ export default class ServicesTab extends Component {
                             />
                         </Body>
                     </ListItem>
-                    <Text>Book in Advance</Text>
-                    <List>
-                        
-                    </List>
-                </Content>
-            </Container>
+                    <View style={{ marginTop: 20, flex: 1 }}>
+                        <MyText type="black" style={{ fontSize: 20, marginLeft: HORIZONTAL_MARGIN }}>Book in Advance</MyText>
+                        <FlatList
+                          horizontal={false}
+                          data={services}
+                          renderItem={this.renderService}
+                          keyExtractor={this.keyExtractor}
+                          contentContainerStyle={{ paddingHorizontal: HORIZONTAL_MARGIN }}
+                        />
+                    </View>
+                </View>
+            // </Container>
         );
     }
 }
-
-const styles = StyleSheet.create({
-
-});

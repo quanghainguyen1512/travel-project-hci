@@ -34,7 +34,7 @@ export default class ContributorItem extends Component {
                       type="SimpleLineIcons"
                       style={{ fontSize: 20 }}
                     />
-                    <Text style={{ fontSize: 11 }}>{followed ? 'Followed' : 'Following'}</Text>
+                    <Text style={{ fontSize: 11 }}>{!followed ? 'Follow' : 'Following'}</Text>
                 </Button>
                 <Text note style={{ textAlign: 'center' }}>{`Top contributor in \n${topIn}`}</Text>
             </View>

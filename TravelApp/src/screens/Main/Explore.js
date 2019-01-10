@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {
  ImageBackground, View, StyleSheet, FlatList
 } from 'react-native';
-import { Container, Content, Spinner } from 'native-base';
+import {
+    Container, Content, Spinner, StyleProvider
+} from 'native-base';
 import { home } from '../../constants/Images';
 import { A4RATIO } from '../../constants/Ratios';
 import { HORIZONTAL_MARGIN, DEVICE_WIDTH } from '../../constants/Layout';
@@ -15,6 +17,8 @@ import { articles } from '../../../data/PlaceDetail.Data';
 import ArticlesCard from '../../components/AritcleCard';
 import { places } from '../../../data/CityDetail.Data';
 import PlaceCard from '../../components/PlaceCard';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 export default class Explore extends Component {
     constructor(props) {
@@ -34,7 +38,7 @@ export default class Explore extends Component {
         <HotDest
           item={item}
           style={{ marginLeft: HORIZONTAL_MARGIN }}
-          onPress={() => this.navigation.navigate('Vietnam')}
+          onPress={() => this.props.navigation.navigate('Vietnam')}
         />
     )
 
@@ -55,6 +59,7 @@ export default class Explore extends Component {
     render() {
         const { homeBg, headline, subContainer } = styles;
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <Content>
                     <ImageBackground
@@ -134,6 +139,7 @@ export default class Explore extends Component {
                     }
                 </Content>
             </Container>
+            </StyleProvider>
         );
     }
 }

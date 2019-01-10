@@ -10,29 +10,34 @@ import { BlurView } from 'react-native-blur';
 import ViewMoreText from 'react-native-view-more-text';
 import { GrayAlpha } from '../../constants/Colors';
 import { DEVICE_WIDTH, HORIZONTAL_MARGIN } from '../../constants/Layout';
+import MyText from '../../components/MyText';
 
 const bgImg = require('../../assets/images/hcmabout.jpg');
 
-class MyText extends Component {
+// const MyText = (props) => {
+//     const { style, children } = props;
+//     return <Text style={[style, { color: 'white' }]} {...props}>{children}</Text>;
+// };
+
+class WhiteText extends Component {
     render() {
-        const { style, ...props } = this.props;
-        return <Text style={[style, { color: 'white' }]} {...props} />;
+        const { style, type, ...props } = this.props;
+        return <MyText type={type} style={[style, { color: 'white' }]} {...props} />;
     }
 }
 
 export default class AboutCity extends Component {
     constructor(props) {
         super(props);
-        // this.state = { degree: 'C' };
         this.state = { viewRef: null };
     }
 
     renderViewMore = onPress => (
-          <MyText onPress={onPress} style={{ fontStyle: 'italic', fontWeight: '400' }}>VIEW MORE</MyText>
+          <WhiteText type="black" onPress={onPress} style={{ fontWeight: '400' }}>VIEW MORE</WhiteText>
         )
 
     renderViewLess = onPress => (
-          <MyText onPress={onPress} style={{ fontStyle: 'italic', fontWeight: '400' }}>VIEW LESS</MyText>
+          <WhiteText type="black" onPress={onPress} style={{ fontWeight: '400' }}>VIEW LESS</WhiteText>
         )
 
     imageLoaded = () => {
@@ -77,12 +82,12 @@ export default class AboutCity extends Component {
                 </Header>
                 <Content style={{ paddingHorizontal: HORIZONTAL_MARGIN, paddingBottom: 20 }}>
                     <View style={{ marginVertical: 25 }}>
-                        <MyText style={{ fontSize: 30 }}>About</MyText>
-                        <MyText style={{ fontSize: 40, fontWeight: '600' }}>Ho Chi Minh City</MyText>
+                        <WhiteText style={{ fontSize: 30 }}>About</WhiteText>
+                        <WhiteText type="black" style={{ fontSize: 40, fontWeight: '600' }}>Ho Chi Minh City</WhiteText>
                     </View>
                     {/* Don't miss */}
                     <View style={{ flexDirection: 'column', alignItems: 'flex-start', marginBottom: 25 }}>
-                        <MyText>{'Don\'t miss:'}</MyText>
+                        <WhiteText>{'Don\'t miss:'}</WhiteText>
                         <View style={dontMissArea}>
                             <Text style={dontMissItem}>Urban Adventures</Text>
                             <Text style={dontMissItem}>History and Culture</Text>
@@ -96,18 +101,18 @@ export default class AboutCity extends Component {
                       renderViewLess={this.renderViewLess}
                       textStyle={{ textAlign: 'left' }}
                     >
-                        <MyText style={{ fontSize: 18 }}>
+                        <WhiteText style={{ fontSize: 18 }}>
                             {'Known as Vietnam\'s Saigon City, immerse yourself in the rich culture of Ho Chi Minh City! '}
                             {'This Vietnamese city is a trove of historical sights waiting to be discovered. '}
                             {'Spend half a day at Cu Chi Tunnels and learn about its significance during the Viet Cong war. '}
                             {'Travel like a local and hop on a Motorbike Adventure tour and visit significant relics such as the Central Post Office and the Saigon Opera House.\n'}
                             {'Experience a different side of the city at the Mekong Delta and encouter the iconic fishing village filled with stilt houses and rice paddies. '}
                             {'Don\'t forget to snack on sweet seasonal fruits and coconut candy, freshly made daily!'}
-                        </MyText>
+                        </WhiteText>
                     </ViewMoreText>
                     {/* Gallery */}
                     <View style={{ marginVertical: 25 }}>
-                        <MyText style={{ fontSize: 25 }}>Gallery</MyText>
+                        <WhiteText style={{ fontSize: 25 }}>Gallery</WhiteText>
                         <View style={gallery}>
                             <Image source={bgImg} style={imgGallery} />
                             <Image source={bgImg} style={imgGallery} />
@@ -119,18 +124,18 @@ export default class AboutCity extends Component {
                     </View>
                     <View style={additionalInfo}>
                         <View>
-                            <MyText style={subTitle}>Time Zone</MyText>
-                            <MyText style={mainContent}>GMT +07:00</MyText>
-                            <MyText note>No time difference</MyText>
+                            <WhiteText style={subTitle}>Time Zone</WhiteText>
+                            <WhiteText style={mainContent}>GMT +07:00</WhiteText>
+                            <WhiteText note>No time difference</WhiteText>
                         </View>
                         <View style={{ marginTop: 20 }}>
-                            <MyText style={subTitle}>Currency</MyText>
-                            <MyText style={mainContent}>Vietnamese Dong</MyText>
-                            <MyText note>1USD = 25,000 VND</MyText>
+                            <WhiteText style={subTitle}>Currency</WhiteText>
+                            <WhiteText style={mainContent}>Vietnamese Dong</WhiteText>
+                            <WhiteText note>1USD = 25,000 VND</WhiteText>
                         </View>
                         <View style={{ marginTop: 20 }}>
-                            <MyText style={subTitle}>Best Time To Visit</MyText>
-                            <MyText style={mainContent}>JAN - FEB (Spring Flowers Festival)</MyText>
+                            <WhiteText style={subTitle}>Best Time To Visit</WhiteText>
+                            <WhiteText style={mainContent}>JAN - FEB (Spring Flowers Festival)</WhiteText>
                         </View>
                     </View>
                 </Content>

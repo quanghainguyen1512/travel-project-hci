@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import {
-    Container, Header, Body, Title, Tabs, Tab, Left, Right
+    Container, Header, Body, Title, Tabs, Tab, Left, Right,
+    StyleProvider
 } from 'native-base';
 import YouTab from '../Activity/YouTab';
 import FollowingTab from '../Activity/FollowingTab';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 export default class Activity extends Component {
     render() {
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <Header hasTabs>
                     <Left style={{ flex: 1 }} />
@@ -25,6 +29,7 @@ export default class Activity extends Component {
                     </Tab>
                 </Tabs>
             </Container>
+            </StyleProvider>
         );
     }
 }

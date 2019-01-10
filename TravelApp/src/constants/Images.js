@@ -49,3 +49,10 @@ export const vietnam = {
     ninhbinh: require(`${imgRoot}/ninhbinh.jpg`),
     hochiminh: require(`${imgRoot}/hochiminh.jpg`)
 };
+
+export const serviceImg = {
+    serv1: require(`${imgRoot}/serv1.jpg`),
+    serv2: require(`${imgRoot}/serv2.jpg`),
+    serv3: require(`${imgRoot}/serv3.jpg`),
+    serv4: require(`${imgRoot}/serv4.jpg`)
+};

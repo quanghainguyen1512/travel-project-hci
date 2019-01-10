@@ -66,6 +66,60 @@ export const cities = [
         img: 'danang'
     }
 ];
+
+export const SERVICES = [
+    {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night Including Dinner',
+        price: '1,767,442',
+        img: require('../src/assets/images/a.jpg'),
+        rating: 5
+    },
+    {
+        type: 'NIGHT TOURS',
+        title: 'Private Jeep Tour Saigon by Night and Skybar Drink',
+        price: '1,279,070',
+        img: require('../src/assets/images/b.jpg'),
+        rating: 5
+    }, {
+        type: 'VESPA, SCOOTER ...',
+        title: 'Ho Chi Minh City Night Tour by Vintage Vespa',
+        price: '1,162,791',
+        img: require('../src/assets/images/c.jpg'),
+        rating: 4
+    }, {
+        type: 'NIGHT TOURS',
+        title: 'Ho Chi Minh City by Night - Dinner on Indochina...',
+        price: '651,163',
+        img: require('../src/assets/images/d.jpg'),
+        rating: 5
+    }, {
+        type: 'STREET FOOD TOURS',
+        title: 'Ho Chi Minh City Street Food Tour with Dinner',
+        price: '744,187',
+        img: require('../src/assets/images/e.jpg'),
+        rating: 4
+    }, {
+        type: 'DAY CRUISES',
+        title: 'Small-Group Mekong Delta Experience by Speedboat',
+        price: '2,604,652',
+        img: require('../src/assets/images/f.jpg'),
+        rating: 5
+    }, {
+        type: 'DAY CRUISES',
+        title: 'Mekong Delta Discovery Small Group ...',
+        price: '1,558,140',
+        img: require('../src/assets/images/g.jpg'),
+        rating: 5
+    }, {
+        type: 'DAY CRUISES',
+        title: 'Half-Day Cu Chi Tunnels from Ho Chi Minh City ...',
+        price: '1,976,745',
+        img: require('../src/assets/images/h.jpg'),
+        rating: 5
+    },
+];
+
 // const imgRoot = '../src/assets/images';
 // export const places = [
 //     {

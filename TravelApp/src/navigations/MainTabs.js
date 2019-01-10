@@ -24,7 +24,7 @@ export default class MainTabs extends Component {
             icon: 'compass',
             type: 'MaterialCommunityIcons',
             label: 'Explore',
-            barColor: '#436fa8',
+            barColor: '#d9534f',
             pressColor: 'rgba(255, 255, 255, 0.16)',
             badgeCount: 0
         },
@@ -33,7 +33,7 @@ export default class MainTabs extends Component {
             icon: 'bell',
             type: 'Entypo',
             label: 'Activity',
-            barColor: '#B71C1C',
+            barColor: '#436fa8',
             pressColor: 'rgba(255, 255, 255, 0.16)',
             badgeCount: 12
         },

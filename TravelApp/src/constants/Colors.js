@@ -8,4 +8,4 @@ export const Theme = {
 
 export const GrayAlpha = '#d1d1d1bb';
 export const BACKGROUND = '#F5F5F5';
-export const MAIN_COLOR = 'darkgreen';
+export const MAIN_COLOR = '#d9534f';

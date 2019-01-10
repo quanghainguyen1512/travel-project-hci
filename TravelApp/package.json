@@ -16,6 +16,7 @@
     "react-native-blur": "^3.2.2",
     "react-native-collapsible": "^1.4.0",
     "react-native-easy-grid": "^0.2.0",
+    "react-native-fast-image": "^5.1.2",
     "react-native-gesture-handler": "^1.0.12",
     "react-native-linear-gradient": "^2.5.3",
     "react-native-material-bottom-navigation": "^1.0.2",

@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet, View, TouchableOpacity, ImageBackground, findNodeHandle
+    StyleSheet, View, TouchableOpacity, ImageBackground, FlatList
 } from 'react-native';
 import {
-    Container, Thumbnail, Button, Content, Header, Text,
-    Toast, Body, Title, Icon, Right
+    Container, Thumbnail, Button, Header, Text,
+    Icon, Right, Spinner
 } from 'native-base';
-import { BlurView } from 'react-native-blur';
-import { profilepic, citiesImg } from '../../constants/Images';
+import FastImage from 'react-native-fast-image';
+import { profilepic, citiesImg, serviceImg } from '../../constants/Images';
 import { DEVICE_WIDTH, HORIZONTAL_MARGIN, DEVICE_HEIGHT } from '../../constants/Layout';
+import MyText from '../../components/MyText';
 
 // import { Grid, Row } from 'react-native-easy-grid';
 
 // import { DEVICE_HEIGHT } from '../../constants/Layout';
 export default class Profile extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     // this.state = { degree: 'C' };
-    //     this.state = { viewRef: null };
-    // }
+    constructor(props) {
+        super(props);
+        this.state = { mounting: true };
+    }
 
-    // imageLoaded = () => {
-    //     this.setState({ viewRef: findNodeHandle(this.backgroundImage) });
-    // }
+    componentDidMount() {
+        setTimeout(() => this.setState({ mounting: false }), 200);
+    }
+
+    renderPhoto = ({ item }) => (
+        <FastImage
+          source={item}
+          style={{ aspectRatio: 1, borderRadius: 10, marginRight: 5 }}
+          resizeMode={FastImage.resizeMode.cover}
+        />
+    )
+
+    renderSeparator = () => (
+        <View style={{ marginVertical: HORIZONTAL_MARGIN / 3 }} />
+    );
+
+    keyExtractor = (item, index) => `${index}`;
 
     render() {
         const {
@@ -73,6 +87,29 @@ export default class Profile extends Component {
                         <Text>88</Text>
                         <Text note>Following</Text>
                     </TouchableOpacity>
+                </View>
+                <View style={{ marginLeft: HORIZONTAL_MARGIN, flex: 1 }}>
+                    <MyText type="black" style={{ fontSize: 18 }}>Photos</MyText>
+                    {
+                        this.state.mounting
+                        ? (
+                        <View style={{ justifyContent: 'center', flex: 1 }}>
+                            <Spinner color="red" />
+                        </View>
+                        )
+                        : (
+                            <FlatList
+                              data={Object.values(serviceImg)}
+                              renderItem={this.renderPhoto}
+                              ItemSeparatorComponent={this.renderSeparator}
+                              keyExtractor={this.keyExtractor}
+                              showsHorizontalScrollIndicator={false}
+                              horizontal
+                              style={{ flex: 1, marginVertical: 10 }}
+                            />
+                        )
+                    }
+
                 </View>
                 {/* <View style={mid}>
                     <Button info style={textButton}>

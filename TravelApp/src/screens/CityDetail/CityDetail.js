@@ -438,7 +438,9 @@ export default class CityDetail extends Component {
                                     </Button>
                                 </Left>
                                 <Body>
-                                    <MyText>Sightseeing</MyText>
+                                    <TouchableOpacity onPress={() => navigation.navigate('Sightseeing')}>
+                                        <MyText>Sightseeing</MyText>
+                                    </TouchableOpacity>
                                 </Body>
                             </ListItem>
                             <ListItem icon>

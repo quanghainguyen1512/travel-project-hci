@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, MapView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {
- Text, H2, Content, ListItem, List, Body, Right, Icon, Button, Fab, Container, Spinner
+    Text, Content, List, Icon, Button, Fab, Container, Spinner
 } from 'native-base';
 import { AirbnbRating } from 'react-native-ratings';
 import { FlatList } from 'react-native-gesture-handler';
@@ -10,6 +10,7 @@ import { featureReviews, recentReviews } from '../../../data/PlaceDetail.Data';
 import FeatureReviewCard from '../../components/FeatureReviewCard';
 import { HORIZONTAL_MARGIN } from '../../constants/Layout';
 import RecentReview from '../../components/RecentReview';
+import MyText from '../../components/MyText';
 
 export default class ReviewsTab extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ export default class ReviewsTab extends Component {
             : (
             <Container>
                 <Content style={{ paddingVertical: HORIZONTAL_MARGIN }}>
-                    <H2 style={{ marginLeft: HORIZONTAL_MARGIN, fontWeight: '500' }}>Overall</H2>
+                    <MyText type="black" style={{ marginLeft: HORIZONTAL_MARGIN, fontSize: 20 }}>Overall</MyText>
                     <View style={titleArea}>
                         <AirbnbRating
                           showRating={false}
@@ -80,7 +81,7 @@ export default class ReviewsTab extends Component {
                         <Icon active name="ios-search" />
                     </Item> */}
                     <View style={{ marginVertical: HORIZONTAL_MARGIN * 3 }}>
-                        <H2 style={{ marginLeft: HORIZONTAL_MARGIN, fontWeight: '500' }}>Most Recent reviews</H2>
+                        <MyText type="black" style={{ marginLeft: HORIZONTAL_MARGIN, fontSize: 20 }}>Reviews</MyText>
                         <List>
                             {
                                 recentReviews.map((item, index) => (
@@ -94,15 +95,14 @@ export default class ReviewsTab extends Component {
                                     />
                                 ))
                             }
-                            <ListItem key="asd" onPress={() => navigation.navigate('MoreReviews')}>
-                                {/* <Left /> */}
+                            {/* <ListItem key="asd" onPress={() => navigation.navigate('MoreReviews')}>
                                 <Body>
                                     <Text style={{ fontWeight: '500', textDecorationLine: 'underline' }}>View more reviews</Text>
                                 </Body>
                                 <Right>
                                     <Icon type="Entypo" name="chevron-right" />
                                 </Right>
-                            </ListItem>
+                            </ListItem> */}
                             {/* <ListItem icon>
                                 <Left>
                                     <Icon name="edit" type="Feather" />
