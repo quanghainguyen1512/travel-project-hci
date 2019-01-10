@@ -83,6 +83,6 @@ AfterViewInit {
     navigateToCity() {
         this
             .router
-			.navigateByUrl('/pages/city');
+			.navigateByUrl('/pages/country');
     }
 }

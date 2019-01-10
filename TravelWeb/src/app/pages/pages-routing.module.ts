@@ -22,7 +22,7 @@ const routes: Routes = [{
     { path: 'bookinghome', component: BookinghomeComponent},
     { path: 'booking', component: BookingComponent},
     { path: 'places', component: PlacesComponent },
-    { path: 'city', component: CityComponent }
+    { path: 'country', component: CityComponent }
   ]
 }];
 
