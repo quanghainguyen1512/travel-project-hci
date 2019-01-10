@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {Router} from '@angular/router';
-import {SignInComponent, SignOutComponent} from '../header/header.component';
+import {SignInComponent, SignOutComponent, NewsFeedComponent} from '../header/header.component';
 import { DOCUMENT } from '@angular/platform-browser';
 
 export interface State {
@@ -103,6 +103,12 @@ export class HeaderTransparentComponent implements OnInit {
                 this.isSignIn = result;
             });
     }
+
+    public openNewsFeed() {
+        const dialogRef = this.dialog.open(NewsFeedComponent, {
+          height: '75%'
+        });
+      }
 
     navigateToBooking() {
         this.document.location.href = 'https://www.booking.com/';
