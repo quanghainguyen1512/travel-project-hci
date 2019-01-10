@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { View, ImageBackground, TouchableOpacity } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import {
-    Container, Header, Left, Button, Icon, Content, Col, Grid, Spinner
+    Container, Header, Left, Button, Icon, Content, Col, Grid, Spinner,
+    StyleProvider
 } from 'native-base';
 import FastImage from 'react-native-fast-image';
 import { HORIZONTAL_MARGIN, DEVICE_WIDTH, DEVICE_HEIGHT } from '../../constants/Layout';
 import MyText from '../../components/MyText';
 import { vietnam } from '../../constants/Images';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 const Item = (props) => {
     const {
@@ -64,6 +67,7 @@ export default class Vietnam extends Component {
     render() {
         const { navigation, onLoadEnd } = this.props;
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <ImageBackground
                   source={require('../../assets/images/vietnam.jpg')}
@@ -118,6 +122,7 @@ export default class Vietnam extends Component {
                     }
                 </Content>
             </Container>
+            </StyleProvider>
         );
     }
 }

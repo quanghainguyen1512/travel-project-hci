@@ -4,13 +4,16 @@ import {
  View, StyleSheet, Image, findNodeHandle
 } from 'react-native';
 import {
-    Container, Header, Left, Content, Icon, Button, Text, Right
+    Container, Header, Left, Content, Icon, Button, Text, Right,
+    StyleProvider
 } from 'native-base';
 import { BlurView } from 'react-native-blur';
 import ViewMoreText from 'react-native-view-more-text';
 import { GrayAlpha } from '../../constants/Colors';
 import { DEVICE_WIDTH, HORIZONTAL_MARGIN } from '../../constants/Layout';
 import MyText from '../../components/MyText';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 const bgImg = require('../../assets/images/hcmabout.jpg');
 
@@ -52,6 +55,7 @@ export default class AboutCity extends Component {
             additionalInfo, subTitle, mainContent
         } = styles;
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <Image
                   source={bgImg}
@@ -140,6 +144,7 @@ export default class AboutCity extends Component {
                     </View>
                 </Content>
             </Container>
+            </StyleProvider>
         );
     }
 }
