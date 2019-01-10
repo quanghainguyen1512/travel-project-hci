@@ -24,6 +24,7 @@ import { RatingSumaryModule } from '../template/rating-sumary/rating-sumary.modu
 import { ModalImageModule } from '../template/modal-image/modal-image.module';
 import { CommentModule } from '../template/comment/comment.module';
 import { RouterModule } from '@angular/router';
+import { CityComponent } from './city/city.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { RouterModule } from '@angular/router';
         BookingComponent,
         HomeComponent,
         PlacesComponent,
+        CityComponent,
         
     ],
     imports: [
