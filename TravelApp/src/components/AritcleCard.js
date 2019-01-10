@@ -7,6 +7,7 @@ import {
 } from 'native-base';
 import { DEVICE_WIDTH, HORIZONTAL_MARGIN } from '../constants/Layout';
 import MyText from './MyText';
+import { MAIN_COLOR } from '../constants/Colors';
 
 // const img = require('../assets/images/bitexcoOverview.jpg');
 const ava = require('../assets/images/profilepic.jpg');
@@ -51,8 +52,8 @@ export default class ArticlesCard extends Component {
                         <View>
                             {/* <Icon active type="Entypo" name="arrow-bold-up" /> */}
                             {/* <Icon active type="Entypo" name="arrow-bold-down" /> */}
-                            <Icon type="Foundation" name="like" />
-                            <Icon type="Foundation" name="dislike" />
+                            <Icon style={{ color: MAIN_COLOR }} type="Foundation" name="like" />
+                            <Icon style={{ color: MAIN_COLOR }} type="Foundation" name="dislike" />
                         </View>
                         <View>
                             <Text>{points}</Text>

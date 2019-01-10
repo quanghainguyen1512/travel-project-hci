@@ -3,12 +3,15 @@ import {
     View, TouchableOpacity, StyleSheet
 } from 'react-native';
 import {
-    Container, Header, Content, Item, Input, Icon, Text, Spinner
+    Container, Header, Content, Item, Input, Icon, Text, Spinner,
+    StyleProvider
 } from 'native-base';
 import { countries, categories } from '../../../data/MainScreen.Data';
 import CountryArea from '../../components/CountryArea';
 import { HORIZONTAL_MARGIN } from '../../constants/Layout';
 import FilterCountryItem from '../../components/FilterCountryItem';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 export default class Search extends Component {
     constructor(props) {
@@ -33,6 +36,7 @@ export default class Search extends Component {
         const { countriesContainer, filterContainer } = styles;
         const { navigation } = this.props;
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <Header searchBar rounded>
                     <Item>
@@ -77,6 +81,7 @@ export default class Search extends Component {
                     </Content>)
                 }
             </Container>
+            </StyleProvider>
         );
     }
 }

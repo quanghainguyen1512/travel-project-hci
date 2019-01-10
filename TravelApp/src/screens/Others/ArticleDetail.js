@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, ImageBackground, View } from 'react-native';
 import {
-    Text, Header, Title, Container, Content, Left, Body, Button, Icon, Right, Thumbnail
+    Text, Header, Title, Container, Content, Left, Body, Button, Icon, Right, Thumbnail,
+    StyleProvider
 } from 'native-base';
 import { NavigationActions } from 'react-navigation';
 import FastImage from 'react-native-fast-image';
@@ -10,11 +11,14 @@ import MyText from '../../components/MyText';
 import { HORIZONTAL_MARGIN, DEVICE_WIDTH } from '../../constants/Layout';
 import { A4RATIO } from '../../constants/Ratios';
 import { profilepic } from '../../constants/Images';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 export default class ArticleDetail extends Component {
     render() {
         const { navigation } = this.props;
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <Header>
                     <Left>
@@ -185,6 +189,7 @@ export default class ArticleDetail extends Component {
                     </View>
                 </Content>
             </Container>
+            </StyleProvider>
         );
     }
 }

@@ -11,6 +11,7 @@ import FeatureReviewCard from '../../components/FeatureReviewCard';
 import { HORIZONTAL_MARGIN } from '../../constants/Layout';
 import RecentReview from '../../components/RecentReview';
 import MyText from '../../components/MyText';
+import { MAIN_COLOR } from '../../constants/Colors';
 
 export default class ReviewsTab extends Component {
     constructor(props) {
@@ -131,19 +132,21 @@ export default class ReviewsTab extends Component {
                     </View> */}
                 </Content>
                 <Fab
+                  style={{ backgroundColor: MAIN_COLOR }}
                   active={fabActive}
                   direction="up"
                   position="bottomRight"
-                  onPress={() => this.setState({ fabActive: !fabActive })}
+                  onPress={() => navigation.navigate('WriteReview')}
+                //   onPress={() => this.setState({ fabActive: !fabActive })}
                 >
                     {/* <Icon name="plus" type="Entypo" /> */}
                     <Icon name="edit" type="Feather" />
-                    <Button onPress={() => navigation.navigate('WriteReview')}>
+                    {/* <Button >
                         <Icon name="comment" type="FontAwesome" />
-                    </Button>
-                    <Button>
+                    </Button> */}
+                    {/* <Button>
                         <Icon name="question" type="FontAwesome" />
-                    </Button>
+                    </Button> */}
                 </Fab>
             </Container>
         ));

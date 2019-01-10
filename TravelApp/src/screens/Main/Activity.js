@@ -7,6 +7,7 @@ import YouTab from '../Activity/YouTab';
 import FollowingTab from '../Activity/FollowingTab';
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/material';
+import { MAIN_COLOR } from '../../constants/Colors';
 
 export default class Activity extends Component {
     render() {
@@ -20,7 +21,7 @@ export default class Activity extends Component {
                     </Body>
                     <Right style={{ flex: 1 }} />
                 </Header>
-                <Tabs>
+                <Tabs style={{ backgroundColor: MAIN_COLOR }}>
                     <Tab textStyle={{ fontFamily: 'AvenirLTStd-Roman' }} heading="You">
                         <YouTab />
                     </Tab>

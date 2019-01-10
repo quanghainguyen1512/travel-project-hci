@@ -6,6 +6,7 @@ import {
 import { AirbnbRating } from 'react-native-ratings';
 import { profilepic } from '../constants/Images';
 import MyText from './MyText';
+import { MAIN_COLOR } from '../constants/Colors';
 
 const RecentReview = (item, key) => {
     const {
@@ -37,10 +38,10 @@ const RecentReview = (item, key) => {
                 <Text style={{ fontSize: 13 }}>{shortenText}</Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignSelf: 'stretch' }}>
                     <Button icon transparent>
-                        <Icon type="Foundation" name="like" />
+                        <Icon style={{ color: MAIN_COLOR }} type="Foundation" name="like" />
                     </Button>
                     <Button icon transparent>
-                        <Icon type="Foundation" name="dislike" />
+                        <Icon style={{ color: MAIN_COLOR }} type="Foundation" name="dislike" />
                     </Button>
                 </View>
             </Body>

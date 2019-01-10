@@ -4,12 +4,14 @@ import {
 } from 'react-native';
 import {
     Container, Thumbnail, Button, Header, Text,
-    Icon, Right, Spinner
+    Icon, Right, Spinner, StyleProvider
 } from 'native-base';
 import FastImage from 'react-native-fast-image';
 import { profilepic, citiesImg, serviceImg } from '../../constants/Images';
 import { DEVICE_WIDTH, HORIZONTAL_MARGIN, DEVICE_HEIGHT } from '../../constants/Layout';
 import MyText from '../../components/MyText';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 // import { Grid, Row } from 'react-native-easy-grid';
 
@@ -46,6 +48,7 @@ export default class Profile extends Component {
         // const uri = 'https://lh3.googleusercontent.com/-xG64hh6yopY/WGhqaprlcaI/AAAAAAAAAP4/5AumUB4AqZMpT7m_4uCFuNYiw1GvNTCtgCEwYBhgL/w140-h139-p/31246367072_bd8a7e80b3_k.jpg';
         // const uri = require('../../assets/images/profilepic.jpg');
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <ImageBackground
                   source={citiesImg.nhatrang}
@@ -128,6 +131,7 @@ export default class Profile extends Component {
                     </Button>
                 </View> */}
             </Container>
+            </StyleProvider>
         );
     }
 }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { } from 'react-native';
 import {
     Container, Header, Tab, Tabs,
-    Left, Icon, Button, Body, Right, Title
+    Left, Icon, Button, Body, Right, Title,
+    StyleProvider
 } from 'native-base';
 import { NavigationActions } from 'react-navigation';
 
@@ -10,6 +11,8 @@ import Overview from './Overview';
 import ReviewsTab from './ReviewsTab';
 import ArticlesTab from './ArticlesTab';
 import ServicesTab from './ServicesTab';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
 
 export default class PlaceDetail extends Component {
     constructor(props) {
@@ -26,6 +29,7 @@ export default class PlaceDetail extends Component {
     render() {
         const { navigation } = this.props;
         return (
+            <StyleProvider style={getTheme(material)}>
             <Container>
                 <Header hasTabs>
                     <Left>
@@ -66,6 +70,7 @@ export default class PlaceDetail extends Component {
                     </Tab>
                 </Tabs>
             </Container>
+            </StyleProvider>
         );
     }
 }
