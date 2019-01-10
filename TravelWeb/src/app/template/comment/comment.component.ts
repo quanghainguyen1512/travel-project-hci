@@ -6,6 +6,7 @@ import {
     SimpleChanges,
     SimpleChange
 } from '@angular/core';
+import { COMMENT_IMAGE } from 'src/app/mock-data/comment-detail';
 
 @Component({selector: 'app-comment', templateUrl: './comment.component.html', styleUrls: ['./comment.component.scss']})
 export class CommentComponent implements OnInit, OnChanges{
@@ -21,6 +22,8 @@ export class CommentComponent implements OnInit, OnChanges{
 
     private rating = [];
     private ratingDefault = [];
+
+    public image = COMMENT_IMAGE;
 
     constructor() {}
 

@@ -196,13 +196,13 @@ export const SERVICES = [
         price: '1,279,070',
         img: 'assets/service/2.jpg'
     }, {
-        type: 'VESPA, SCOOTER & MOPED...',
+        type: 'VESPA, SCOOTER ...',
         title: 'Ho Chi Minh City Night Tour by Vintage Vespa',
         price: '1,162,791',
         img: 'assets/service/3.jpg'
     }, {
         type: 'NIGHT TOURS',
-        title: 'Ho Chi Minh City by Night - Dinner on Indochina Queen Junk',
+        title: 'Ho Chi Minh City by Night - Dinner on Indochina...',
         price: '651,163',
         img: 'assets/service/4.jpg'
     }, {
@@ -217,12 +217,12 @@ export const SERVICES = [
         img: 'assets/service/6.jpg'
     }, {
         type: 'DAY CRUISES',
-        title: 'Mekong Delta Discovery Small Group Adventure Tour from Ho Chi Minh City',
+        title: 'Mekong Delta Discovery Small Group ...',
         price: '1,558,140',
         img: 'assets/service/7.jpg'
     }, {
         type: 'DAY CRUISES',
-        title: 'Half-Day Cu Chi Tunnels from Ho Chi Minh City by Luxury Speedboat',
+        title: 'Half-Day Cu Chi Tunnels from Ho Chi Minh City ...',
         price: '1,976,745',
         img: 'assets/service/8.jpg'
     }, 
@@ -239,4 +239,31 @@ export const PLACE_IMAGES = [
         id: '2',
         img: 'assets/Places-Image/2.jpg'
     }
+];
+
+export const ROUTING = [
+    {
+        title: 'Gallery',
+        tag: 'gallery-scroll',
+        clicked: false,
+        id: 0
+    }, 
+    {
+        title: 'Relative Articles',
+        tag: 'relatedArticles-scroll',
+        clicked: false,
+        id: 1
+    }, 
+    {
+        title: 'Reviews',
+        tag: 'reviews-scroll',
+        clicked: false,
+        id: 2
+    }, 
+    {
+        title: 'Services',
+        tag: 'services-scroll',
+        clicked: false,
+        id: 3
+    }, 
 ]

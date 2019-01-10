@@ -8,7 +8,8 @@ import {
     COMMENT,
     RELATED_PLACES,
     SERVICES,
-    PLACE_IMAGES
+    PLACE_IMAGES,
+    ROUTING
 } from 'src/app/mock-data/place-detail';
 import {Router} from '@angular/router';
 declare var ol : any;
@@ -35,6 +36,8 @@ AfterViewInit {
     public listServices = SERVICES;
 
     map : any;
+
+    public routing = ROUTING;
 
     constructor(private router : Router) {
         this.srcImg = this.imgPlace[0].img;
@@ -80,8 +83,22 @@ AfterViewInit {
         console.log('submit');
     }
 
-    scroll(el) {
-        el.scrollIntoView({behavior: "smooth"});
+    scroll(tag, id) {
+        console.log('id: ', id);
+        let temp = document.getElementById(tag);
+        if (temp) {
+            temp.scrollIntoView({behavior: "smooth"});
+        }
+
+        this
+            .routing
+            .forEach((value, index, array) => {
+                if (value.id === id) {
+                    this.routing[index].clicked = true;
+                } else {
+                    this.routing[index].clicked = false;
+                }
+            });
     }
 
     navigateToReview() {

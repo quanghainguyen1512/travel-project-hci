@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header-transparent [flagAbsolute]="'false'"></app-header-transparent>
 <app-modal-image [img]="imgSrc"></app-modal-image>
 <div id="top"></div>
 <div class="container-fluid" (onload)="loadPage(overview)">
@@ -17,29 +17,12 @@
                 >{{item.title}}
             </a>
         </nav>
-        <!-- <div class=" py-1" id="sub-menu">
-            <div >
-                <span (click)="scroll(gallery)">Gallery</span>
-            </div>
-
-            <div >
-                <span (click)="scroll(popularPlaces)">Popular Places</span>
-            </div>
-
-            <div class="float-left">
-                <span (click)="scroll(relativeArticles)">Related Articles</span>
-            </div>
-
-            <div class="float-left">
-                <span (click)="scroll(thingsToDo)">Things To Do</span>
-            </div>
-        </div> -->
 
         <main>
             <h3 class="title">About Ho Chi Minh City</h3>
 
             <div id="about" class="row" style="text-align: justify;">
-                <div class="col-8" style=" font-family: avenir-roman;">
+                <div class="col-md-12 col-lg-8" style=" font-family: avenir-roman;">
                     Known as Vietnam's Saigon City, immerse yourself in the rich culture of Ho Chi
                     Minh City! This Vietnamese city is a trove of historical sights waiting to be
                     discovered. Spend half a day at the Cu Chi Tunnels and learn about its
@@ -53,7 +36,7 @@
                     to snack on sweet seasonal fruits and coconut candy, freshly made daily!
                 </div>
 
-                <div class="col-4">
+                <div class="col-md-12 col-lg-4">
                     <div #gmap id="map" class="map"></div>
                 </div>
             </div>
@@ -108,7 +91,7 @@
                         <div class="carousel-item active">
                             <div class="row">
                                 <div
-                                    class="col-3 mt-1"
+                                    class="col-lg-3 col-md-6 mt-1"
                                     *ngFor="let item of places"
                                     (click)="navigateToPlaces()">
                                     <div class="card bg-light mb-3">
@@ -146,7 +129,7 @@
                         <div class="carousel-item">
                             <div class="row">
                                 <div
-                                    class="col-3 mt-1"
+                                    class="col-lg-3 col-md-6 mt-1"
                                     *ngFor="let item of places"
                                     (click)="navigateToPlaces()">
                                     <div class="card bg-light mb-3">
@@ -278,7 +261,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-3 mt-1" *ngFor="let item of nearbyCitites">
+                                <div class="col-md-12 col-lg-3 mt-1" *ngFor="let item of nearbyCitites">
                                     <div class="card bg-light mb-3">
                                         <div class="card-header">
                                             <h6 class="pl-4" style="font-family: avenir-black;">Distance:
@@ -296,7 +279,7 @@
 
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-3 mt-1" *ngFor="let item of nearbyCitites">
+                                <div class="col-md-12 col-lg-3 mt-1" *ngFor="let item of nearbyCitites">
                                     <div class="card bg-light mb-3">
                                         <div class="card-header">
                                             <h6 class="pl-4">Distance:
@@ -336,4 +319,4 @@
     </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer-transparent [flagAbsolute]="'false'"></app-footer-transparent>

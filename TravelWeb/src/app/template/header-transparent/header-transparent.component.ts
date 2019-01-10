@@ -1,8 +1,8 @@
-import {Component, OnInit, Input, Inject} from '@angular/core';
+import { Component, OnInit, Input, Inject, AfterViewInit, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {Router} from '@angular/router';
 import {SignInComponent, SignOutComponent, NewsFeedComponent} from '../header/header.component';
 import { DOCUMENT } from '@angular/platform-browser';
@@ -14,7 +14,12 @@ export interface State {
 }
 
 @Component({selector: 'app-header-transparent', templateUrl: './header-transparent.component.html', styleUrls: ['./header-transparent.component.scss']})
-export class HeaderTransparentComponent implements OnInit {
+export class HeaderTransparentComponent implements OnInit, OnChanges {
+
+    @Input()
+    flagAbsolute = '';
+
+    public flag = false;
 
     states : State[] = [
         {
@@ -61,6 +66,16 @@ export class HeaderTransparentComponent implements OnInit {
     }
 
     ngOnInit() {}
+
+    ngOnChanges(changes: SimpleChanges) {
+        const flagAbsolute: SimpleChange = changes.flagAbsolute;
+        console.log('current value: ', flagAbsolute.currentValue);
+        if(flagAbsolute.currentValue === 'true') {
+            this.flag = true;
+        }else {
+            this.flag = false;
+        }
+    }
 
     private _filterStates(value : string) : State[] {
         const filterValue = value.toLowerCase();
