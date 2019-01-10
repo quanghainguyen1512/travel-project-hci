@@ -22,7 +22,7 @@ const ServiceCard = (props) => {
             </CardItem>
             <CardItem>
                 <View style={{ flex: 1, justifyContent: 'space-between' }}>
-                    <MyText>{title}</MyText>
+                    <MyText type="black" style={{ fontSize: 20 }}>{title}</MyText>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 15 }}>
                         <AirbnbRating
                           showRating={false}
