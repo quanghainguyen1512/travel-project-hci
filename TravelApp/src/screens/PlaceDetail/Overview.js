@@ -3,7 +3,7 @@ import {
     StyleSheet, View, Image, TouchableOpacity,
 } from 'react-native';
 import {
-    Text, H2, Button, H3, ListItem, Left, Icon, Body, Right, Toast, List
+    Text, H2, Button, H3, ListItem, Left, Icon, Body, Right, Toast, List, Spinner
 } from 'native-base';
 import Carousel from 'react-native-snap-carousel';
 import Swiper from 'react-native-swiper';
@@ -22,6 +22,15 @@ const bitexcoOverview = require('../../assets/images/bitexcoOverview.jpg');
 const imgWidth = DEVICE_WIDTH;
 
 export default class Overview extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { mounting: true };
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.setState({ mounting: false }), 200);
+    }
+
     renderPlacesCard = ({ item }) => (
         <PlaceCard
           item={item}
@@ -35,6 +44,13 @@ export default class Overview extends Component {
         } = styles;
         const { onTouchCarouselStart, onTouchCarouselEnd } = this.props;
         return (
+            this.state.mounting
+            ? (
+                <View style={{ justifyContent: 'center', flex: 1 }}>
+                    <Spinner color="red" />
+                </View>
+            )
+            : (
             <ScrollView>
                 <Swiper
                   autoplay
@@ -164,7 +180,7 @@ export default class Overview extends Component {
                     />
                 </View>
             </ScrollView>
-        );
+        ));
     }
 }
 

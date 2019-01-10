@@ -28,6 +28,10 @@ export const topContributors = [
 
 export const hotDestinations = [
     {
+        dest: 'Vietnam',
+        img: 'vietnam'
+    },
+    {
         dest: 'Bangkok',
         img: 'bangkok'
     },

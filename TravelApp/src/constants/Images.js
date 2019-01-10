@@ -27,6 +27,7 @@ export const otherUsers = {
 };
 
 export const hotDest = {
+    vietnam: require(`${imgRoot}/vietnam.jpg`),
     bangkok: require(`${imgRoot}/bangkok.jpg`),
     singapore: require(`${imgRoot}/singapore.jpg`),
     phuket: require(`${imgRoot}/phuket.jpg`),
@@ -34,3 +35,17 @@ export const hotDest = {
 };
 
 export const home = require(`${imgRoot}/home.jpg`);
+
+export const vietnam = {
+    dalat: require(`${imgRoot}/dalat.jpg`),
+    nhatrang: require(`${imgRoot}/nhatrang.jpg`),
+    phuquoc: require(`${imgRoot}/phuquoc.jpg`),
+    hoian: require(`${imgRoot}/hoian.jpg`),
+    danang: require(`${imgRoot}/danang.jpg`),
+    hanoi: require(`${imgRoot}/hanoi.jpg`),
+    camau: require(`${imgRoot}/camau.jpg`),
+    halong: require(`${imgRoot}/halong.jpg`),
+    hue: require(`${imgRoot}/hue.jpg`),
+    ninhbinh: require(`${imgRoot}/ninhbinh.jpg`),
+    hochiminh: require(`${imgRoot}/hochiminh.jpg`)
+};

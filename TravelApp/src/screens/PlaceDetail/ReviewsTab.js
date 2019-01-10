@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, MapView } from 'react-native';
 import {
- Text, H2, Content, ListItem, List, Left, Body, Right, Icon, Button, Fab, Container
+ Text, H2, Content, ListItem, List, Body, Right, Icon, Button, Fab, Container, Spinner
 } from 'native-base';
 import { AirbnbRating } from 'react-native-ratings';
 import { FlatList } from 'react-native-gesture-handler';
 import ReviewBar from '../../components/ReviewBar';
-import { featureReviews, recentReviews, recentQuestions } from '../../../data/PlaceDetail.Data';
+import { featureReviews, recentReviews } from '../../../data/PlaceDetail.Data';
 import FeatureReviewCard from '../../components/FeatureReviewCard';
 import { HORIZONTAL_MARGIN } from '../../constants/Layout';
 import RecentReview from '../../components/RecentReview';
@@ -14,7 +14,11 @@ import RecentReview from '../../components/RecentReview';
 export default class ReviewsTab extends Component {
     constructor(props) {
         super(props);
-        this.state = { fabActive: false };
+        this.state = { fabActive: false, mounting: true };
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.setState({ mounting: false }), 200);
     }
 
     renderFeatureReview = ({ item }) => (
@@ -28,7 +32,15 @@ export default class ReviewsTab extends Component {
     render() {
         const { titleArea } = styles;
         const { navigation } = this.props;
+        const { fabActive } = this.state;
         return (
+            this.state.mounting
+            ? (
+                <View style={{ justifyContent: 'center', flex: 1 }}>
+                    <Spinner color="red" />
+                </View>
+            )
+            : (
             <Container>
                 <Content style={{ paddingVertical: HORIZONTAL_MARGIN }}>
                     <H2 style={{ marginLeft: HORIZONTAL_MARGIN, fontWeight: '500' }}>Overall</H2>
@@ -101,7 +113,7 @@ export default class ReviewsTab extends Component {
                             </ListItem> */}
                         </List>
                     </View>
-                    <View>
+                    {/* <View>
                         <H2 style={{ fontWeight: '500', marginLeft: HORIZONTAL_MARGIN }}>Questions & Answers</H2>
                         <List>
                             <ListItem>
@@ -116,13 +128,13 @@ export default class ReviewsTab extends Component {
                                 </Right>
                             </ListItem>
                         </List>
-                    </View>
+                    </View> */}
                 </Content>
                 <Fab
-                  active={this.state.fabActive}
+                  active={fabActive}
                   direction="up"
                   position="bottomRight"
-                  onPress={() => this.setState({ fabActive: !this.state.fabActive })}
+                  onPress={() => this.setState({ fabActive: !fabActive })}
                 >
                     {/* <Icon name="plus" type="Entypo" /> */}
                     <Icon name="edit" type="Feather" />
@@ -134,7 +146,7 @@ export default class ReviewsTab extends Component {
                     </Button>
                 </Fab>
             </Container>
-        );
+        ));
     }
 }
 

@@ -397,7 +397,11 @@ export default class CityDetail extends Component {
                             <View style={cityIntro}>
                                 <View style={title}>
                                     <MyText type="black" style={hcmText}>Ho Chi Minh City</MyText>
-                                    <Button rounded style={{ backgroundColor: GrayAlpha, alignSelf: 'center' }}>
+                                    <Button
+                                      rounded
+                                      style={{ backgroundColor: GrayAlpha, alignSelf: 'center' }}
+                                      onPress={() => navigation.navigate('Vietnam')}
+                                    >
                                         <MyText type="black" style={vietnamText}>VIETNAM</MyText>
                                     </Button>
                                 </View>

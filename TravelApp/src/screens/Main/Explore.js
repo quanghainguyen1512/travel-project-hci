@@ -31,7 +31,11 @@ export default class Explore extends Component {
     )
 
     renderHotDest = ({ item }) => (
-        <HotDest item={item} style={{ marginLeft: HORIZONTAL_MARGIN }} />
+        <HotDest
+          item={item}
+          style={{ marginLeft: HORIZONTAL_MARGIN }}
+          onPress={() => this.navigation.navigate('Vietnam')}
+        />
     )
 
     renderArticles = ({ item }) => (
@@ -42,7 +46,7 @@ export default class Explore extends Component {
         <PlaceCard
           item={item}
           style={{ marginRight: 25 }}
-          onPress={() => this.props.navigation.navigate('PlaceDetail')}
+          onPress={() => this.props.navigation.navigate('PlaceStack')}
         />
     );
 

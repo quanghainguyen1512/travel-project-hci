@@ -2,12 +2,14 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import MainTabs from './MainTabs';
 import CityStack from './CityStack';
 import PlaceStack from './PlaceStack';
+import Vietnam from '../screens/Others/Vietnam';
 
 const AppStack = createStackNavigator(
     {
         MainTabs: { screen: MainTabs },
         CityStack: { screen: CityStack },
-        PlaceStack: { screen: PlaceStack }
+        PlaceStack: { screen: PlaceStack },
+        Vietnam: { screen: Vietnam }
     },
     {
         headerMode: 'none',

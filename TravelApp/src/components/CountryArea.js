@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import MyText from './MyText';
 
-const CountryArea = ({ item, style, onPress }) => {
+const CountryArea = ({ item, style, navigation }) => {
     const { name, cities } = item;
     const { cityArea, cityBox, header } = styles;
     return (
         <View style={style}>
             <View style={header}>
                 <MyText type="black" style={{ fontSize: 25 }}>{name}</MyText>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Vietnam')}>
                     <MyText style={{ color: '#0084ff', fontSize: 15 }}>More</MyText>
                 </TouchableOpacity>
                 {/* <Button transparent info>
@@ -19,7 +19,11 @@ const CountryArea = ({ item, style, onPress }) => {
             <View style={cityArea}>
                 {
                     cities.map((city, index) => (
-                        <TouchableOpacity key={index} style={cityBox} onPress={onPress}>
+                        <TouchableOpacity
+                          key={index}
+                          style={cityBox}
+                          onPress={() => navigation.navigate('CityStack')}
+                        >
                             <MyText style={{ color: 'black' }}>{city}</MyText>
                         </TouchableOpacity>
                     ))

@@ -68,8 +68,8 @@ export default class Search extends Component {
                                     <CountryArea
                                       key={index}
                                       item={item}
+                                      navigation={navigation}
                                       style={{ marginBottom: 30 }}
-                                      onPress={() => navigation.navigate('CityStack')}
                                     />
                                 ))
                             }
