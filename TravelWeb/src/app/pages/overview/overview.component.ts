@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
 import {NEARBY_CITIES} from 'src/app/mock-data/nearby-cities';
 import {POPULAR_PLACES} from 'src/app/mock-data/popular-places';
-import { Router } from '@angular/router';
-import { IMAGES_DESTINATION } from 'src/app/mock-data/destination-detail';
+import {Router} from '@angular/router';
+import {IMAGES_DESTINATION} from 'src/app/mock-data/destination-detail';
+import {ROUTING} from 'src/app/mock-data/overview-detail';
 
 declare var ol : any;
 
@@ -15,9 +16,10 @@ export interface Article {
 }
 
 @Component({selector: 'app-overview', templateUrl: './overview.component.html', styleUrls: ['./overview.component.scss']})
-export class OverviewComponent implements OnInit, AfterViewInit {
-	@ViewChild("main") MyProp: ElementRef;
-	
+export class OverviewComponent implements OnInit,
+AfterViewInit {
+    @ViewChild("main")MyProp : ElementRef;
+
     public imgForDestination = IMAGES_DESTINATION;
     public imgSrc = '';
     public nearbyCitites = [];
@@ -25,8 +27,10 @@ export class OverviewComponent implements OnInit, AfterViewInit {
 
     map : any;
 
-    constructor(private router: Router) {
-		this.nearbyCitites = NEARBY_CITIES;
+    public routing = ROUTING;
+
+    constructor(private router : Router) {
+        this.nearbyCitites = NEARBY_CITIES;
     }
 
     ngOnInit() {
@@ -53,24 +57,42 @@ export class OverviewComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         let top = document.getElementById('top');
-        if(top) {
+        if (top) {
             top.scrollIntoView();
         }
     }
 
-    scroll(el) {
-        el.scrollIntoView({behavior: "smooth"});
+    scroll(tag, id) {
+        console.log('id: ', id);
+        let temp = document.getElementById(tag);
+        if (temp) {
+            temp.scrollIntoView({behavior: "smooth"});
+        }
+
+        this
+            .routing
+            .forEach((value, index, array) => {
+                if (value.id === id) {
+                    this.routing[index].clicked = true;
+                } else {
+                    this.routing[index].clicked = false;
+                }
+            });
     }
 
     showImage(id : string) {
         this.imgSrc = this.imgForDestination[+ id - 1].img;
-	}
-	
-	navigateToPlaces() {
-		this.router.navigateByUrl('/pages/places');
     }
-    
+
+    navigateToPlaces() {
+        this
+            .router
+            .navigateByUrl('/pages/places');
+    }
+
     navigateToReview() {
-        this.router.navigateByUrl('/pages/review');
+        this
+            .router
+            .navigateByUrl('/pages/review');
     }
 }
