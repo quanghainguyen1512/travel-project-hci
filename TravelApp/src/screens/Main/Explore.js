@@ -43,7 +43,11 @@ export default class Explore extends Component {
     )
 
     renderArticles = ({ item }) => (
-        <ArticlesCard item={item} style={{ marginLeft: HORIZONTAL_MARGIN, width: DEVICE_WIDTH * 0.6 }} />
+        <ArticlesCard
+          item={item}
+          onPress={() => this.props.navigation.navigate('ArticleDetail')}
+          style={{ marginLeft: HORIZONTAL_MARGIN, width: DEVICE_WIDTH * 0.6 }}
+        />
     );
 
     renderPlacesCard = ({ item }) => (

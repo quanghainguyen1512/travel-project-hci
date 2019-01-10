@@ -55,7 +55,7 @@ export default class PlaceDetail extends Component {
                         onTouchCarouselEnd={() => this.setState({ isTabLocked: false })} */}
                     </Tab>
                     <Tab heading="Articles">
-                        <ArticlesTab />
+                        <ArticlesTab navigation={navigation} />
                     </Tab>
                     <Tab heading="Reviews">
                         <ReviewsTab navigation={navigation} />

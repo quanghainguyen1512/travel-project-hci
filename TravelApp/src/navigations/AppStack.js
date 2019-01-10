@@ -3,13 +3,15 @@ import MainTabs from './MainTabs';
 import CityStack from './CityStack';
 import PlaceStack from './PlaceStack';
 import Vietnam from '../screens/Others/Vietnam';
+import ArticleDetail from '../screens/Others/ArticleDetail';
 
 const AppStack = createStackNavigator(
     {
         MainTabs: { screen: MainTabs },
         CityStack: { screen: CityStack },
         PlaceStack: { screen: PlaceStack },
-        Vietnam: { screen: Vietnam }
+        Vietnam: { screen: Vietnam },
+        ArticleDetail: { screen: ArticleDetail }
     },
     {
         headerMode: 'none',

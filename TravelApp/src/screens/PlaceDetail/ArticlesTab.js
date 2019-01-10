@@ -17,7 +17,7 @@ export default class ArticlesTab extends Component {
     }
 
     renderArticles = ({ item }) => (
-        <ArticlesCard item={item} />
+        <ArticlesCard item={item} onPress={() => this.props.navigation.navigate('ArticleDetail')} />
     );
 
     renderSeparator = () => (

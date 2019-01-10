@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
-    Container, Header, Body, Title, Tabs, Tab, Left, Right,
-    StyleProvider
+    Body, Title, Tabs, Tab, Left, Right,
+    StyleProvider, Container, Header
 } from 'native-base';
 import YouTab from '../Activity/YouTab';
 import FollowingTab from '../Activity/FollowingTab';
