@@ -20,12 +20,12 @@
                     <div class="row">
                         <div class="col">
                             <img class="option-img" aria-hidden [src]="state.flag" height="25"/>
-                            <span>{{state.capital}}</span>
+                            <span>{{state.name}}</span>
                             |
-                            <small>{{state.name}}</small>
+                            <small>{{state.capital}}</small>
                         </div>
 
-                        <div class="col text-right" (click)="navigateToCity()">
+                        <div class="col text-right" id="more" (click)="navigateToCity()">
                             <span style="color: #0084ff;" >more</span>
                         </div>
                     </div>

@@ -84,6 +84,5 @@ AfterViewInit {
         this
             .router
 			.navigateByUrl('/pages/city');
-		console.log('hello');
     }
 }
