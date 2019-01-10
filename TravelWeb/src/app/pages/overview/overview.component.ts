@@ -4,7 +4,7 @@ import {NEARBY_CITIES} from 'src/app/mock-data/nearby-cities';
 import {POPULAR_PLACES} from 'src/app/mock-data/popular-places';
 import {Router} from '@angular/router';
 import {IMAGES_DESTINATION} from 'src/app/mock-data/destination-detail';
-import {ROUTING} from 'src/app/mock-data/overview-detail';
+import {ROUTING, RELATED_ARTICLES_DESTINATION, SIGHTSEEING, MUST_EAT, RELAX} from 'src/app/mock-data/overview-detail';
 
 declare var ol : any;
 
@@ -28,6 +28,10 @@ AfterViewInit {
     map : any;
 
     public routing = ROUTING;
+    public relatedArticlesDestination = RELATED_ARTICLES_DESTINATION;
+    public listSightseeing = SIGHTSEEING;
+    public listMustEat = MUST_EAT;
+    public listRelax = RELAX;
 
     constructor(private router : Router) {
         this.nearbyCitites = NEARBY_CITIES;
@@ -93,6 +97,6 @@ AfterViewInit {
     navigateToReview() {
         this
             .router
-            .navigateByUrl('/pages/review');
+            .navigateByUrl('/pages/article');
     }
 }

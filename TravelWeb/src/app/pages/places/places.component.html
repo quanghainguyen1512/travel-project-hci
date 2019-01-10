@@ -130,7 +130,7 @@
                 <div class="media" (click)="navigateToReview()">
                     <img *ngIf="item.left" class="mr-3" [src]="item.img" alt="{{item.title}}"/>
                     <div class="media-body">
-                        <a routerLink="/pages/review" routerLinkActive="active">
+                        <a routerLink="/pages/article" routerLinkActive="active">
                             <h4 class="mt-0" style="font-family: avenir-black;">{{item.title}}</h4>
                         </a>
                         <a routerLink="/pages/profile" routerLinkActive="active">
@@ -145,15 +145,8 @@
                         </a>
                         <p class="time">{{item.postedDate}}</p>
                         <p class="rating">
-                            <span style="color: orange">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </span>
 
-                            <span class="ml-3">
+                            <span>
                                 {{item.points}} points
                             </span>
 

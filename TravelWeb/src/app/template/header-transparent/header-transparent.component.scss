@@ -1,6 +1,6 @@
 #header-transparent {
 
-    background-color: red;
+    background-color: #d9534f;
 
     .absolute {
         position: absolute !important;
@@ -47,5 +47,13 @@
             background-color: white;
             color: rgba(0,0,0,0.1);
         }
+    }
+}
+
+#notification {
+    img {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
     }
 }

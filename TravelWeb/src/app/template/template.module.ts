@@ -11,7 +11,8 @@ import {
     MatDialogModule,
     MatMenuModule,
     MatButtonModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTabsModule
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HeaderTransparentComponent } from './header-transparent/header-transparent.component';
@@ -36,7 +37,8 @@ import { FooterTransparentComponent } from './footer-transparent/footer-transpar
         MatMenuModule,
         MatButtonModule,
         MatAutocompleteModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatTabsModule
     ],
     exports: [
         HeaderComponent,

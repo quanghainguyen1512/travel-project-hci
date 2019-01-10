@@ -125,6 +125,6 @@ AfterViewInit {
     navigateToReview() {
         this
             .router
-            .navigateByUrl('/pages/review');
+            .navigateByUrl('/pages/article');
     }
 }

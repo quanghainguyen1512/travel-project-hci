@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material';
 import {Router} from '@angular/router';
 import {SignInComponent, SignOutComponent, NewsFeedComponent} from '../header/header.component';
 import { DOCUMENT } from '@angular/platform-browser';
+import { NOTIFICATIONS, FOLLOWING } from 'src/app/mock-data/header-detail';
 
 export interface State {
     flag : string;
@@ -20,6 +21,10 @@ export class HeaderTransparentComponent implements OnInit, OnChanges {
     flagAbsolute = '';
 
     public flag = false;
+
+    public notificationsHeader = NOTIFICATIONS;
+
+    public followingNotification = FOLLOWING;
 
     states : State[] = [
         {

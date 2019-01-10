@@ -1,28 +1,16 @@
-export const ROUTING = [
-    {
-        title: 'Gallery',
-        tag: 'gallery',
-        clicked: false,
-        id: 0
-    }, {
-        title: 'Popular Places',
-        tag: 'popularPlaces',
-        clicked: false,
-        id: 1
-    }, {
-        title: 'Relative Articles',
-        tag: 'relativeArticles',
-        clicked: false,
-        id: 2
-    }, {
-        title: 'Things To Do',
-        tag: 'thingsToDo',
-        clicked: false,
-        id: 3
-    }
-];
+export const PROFILE_DETAIL = {
+    img: 'assets/avatar.png',
+    fullName: 'Phan The Anh',
+    nickName: 'Andrew Phan',
+    contributions: '21',
+    followers: '50',
+    following: '88',
+    email: 'andrewphan@gmail.com',
+    time: 'May 2013',
+    slogan: 'I love traveling...'
+};
 
-export const RELATED_ARTICLES_DESTINATION = [
+export const RELATED_ARTICLES_PLACES = [
     {
         title: '3 Days in Ho Chi Minh City',
         name: 'Andrew Phan',
@@ -80,74 +68,5 @@ export const RELATED_ARTICLES_DESTINATION = [
                 'ns of flavors in the Vietnamese cuisine with the help of local foodie students. ' +
                 'We are non profit group of local uni students. we would love to show you the bes' +
                 't of our home city and try the best of our well known street foods'
-    }
-];
-
-export const SIGHTSEEING = [
-    {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night and Skybar Drink',
-        price: '1,279,070',
-        img: 'assets/things-to-do/2.jpg'
-    }, {
-        type: 'VESPA, SCOOTER ...',
-        title: 'Ho Chi Minh City Night Tour by Vintage Vespa',
-        price: '1,162,791',
-        img: 'assets/things-to-do/3.jpg'
-    }, {
-        type: 'DAY CRUISES',
-        title: 'Small-Group Mekong Delta Experience by Speedboat',
-        price: '2,604,652',
-        img: 'assets/things-to-do/6.jpg'
-    }, {
-        type: 'DAY CRUISES',
-        title: 'Mekong Delta Discovery Small Group ...',
-        price: '1,558,140',
-        img: 'assets/things-to-do/7.jpg'
-    }, {
-        type: 'DAY CRUISES',
-        title: 'Half-Day Cu Chi Tunnels from Ho Chi Minh City ...',
-        price: '1,976,745',
-        img: 'assets/things-to-do/8.jpg'
-    }
-];
-
-export const MUST_EAT = [
-    {
-        type: 'STREET FOOD TOURS',
-        title: 'Ho Chi Minh City Street Food Tour with Dinner',
-        price: '744,187',
-        img: 'assets/things-to-do/5.jpg'
-    }, {
-        type: 'NIGHT TOURS',
-        title: 'Private Jeep Tour Saigon by Night Including Dinner',
-        price: '1,767,442',
-        img: 'assets/things-to-do/1.jpg'
-    }, {
-        type: 'NIGHT TOURS',
-        title: 'Ho Chi Minh City by Night - Dinner on Indochina...',
-        price: '651,163',
-        img: 'assets/things-to-do/4.jpg'
-    },
-    {
-        type: 'STREET FOOD TOURS',
-        title: 'Ho Chi Minh: Private Street Food Night...',
-        price: '906,977',
-        img: 'assets/things-to-do/10.jpg'
-    }
-];
-
-export const RELAX = [
-    {
-        type: 'DAY TRIPS',
-        title: 'Saigon City Tour - The Changing City - HaHa Tours',
-        price: '1,465,117',
-        img: 'assets/things-to-do/9.jpg'
-    },
-    {
-        type: 'THEATER, SHOWS & MUSICALS',
-        title: 'A O Show in Ho Chi Minh City',
-        price: '679,675',
-        img: 'assets/things-to-do/11.jpg'
     }
 ];

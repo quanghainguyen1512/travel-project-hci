@@ -49,9 +49,6 @@ export class ReviewComponent implements OnInit, AfterViewInit {
         if(top) {
             top.scrollIntoView();
         }
-
-        const dateInput = <HTMLInputElement>document.getElementById('dateVisited');
-        dateInput.value = this.formatDate(new Date());
     }
 
     private formatDate(date: Date): string {

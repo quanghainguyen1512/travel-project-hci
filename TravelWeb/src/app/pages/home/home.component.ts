@@ -16,9 +16,9 @@ export interface State {
 export class HomeComponent implements OnInit,
 AfterViewInit {
 
-    slogan : string = 'Explore';
+    slogan : string = 'YOURS TO EXPLORE';
 
-    title : string = 'Best new attractions for you in 2019';
+    title : string = 'Hot Destinations';
 
     stateCtrl = new FormControl();
     filteredStates : Observable < State[] >;

@@ -13,8 +13,7 @@
                 href="javascript:void(0)"
                 (click)="scroll(item.tag, item.id)"
                 *ngFor="let item of routing"
-                [ngClass]="{'sub-menu-click': item.clicked}"
-                >{{item.title}}
+                [ngClass]="{'sub-menu-click': item.clicked}">{{item.title}}
             </a>
         </nav>
 
@@ -192,62 +191,164 @@
             <h2 class="title">Related Articles</h2>
 
             <div #relativeArticles id="relativeArticles">
-                <div class="media" (click)="navigateToReview()">
-                    <img class="mr-3" src="assets/btc2.jpg" alt="Generic placeholder image"/>
-                    <div class="media-body">
-                        <a routerLink="/pages/review" routerLinkActive="active">
-                            <h4 class="mt-0" style="font-family: avenir-black;">3 days in Ho Chi Minh City</h4>
-                        </a>
-                        <a routerLink="/pages/profile" routerLinkActive="active">
-                            <p class="author">by Johny</p>
-                        </a>
-                        <p class="time">Ho Chi Minh City - 20/11/2019</p>
-                        <p class="rating" style="color: orange">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </p>
-                        <br/>
-                        <span style="font-family: avenir-roman">
-                            Ròng rã suốt 3 thập kỉ
-                        </span>
-                    </div>
-                </div>
+                <div *ngFor="let item of relatedArticlesDestination" class="mb-2">
+                    <div class="media" (click)="navigateToReview()">
+                        <img *ngIf="item.left" class="mr-3" [src]="item.img" alt="{{item.title}}"/>
+                        <div class="media-body">
+                            <a routerLink="/pages/article" routerLinkActive="active">
+                                <h4 class="mt-0" style="font-family: avenir-black;">{{item.title}}</h4>
+                            </a>
+                            <a routerLink="/pages/profile" routerLinkActive="active">
+                                <p class="author">by
+                                    {{item.name}}
+                                    -
+                                    {{item.places}}
+                                    places in
+                                    {{item.days}}
+                                    days
+                                </p>
+                            </a>
+                            <p class="time">{{item.postedDate}}</p>
+                            <p class="rating">
 
-                <hr/>
-                <div class="media" (click)="navigateToReview()">
-                    <div class="media-body">
-                        <a routerLink="/pages/review" routerLinkActive="active">
-                            <h4 class="mt-0" style="font-family: avenir-black;">3 days in Ho Chi Minh City</h4>
-                        </a>
-                        <a routerLink="/pages/profile" routerLinkActive="active">
-                            <p class="author">by Johny</p>
-                        </a>
-                        <p class="time">Ho Chi Minh City - 20/11/2019</p>
-                        <p class="rating" style="color: orange">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </p>
-                        <br/>
-                        <span style="font-family: avenir-roman">
-                            Ròng rã suốt 3 thập kỉ
-                        </span>
+                                <span>
+                                    {{item.points}}
+                                    points
+                                </span>
+
+                                <span class="ml-1" style="font-family: avenir-book;">
+                                    {{item.percentage}}
+                                    upvoted
+                                    <i class="fa fa-level-up" aria-hidden="true"></i>
+                                </span>
+
+                            </p>
+
+                            <span style="font-family: avenir-roman; text-align: justify;">
+                                {{item.shortText}}
+                            </span>
+                        </div>
+                        <img *ngIf="!item.left" class="ml-3" [src]="item.img" alt="{{item.title}}"/>
                     </div>
 
-                    <img class="ml-3" src="assets/btc2.jpg" alt="Generic placeholder image"/>
+                    <hr/>
                 </div>
             </div>
 
-            <hr/>
-
             <h2 class="title">Things To Do</h2>
 
-            <div #thingsToDo id="thingsToDo"></div>
+            <div #thingsToDo id="thingsToDo">
+                <mat-tab-group>
+                    <mat-tab label="Sightseeing">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 mt-2 p-1" *ngFor="let item of listSightseeing">
+                                    <div class="card">
+
+                                        <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+
+                                        <div class="card-body">
+                                            <p class="type" style="font-family: avenir-book;">{{item.type}}</p>
+                                            <h6 class="card-title" style="font-family: avenir-black;">{{item.title}}</h6>
+                                            <p style="color: orange;">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </p>
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <span style="font-size: 12px">{{item.price}}</span>
+                                                    <strong style="font-size: 13px">VND</strong>
+                                                    <br/>
+                                                    <span style="font-size: 12px; color: rgba(0,0,0,0.4)">per adult</span>
+                                                </div>
+
+                                                <div class="col">
+                                                    <button class="btn btn-danger">Book now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Best Food & Must Eats">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 mt-2 p-1" *ngFor="let item of listMustEat">
+                                    <div class="card">
+
+                                        <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+
+                                        <div class="card-body">
+                                            <p class="type" style="font-family: avenir-book;">{{item.type}}</p>
+                                            <h6 class="card-title" style="font-family: avenir-black;">{{item.title}}</h6>
+                                            <p style="color: orange;">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </p>
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <span style="font-size: 12px">{{item.price}}</span>
+                                                    <strong style="font-size: 13px">VND</strong>
+                                                    <br/>
+                                                    <span style="font-size: 12px; color: rgba(0,0,0,0.4)">per adult</span>
+                                                </div>
+
+                                                <div class="col">
+                                                    <button class="btn btn-danger">Book now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Rest & Relaxes">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3 mt-2 p-1" *ngFor="let item of listRelax">
+                                    <div class="card">
+
+                                        <img class="card-img-top" [src]="item.img" alt="Card image cap"/>
+
+                                        <div class="card-body">
+                                            <p class="type" style="font-family: avenir-book;">{{item.type}}</p>
+                                            <h6 class="card-title" style="font-family: avenir-black;">{{item.title}}</h6>
+                                            <p style="color: orange;">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </p>
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <span style="font-size: 12px">{{item.price}}</span>
+                                                    <strong style="font-size: 13px">VND</strong>
+                                                    <br/>
+                                                    <span style="font-size: 12px; color: rgba(0,0,0,0.4)">per adult</span>
+                                                </div>
+
+                                                <div class="col">
+                                                    <button class="btn btn-danger">Book now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
 
             <hr/>
 
