@@ -69,6 +69,27 @@ AfterViewInit {
         if (top) {
             top.scrollIntoView();
         }
+
+        const dateInput = <HTMLInputElement>document.getElementById('dateVisited');
+        dateInput.value = this.formatDate(new Date());
+    }
+
+    private formatDate(date: Date): string {
+        let format = '';
+        const monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+
+        const day = date.getDate();
+        const monthIndex = date.getMonth();
+        const year = date.getFullYear();
+
+        format = monthNames[monthIndex] + ' ' + day + ', ' + year;
+
+        return format;
     }
 
     changeImage(id : string) {

@@ -62,9 +62,9 @@
         .image {
             overflow-y: auto;
 
-            .col-4 {
+            .col-4, .col-lg-4, .col-md-2 {
                 padding: 5px !important;
-
+                height: 70px !important;
                 img{
                     &:hover {
                         cursor: pointer;
@@ -73,7 +73,7 @@
             }
 
             .card-img-top {
-                height: 4em;
+                height: 70px;
             }
         }
     }

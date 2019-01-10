@@ -1,3 +1,4 @@
+<app-header-transparent></app-header-transparent>
 <div class="container-fluid review-page my-4">
     <div id="top"></div>
     <div class="row">
@@ -5,20 +6,33 @@
             <div class="media title">
 
                 <div class="media-body">
-                    <h1 class="mt-0">Hồ con rùa</h1>
+                    <h1 class="mt-0" style="font-family: avenir-black;">{{profileReviewReview.title}}</h1>
 
                     <div class="media profile">
                         <img class="mr-3 avatar" src="assets/avatar.png" alt="Hồ con rùa"/>
                         <div class="media-body">
                             <div>
-                                <a style="color: black" routerLink="/pages/profile" routerLinkActive="active">
-                                    Johnny
+                                <a
+                                    style="font-family: avenir-book;"
+                                    style="color: black"
+                                    routerLink="/pages/profile"
+                                    routerLinkActive="active">
+                                    {{profileReviewReview.name}}
                                 </a>
+                                <span class="time">
+                                    -
+                                    {{profileReviewReview.places}}
+                                    places in
+                                    {{profileReviewReview.days}}
+                                    days</span>
                                 <br/>
                                 <span class="followers">Followers: 89</span>
                             </div>
                             <div>
-                                <span class="time mr-2">20/12/2018</span>
+                                <span class="time ">{{profileReviewReview.postedDate}}</span>
+                            </div>
+
+                            <div>
                                 <span class="rating">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -26,87 +40,433 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </span>
+                                <span class="ml-3 time">
+                                    {{profileReviewReview.points}}
+                                    points
+                                </span>
+
+                                <span class="ml-1 time" style="font-family: avenir-book;">
+                                    {{profileReviewReview.percentage}}
+                                    upvoted
+                                    <i class="fa fa-level-up" aria-hidden="true"></i>
+                                </span>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-                <img class="mr-1 " src="assets/hcmc5.jpg" alt="Hồ con rùa"/>
+                <img
+                    class="mr-1 "
+                    [src]="profileReviewReview.img"
+                    alt="3 Days in Ho Chi Minh City"/>
             </div>
 
             <div class="content mt-3">
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                felis in faucibus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare
-                vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus.
+                {{profileReviewReview.shortText}}
 
+                <h2 style="font-family: 'Pacifico', cursive;" class="text-center mt-5">Day 1</h2>
+                <h3 class="mt-2" style="font-family: avenir-black;">War Renmants Museum</h3>
                 <div class="row">
-                    <div class="col-6 p-3">
+                    <div class="col p-1">
                         <div class="card p-2">
-                            <img class="card-img-top" src="assets/hcmc8.jpg" alt="Card image cap"/>
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/war-remnants-museum.jpg"
+                                alt="Card image cap"/>
 
                         </div>
                     </div>
 
-                    <div class="col-6 p-3">
+                    <div class="col p-1">
                         <div class="card p-2">
-                            <img class="card-img-top" src="assets/hcmc6.jpg" alt="Card image cap"/>
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/war-remnants-museum-1.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/war-remnants-museum-2.jpg"
+                                alt="Card image cap"/>
 
                         </div>
                     </div>
                 </div>
 
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                felis in faucibus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare
-                vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus.
-                <br/>
-                <br/>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                felis in faucibus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare
-                vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus.
+                <p style="text-align: justify; font-family: avenir-roman;" class="mt-2">
+                    Start your first day in Ho Chi Minh City by learning more about the Vietnam War
+                    – from Vietnam’s perspective. A visit to the War Remnants Museum is an important
+                    and educational stop on your Ho Chi Minh City itinerary and creates a basis for
+                    understanding the rest of your time in Vietnam.
+                </p>
+
+                <p class="mt-2" style="font-family: avenir-black; color: red;">
+                    <i class="fa fa-lightbulb-o"></i>
+                    Tips:
+                </p>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="pl-5">
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    You’ll get more out of this museum the more you know about the Vietnam War
+                    before you arrive.
+
+                    <br/>
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    The upper floors of the museum display graphic images of the effects of agent
+                    orange and unexploded ordnance so are best avoided if visiting with children.
+
+                    <br/>
+                    <i class="fa fa-clock-o" style="color: red"></i>
+                    Plan to stay: 1-2 hours
+                </p>
+
+                <!-- ---------------------- -->
+                <h3 class="mt-3" style="font-family: avenir-black;">The Independence Palace</h3>
+                <div class="row">
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/the-independence-palace.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/the-independence-palace-1.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/the-independence-palace-2.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="mt-2">
+                    Staying with the history lesson theme, be sure to squeeze in a trip to the
+                    Reunification Palace too. Home to the presidents of South Vietnam before the
+                    fall of Saigon in 1975, interestingly, the palace has been left exactly as it
+                    was back then.
+                </p>
+
+                <p class="mt-2" style="font-family: avenir-black; color: red;">
+                    <i class="fa fa-lightbulb-o"></i>
+                    Tips:
+                </p>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="pl-5">
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    Don’t leave without seeing the underground bunker – it features a
+                    telecommunications center and a fascinating series of tunnels.
+
+                    <br/>
+                    <i class="fa fa-clock-o" style="color: red"></i>
+                    Plan to stay: 1-2 hours
+                </p>
+
+                <!-- ---------------------- -->
+
+                <h2 style="font-family: 'Pacifico', cursive;" class="text-center mt-5">Day 2</h2>
+                <h3 class="mt-2" style="font-family: avenir-black;">Ben Thanh Market</h3>
+                <div class="row">
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/benthanh.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/benthanh-1.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/benthanh-2.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="mt-2">
+                    Chaotic yet fun, a trip to Ben Thanh Market, the city’s busiest and most central
+                    market, is worth the assault on the senses! It’s a lively and colorful place
+                    where determined market vendors and customers haggle for everything from fresh
+                    meat and vegetables to clothes, domestic items and souvenirs. Grab some lunch
+                    from one of the food stalls here to set you up for the afternoon’s activities
+                </p>
+
+                <p class="mt-2" style="font-family: avenir-black; color: red;">
+                    <i class="fa fa-lightbulb-o"></i>
+                    Tips:
+                </p>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="pl-5">
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    Taking a taxi from outside the Ben Thanh Market near the roundabout is not a
+                    good idea. Instead head to the other side of the market entrance and left
+                    towards the five-star hotels.
+
+                    <br/>
+
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    The vendors who work at the market can be stubborn with their prices but you’ll
+                    need to haggle hard or you’ll end up paying far too much. (Some stalls now have
+                    Fixed Price signs.)
+
+                    <br/>
+                    <i class="fa fa-clock-o" style="color: red"></i>
+                    Plan to stay: 1-2 hours
+                </p>
+
+                <!-- ---------------------- -->
+
+                <h3 class="mt-3" style="font-family: avenir-black;">Cu Chi Tunnels</h3>
+                <div class="row">
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/cuchi.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/cuchi-1.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/cuchi-2.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="mt-2">
+                    Make sure you embark on one of the most interesting day trips out of the city by
+                    heading to the Cu Chi Tunnels. In just a few hours you’ll learn how the Viet
+                    Cong lived underground for long stretches of time during the war. You’ll also
+                    see bomb craters along with booby traps that were used on American troops. For
+                    those who aren’t afraid of small spaces (some of them are incredibly narrow) you
+                    can experience the tunnels firsthand by getting in them.
+                </p>
+
+                <p class="mt-2" style="font-family: avenir-black; color: red;">
+                    <i class="fa fa-lightbulb-o"></i>
+                    Tips:
+                </p>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="pl-5">
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    Don’t worry if you don’t fancy squeezing into the tunnels yourself – it’s not
+                    for everyone and it certainly won’t take away from your Cu Chi Tunnels
+                    experience if you don’t!
+                    <br/>
+
+                    <br/>
+                    <i class="fa fa-clock-o" style="color: red"></i>
+                    Plan to stay: 2-3 hours
+                </p>
+
+                <!-- ---------------------- -->
+
+                <h2 style="font-family: 'Pacifico', cursive;" class="text-center mt-5">Day 3</h2>
+                <h3 class="mt-2" style="font-family: avenir-black;">Mekong Delta Private Day Tour</h3>
+                <div class="row">
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/mekong.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/mekong-1.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col p-1">
+                        <div class="card p-2">
+                            <img
+                                class="card-img-top"
+                                src="assets/article-images/mekong-2.jpg"
+                                alt="Card image cap"/>
+
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="mt-2">
+                    Let’s face it, no trip to Ho Chi Minh City would be complete without exploring
+                    the Mekong Delta. The Mekong River flows through Tibet, China, Burma, Laos and
+                    Cambodia before finally winding its way into Vietnam. Travel along the river by
+                    longtail boat, sample exotic fruits and candy, visit local markets and learn all
+                    about rural life in and around the Delta.
+                </p>
+
+                <p class="mt-2" style="font-family: avenir-black; color: red;">
+                    <i class="fa fa-lightbulb-o"></i>
+                    Tips:
+                </p>
+
+                <p style="text-align: justify; font-family: avenir-roman;" class="pl-5">
+                    <i class="fa fa-dot-circle-o" style="color: red"></i>
+                    This tour involves a two-hour drive from Ho Chi Minh City, which is a little
+                    more than some tours. Bear in mind it’s worth the extra distance to get further
+                    off the tourist track.
+                    <br/>
+                    <i class="fa fa-clock-o" style="color: red"></i>
+                    Plan to stay: More than 3 hours
+                </p>
             </div>
 
             <hr/>
 
             <div class="review mt-3">
 
-                <app-rating-sumary [rating] = "rating"></app-rating-sumary>
+                <app-rating-sumary [rating]="rating"></app-rating-sumary>
 
                 <hr/>
 
                 <div *ngFor="let comment of comments">
                     <app-comment [comment]="comment"></app-comment>
                 </div>
-               
 
             </div>
 
-            <div class="add-review">
-                <form (submit)="!!onSubmit()">
-                    <div class="form-group">
-                        <label for="comment">Comment</label>
-                        <textarea class="form-control" id="comment" rows="3"></textarea>
+            <div class="text-right">
+                <button data-toggle="modal" data-target="#review-modal" class="btn btn-danger">Write review</button>
+            </div>
+
+            <div
+                class="modal fade"
+                id="review-modal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="review-modal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5
+                                class="modal-title"
+                                id="review-modal-title"
+                                style="font-family: avenir-black;">Write Review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+
+                                <div class="form-group">
+                                    <label style="font-family: avenir-book;" for="typeOfVisit">Type of visit:</label>
+                                    <select class="custom-select" id="typeOfVisit">
+                                        <option value=""></option>
+                                        <option value="1">Solo</option>
+                                        <option value="2">Business</option>
+                                        <option value="3">Couples</option>
+                                        <option value="4">Family with teenagers</option>
+                                        <option value="5">Friends</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="font-family: avenir-book;" for="dateVisited">Date visited:</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="dateVisited"
+                                        aria-describedby="emailHelp"
+                                        disabled/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="font-family: avenir-book;" for="yourRating">Your rating:
+                                    </label>
+                                    <select class="custom-select" id="yourRating">
+                                        <option value="1">Terrible</option>
+                                        <option value="2">Poor</option>
+                                        <option value="3">Average</option>
+                                        <option value="4" selected>Very good</option>
+                                        <option value="5">Excellent</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="font-family: avenir-book;" for="titleComment">Title:</label>
+                                    <input type="text" class="form-control" id="titleComment"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="font-family: avenir-book;" for="comment">Comment:</label>
+                                    <textarea class="form-control" id="comment" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Submit</button>
+                        </div>
                     </div>
-                    <div class="text-right">
-                        <button class="btn btn-danger" type="submit">Submit</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 
         <div class="col-md-12 col-lg-3">
             <div class="right-side">
                 <div class="relative-post" id="relativePost">
-                    <h5 class="moreReviews">Relative articles</h5>
+                    <h5 class="moreReviews" style="font-family: avenir-black;">Related articles</h5>
                     <div *ngFor="let article of relativeArticles">
                         <app-relative-article [article]="article"></app-relative-article>
                     </div>
@@ -115,15 +475,20 @@
 
                 <hr/>
 
-                <div class="image row" id="image">
-                    <div class="col-4" *ngFor="let img of imgForArticle">
-                        <div (click)="showImage(img.id)">
-                            <a data-toggle="modal" data-target="#modalImage">
-                                <img class="card-img-top" [src]="img.img" alt="{{img.img}}"/>
-                            </a>
-                        </div>
+                <div class="image container-fluid">
+                    <div class="row">
+                        <div
+                            class="col-6 col-sm-3 col-lg-4 col-md-2 mt-2"
+                            *ngFor="let img of imgForArticle">
+                            <div (click)="showImage(img.id)">
+                                <a data-toggle="modal" data-target="#modalImage">
+                                    <img class="card-img-top" [src]="img.img" alt="{{img.img}}"/>
+                                </a>
+                            </div>
 
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -131,5 +496,6 @@
     </div>
 </div>
 
-<!-- TODO: Coi lại khúc này này -->
+<app-footer-transparent></app-footer-transparent>
+
 <app-modal-image [img]="imgSrc"></app-modal-image>
