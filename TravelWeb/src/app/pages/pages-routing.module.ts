@@ -9,8 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { BookinghomeComponent } from './bookinghome/bookinghome.component';
 import { BookingComponent } from './booking/booking.component';
 import { PlacesComponent } from './places/places.component';
-import { CityComponent } from './country/country.component';
-import { CountryModule } from './country/country.module';
+import { CityComponent } from './city/city.component';
 
 const routes: Routes = [{
   path: '',
@@ -23,7 +22,7 @@ const routes: Routes = [{
     { path: 'bookinghome', component: BookinghomeComponent},
     { path: 'booking', component: BookingComponent},
     { path: 'places', component: PlacesComponent },
-    { path: 'country', component: CountryModule }
+    { path: 'city', component: CityComponent }
   ]
 }];
 
