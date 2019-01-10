@@ -1,43 +1,104 @@
-<div class="container-fluid" id="header-transparent">
-    <div class="row align-items-center">
-        <div class="col text-center">
-            <input
-                id="searchDestination"
-                type="text"
-                class="form-control"
-                aria-describedby="Choose your destination"
-                placeholder="Choose your destination"
-                [matAutocomplete]="auto"
-                [formControl]="stateCtrl"
-                (keyup)="onKey($event)"/>
-            <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
-                    <img class="option-img" aria-hidden [src]="state.flag" height="15"/>
-                    &nbsp;
-                    <span>{{state.capital}}</span>
-                    |
-                    <small>{{state.name}}</small>
-                </mat-option>
-            </mat-autocomplete>
+<div id="header-transparent">
+    <div class="container-fluid" [ngClass]="{'absolute': flag}">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-lg-4 text-center">
+                <input
+                    id="searchDestination"
+                    type="text"
+                    class="form-control"
+                    aria-describedby="Choose your destination"
+                    placeholder="Choose your destination"
+                    [matAutocomplete]="auto"
+                    [formControl]="stateCtrl"
+                    (keyup)="onKey($event)"/>
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                        <img class="option-img" aria-hidden [src]="state.flag" height="15"/>
+                        &nbsp;
+                        <span>{{state.capital}}</span>
+                        |
+                        <small>{{state.name}}</small>
+                    </mat-option>
+                </mat-autocomplete>
+            </div>
+
+            <div class="col-md-6 col-lg-4 text-center">
+                <a routerLink='/pages' routerLinkActive='active'>
+                    <img id="logo" src="assets/travel.png" alt="Travel"/>
+                </a>
+
+            </div>
+
+            <div class="col-md-12 col-lg-4 text-right pr-4">
+                <button *ngIf="!isSignIn" (click)="showSignIn()">{{signin}}</button>
+                <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>{{profile}}</button>
+                    <button mat-menu-item>{{post}}</button>
+                    <button mat-menu-item (click)="showSignOut()">{{signout}}</button>
+                </mat-menu>
+
+                <button class="ml-2" data-toggle="modal" data-target="#notification">
+                    <i class="fa fa-bell"></i>
+                    1</button>
+
+                <button class="ml-2" (click)="navigateToBooking()">Booking</button>
+            </div>
         </div>
+    </div>
+</div>
 
-        <div class="col text-center">
-            <a routerLink='/pages' routerLinkActive='active'>
-                <img id="logo" src="assets/travel.png" alt="Travel"/>
-            </a>
+<div
+    class="modal fade"
+    id="notification"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="notification"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <mat-tab-group>
+                    <mat-tab label="You">
+                        <div class="mt-2" *ngFor="let item of notificationsHeader">
+                            <div class="media">
+                                <img class="mr-3" [src]="item.img" alt="Generic placeholder image"/>
+                                <div class="media-body align-self-center">
+                                    <span style="font-family: avenir-black" class="mt-0">{{item.name}}</span>
+                                    <span style="font-family: avenir-roman">
+                                        {{item.noti}}
+                                    </span>
+                                    <br/>
+                                    <span style="color: rgba(0, 0, 0, 0.5); font-size: 11px">{{item.time}}</span>
+                                </div>
+                            </div>
 
-        </div>
+                            <hr/>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Following">
+                        <div class="mt-2" *ngFor="let item of followingNotification">
+                            <div class="media">
+                                <img class="mr-3" [src]="item.img" alt="Generic placeholder image"/>
+                                <div class="media-body align-self-center">
+                                    <span style="font-family: avenir-black" class="mt-0">{{item.name}}</span>
+                                    <span style="font-family: avenir-roman">
+                                        {{item.noti}}
+                                    </span>
+                                    <br/>
+                                    <span style="color: rgba(0, 0, 0, 0.5); font-size: 11px">{{item.time}}</span>
+                                </div>
+                            </div>
 
-        <div class="col text-right pr-4">
-            <button *ngIf="!isSignIn" (click)="showSignIn()">{{signin}}</button>
-            <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>{{profile}}</button>
-                <button mat-menu-item>{{post}}</button>
-                <button mat-menu-item (click)="showSignOut()">{{signout}}</button>
-            </mat-menu>
-            
-            <button class="ml-3">Booking</button>
+                            <hr/>
+                        </div>
+
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>

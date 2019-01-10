@@ -1,8 +1,6 @@
 import {Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
-import { IMAGES_FOR_ARTICLE } from '../../mock-data/img-article';
-import { RELATIVE_ARTICLE } from './../../mock-data/relative-article';
-import { COMMENT } from './../../mock-data/comment';
 import { RATING } from 'src/app/mock-data/rating';
+import { COMMENT, PROFILE_REVIEW, IMAGES_FOR_ARTICLE, RELATIVE_ARTICLE } from 'src/app/mock-data/review-detail';
 
 @Component({selector: 'app-review', templateUrl: './review.component.html', styleUrls: ['./review.component.scss']})
 export class ReviewComponent implements OnInit, AfterViewInit {
@@ -16,6 +14,8 @@ export class ReviewComponent implements OnInit, AfterViewInit {
     public relativeArticles = RELATIVE_ARTICLE;
     public comments = COMMENT;
     public rating = RATING;
+
+    public profileReviewReview = PROFILE_REVIEW;
 
     @HostListener('window:resize', ['$event'])
     onResize(event?) {
@@ -34,12 +34,10 @@ export class ReviewComponent implements OnInit, AfterViewInit {
 
         if(document.getElementById('relativePost')) {
             document.getElementById('relativePost').style.height = this.relativePostHeight + 'px';
-            console.log(document.getElementById('relativePost').style.height);
         }
 
         if(document.getElementById('image')) {
             document.getElementById('image').style.height = this.imageHeight + 'px';
-            console.log(document.getElementById('image').style.height);
         }
     }
 
@@ -52,6 +50,25 @@ export class ReviewComponent implements OnInit, AfterViewInit {
             top.scrollIntoView();
         }
     }
+
+    private formatDate(date: Date): string {
+        let format = '';
+        const monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+
+        const day = date.getDate();
+        const monthIndex = date.getMonth();
+        const year = date.getFullYear();
+
+        format = monthNames[monthIndex] + ' ' + day + ', ' + year;
+
+        return format;
+    }
+
 
     onSubmit() {
         console.log('submit');

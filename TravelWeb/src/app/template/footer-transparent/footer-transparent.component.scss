@@ -1,10 +1,13 @@
 #footer-transparent {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-top: 1px solid white;
-    font-weight: 400;
-    z-index: 1;
+    background-color: #d9534f;
+    .absolute {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid white;
+        font-weight: 400;
+        z-index: 1;
+    }
 
     #logo {
         width: 100px;
@@ -13,7 +16,6 @@
 
     a {
         color: white !important;
-
         &:hover {
             text-decoration: none !important;
         }

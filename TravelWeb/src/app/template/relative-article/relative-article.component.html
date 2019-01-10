@@ -1,23 +1,15 @@
-<a routerLink="/pages/review" routerLinkActive="active">
+<a routerLink="/pages/article" routerLinkActive="active">
     <div class="media relative-article">
         <img class="mr-1" [src]="article.img" alt="{{article.title}}"/>
         <div class="media-body">
-            <h6 class="mt-0">{{article.title}}</h6>
+            <h6 class="mt-0" style="font-family: avenir-black;">{{article.title}}</h6>
     
-            <div style="font-size: 13px">{{article.author}}</div>
+            <div style="font-size: 10px" style="font-family: avenir-roman;">{{article.author}}</div>
             <div>
                 <span
                     class="time"
                     style="font-size: 11px; color: rgba(0,0,0,0.4); font-style: italic;">{{article.time}}</span>
                 &nbsp;
-                <span class="rating">
-                    <span style="color: #ffc107" *ngFor="let rt of rating">
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span style="color: rgba(0,0,0,0.4)" *ngFor="let rt of ratingDefault">
-                        <i class="fa fa-star"></i>
-                    </span>
-                </span>
     
             </div>
         </div>

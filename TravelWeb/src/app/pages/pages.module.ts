@@ -18,12 +18,11 @@ import {PlacesComponent} from './places/places.component';
 import {MaterialModule} from '../material.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material';
-import { HeaderTransparentModule } from '../template/header-transparent/header-transparent.module';
-import { FooterTransparentModule } from '../template/footer-transparent/footer-transparent.module';
 import { RatingSumaryModule } from '../template/rating-sumary/rating-sumary.module';
 import { ModalImageModule } from '../template/modal-image/modal-image.module';
 import { CommentModule } from '../template/comment/comment.module';
 import { RouterModule } from '@angular/router';
+import { CityComponent } from './city/city.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +32,7 @@ import { RouterModule } from '@angular/router';
         BookingComponent,
         HomeComponent,
         PlacesComponent,
+        CityComponent
         
     ],
     imports: [

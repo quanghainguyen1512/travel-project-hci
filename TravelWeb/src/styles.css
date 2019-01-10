@@ -26,6 +26,14 @@ body {
     background-color: #F5F5F5;
 }
 
+.btn-danger {
+    background-color: #d9534f !important;
+}
+
+.fa-star {
+    color: #ffc107 !important;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MatGridTileHeaderCssMatStyler } from '@angular/material';
+import { PROFILE_DETAIL, RELATED_ARTICLES_PLACES } from 'src/app/mock-data/profile-detail';
+
 
 @Component({selector: 'app-profile', templateUrl: './profile.component.html', styleUrls: ['./profile.component.scss']})
 export class ProfileComponent implements OnInit, AfterViewInit {
@@ -8,9 +9,15 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     isFollow : boolean = false;
     followText = 'Follow';
 
-	follower = 90;
+    follower = 0;
+    
+    public profileDetail = PROFILE_DETAIL;
 
-    constructor() {}
+    public profileArticles = RELATED_ARTICLES_PLACES;
+
+    constructor() {
+        this.follower = +this.profileDetail.followers;
+    }
 
     ngOnInit() {}
 
