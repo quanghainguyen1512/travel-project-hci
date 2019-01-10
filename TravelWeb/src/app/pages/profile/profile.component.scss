@@ -1,0 +1,86 @@
+.profile {
+    .profile-left {
+        .card {
+
+            max-width: 380px;
+
+            img {
+                height: 250px;
+            }
+
+            .card-body {
+                font-size: 0.8em;
+
+                .title {
+                    font-weight: 600;
+                }
+
+                .follow {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-right {
+        .introduction {
+            .info {
+                font-size: 0.8em;
+            }
+
+            .content {
+                text-align: justify;
+            }
+        }
+
+        .articles {
+
+            .articles-image {
+                width: 180px !important;
+                height: 100px !important;
+            }
+
+            .destination {
+                color: rbga(0, 0, 0, 0.4);
+                font-size: 11px;
+                font-style: italic;
+            }
+
+            .rating {
+                color: orange;
+            }
+            a {
+                color: black;
+            }
+
+        }
+
+        .photos {
+            .timeline {
+                .destination {
+                    font-size: 1.2em;
+                    font-weight: 600;
+                }
+
+                .time {
+                    font-size: 11px;
+                    font-style: italic;
+                    color: rgba(0, 0, 0, 0.4);
+                }
+
+            }
+
+            .category {
+                img {
+                    height: 150px !important;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

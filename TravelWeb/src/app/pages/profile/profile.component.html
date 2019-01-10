@@ -1,0 +1,247 @@
+<div id="top"></div>
+<div class="container-fluid">
+  <div class="row profile my-3">
+    <div class="col-12 col-md-4 profile-left">
+      <div class="card p-3">
+        <img class="card-img-top" src="assets/avatar.png" alt="Avatar" />
+        <div class="row mt-3">
+          <button
+            type="button"
+            style="width: 100%"
+            class="btn btn-danger mx-3 btn-add"
+            (click)="follow()"
+          >
+            {{ followText }}
+          </button>
+        </div>
+        <div class="card-body text-center">
+          <div class="row title">
+            <div class="col-6">Nick name</div>
+
+            <div class="col-6">Articles</div>
+          </div>
+
+          <div class="row text-center">
+            <div class="col-6">Andrew Phan</div>
+
+            <div class="col-6">86</div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-6">
+              <div class="title">Followers</div>
+              <div>{{follower}}</div>
+            </div>
+
+            <div class="col-6">
+              <div class="title">Following</div>
+              <div>20</div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div
+              class="col-4 follow"
+              data-toggle="'tooltip'"
+              [title]="'Share on Facebook'"
+            >
+              <i class="fa fa-facebook-f"></i> <br />
+              500
+            </div>
+
+            <div
+              class="col-4 follow"
+              data-toggle="'tooltip'"
+              [title]="'Share on Twitter'"
+            >
+              <i class="fa fa-twitter"></i> <br />
+              900
+            </div>
+
+            <div
+              class="col-4 follow"
+              data-toggle="'tooltip'"
+              [title]="'Share on Google'"
+            >
+              <i class="fa fa-google-plus"></i> <br />
+              900
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8 profile-right">
+      <div class="card p-3">
+        <div class="card-body">
+          <mat-tab-group>
+            <mat-tab label="Introduction">
+              <div class="introduction">
+                <div class="container-fluid info my-3">
+                  <div class="row text-center ">
+                    <div class="col-4">
+                      <strong>Fullname</strong> <br />
+                      Johny
+                    </div>
+
+                    <div class="col-4">
+                      <strong>Nickname</strong> <br />
+                      @Andrew-Phan
+                    </div>
+
+                    <div class="col-4">
+                      <strong>Email</strong> <br />
+                      andrewphan@gmail.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div><i class="fa fa-clock-o mr-2"></i> Joined May 2013</div>
+
+              <div class="content mt-3">I love traveling...</div>
+            </mat-tab>
+
+            <mat-tab label="Articles">
+              <div class="articles">
+                <a routerLink="/pages/review" routerLinkActive="active">
+                  <div class="media mt-3">
+                    <img
+                      class="mr-3 articles-image"
+                      src="assets/avatar.png"
+                      alt="Hồ con rùa"
+                    />
+  
+                    <div class="media-body">
+                      <h4 class="mt-0">Hồ con rùa</h4>
+                      <div class="destination">Ho Chi Minh city - 20/10/2018</div>
+                      <div class="rating">
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                      <div class="mt-1 content">Hồ con rùa là</div>
+                    </div>
+                  </div>
+                </a>
+                <hr />
+                <a routerLink="/pages/review" routerLinkActive="active">
+                  <div class="media mt-3">
+                    <img
+                      class="mr-3 articles-image"
+                      src="assets/avatar.png"
+                      alt="Hồ con rùa"
+                    />
+  
+                    <div class="media-body">
+                      <h4 class="mt-0">Hồ con rùa</h4>
+                      <div class="destination">Ho Chi Minh city - 20/10/2018</div>
+                      <div class="rating">
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                      <div class="mt-1 content">Hồ con rùa là</div>
+                    </div>
+                  </div>
+                </a>
+                <hr />
+              </div>
+            </mat-tab>
+
+            <mat-tab label="Photos">
+              <div class="photos">
+                <div class="timeline my-2">
+                  <span class="destination">Ho Chi Minh</span> &nbsp;
+                  <span class="time">23/10/2018</span>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="category row">
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/avatar.png"
+                        alt="avatar.png"
+                      />
+                    </div>
+
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/hcmc5.jpg"
+                        alt="avatar.png"
+                      />
+                    </div>
+
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/hcmc6.jpg"
+                        alt="avatar.png"
+                      />
+                    </div>
+
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/hcmc7.jpg"
+                        alt="avatar.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <hr />
+
+                <div class="timeline my-2">
+                  <span class="destination">Thai Land</span> &nbsp;
+                  <span class="time">23/10/2018</span>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="category row">
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/avatar.png"
+                        alt="avatar.png"
+                      />
+                    </div>
+
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/tl1.jpg"
+                        alt="avatar.png"
+                      />
+                    </div>
+
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/tl2.jpg"
+                        alt="avatar.png"
+                      />
+                    </div>
+
+                    <div class="card col-3 p-1">
+                      <img
+                        class="card-img-top category-image"
+                        src="assets/tl3.jpg"
+                        alt="avatar.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

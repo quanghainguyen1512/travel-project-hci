@@ -1,0 +1,157 @@
+
+
+
+#overview {
+    header {
+        height: 300px;
+        background-image: url("src/assets/overview.jpg");
+        color: white;
+        position: relative;
+
+        #sub-menu {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 1px solid white;
+
+            span {
+                font-size: 13px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    main {
+
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+
+        .title {
+            margin-top: 90px;
+            margin-bottom: 30px;
+            font-family: avenir-black;
+        }
+
+        #gallery {
+            .col-lg-3 {
+                padding: 0 5px !important;
+            }
+            img {
+                height: 150px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #generalInformation {
+            h6, h5 {
+                font-family: avenir-black;
+            }
+        }
+
+        #relativeArticles {
+            
+            .media {
+                img {
+                    width: 180px !important;
+                    height: 130px !important;
+                }
+
+                .media-body {
+                    p {
+                        margin-bottom: 2px !important;
+                        font-size: 12px;
+                        font-style: italic;
+                        color: rgba(0,0,0,0.4);
+                    }
+                    h4 {
+                        cursor: pointer;
+                        color: black;
+                        
+                    }
+                }
+
+                a {
+                    &:hover {
+                        text-decoration: none !important;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #popularPlaces {
+            .col-3 {
+                padding: 0 5px !important;
+            }
+        }
+
+        #nearbyDestination {
+            .col-3 {
+                padding: 0 5px !important;
+
+                h6 {
+                    position: absolute;
+                    top: 15px;
+                    left: 0;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+a.carousel-control-next,
+a.carousel-control-prev {
+    width: 50px !important;
+    color: black !important;
+    span {
+        font-size: 2rem !important;
+    }
+}
+
+a.carousel-control-prev {
+    margin-left: -45px;
+}
+
+a.carousel-control-next {
+    margin-right: -40px;
+}
+
+.card {
+    .card-header {
+        img {
+            width: 100%;
+            height: 150px;
+        }
+
+        padding: 2px !important;
+        position: relative;
+
+        h5 {
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-family: avenir-black;
+        }
+    }
+}
+
+.carousel-item {
+    .card {
+        &:hover {
+            margin-top: -10px;
+            cursor: pointer;
+            -webkit-box-shadow: 0 3px 15px 0 rgba(0,0,0,0.75);
+            -moz-box-shadow: 0 3px 15px 0 rgba(0,0,0,0.75);
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,0.75);
+        }
+    }
+}

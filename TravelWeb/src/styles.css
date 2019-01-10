@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+    font-family: avenir-roman;
+    src: url('src/assets/font/avenir_ff/AvenirLTStd-Roman.otf');
+}
+
+@font-face {
+    font-family: avenir-black;
+    src: url('src/assets/font/avenir_ff/AvenirLTStd-Black.otf');
+}
+
+@font-face {
+    font-family: avenir-book;
+    src: url('src/assets/font/avenir_ff/AvenirLTStd-Book.otf');
+}
+
+body,
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

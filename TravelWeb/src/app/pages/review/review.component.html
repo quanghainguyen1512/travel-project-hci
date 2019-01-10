@@ -1,0 +1,135 @@
+<div class="container-fluid review-page my-4">
+    <div id="top"></div>
+    <div class="row">
+        <div class="col-md-12 col-lg-9 left-side p-4 pr-3">
+            <div class="media title">
+
+                <div class="media-body">
+                    <h1 class="mt-0">Hồ con rùa</h1>
+
+                    <div class="media profile">
+                        <img class="mr-3 avatar" src="assets/avatar.png" alt="Hồ con rùa"/>
+                        <div class="media-body">
+                            <div>
+                                <a style="color: black" routerLink="/pages/profile" routerLinkActive="active">
+                                    Johnny
+                                </a>
+                                <br/>
+                                <span class="followers">Followers: 89</span>
+                            </div>
+                            <div>
+                                <span class="time mr-2">20/12/2018</span>
+                                <span class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <img class="mr-1 " src="assets/hcmc5.jpg" alt="Hồ con rùa"/>
+            </div>
+
+            <div class="content mt-3">
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                felis in faucibus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare
+                vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus.
+
+                <div class="row">
+                    <div class="col-6 p-3">
+                        <div class="card p-2">
+                            <img class="card-img-top" src="assets/hcmc8.jpg" alt="Card image cap"/>
+
+                        </div>
+                    </div>
+
+                    <div class="col-6 p-3">
+                        <div class="card p-2">
+                            <img class="card-img-top" src="assets/hcmc6.jpg" alt="Card image cap"/>
+
+                        </div>
+                    </div>
+                </div>
+
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                felis in faucibus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare
+                vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus.
+                <br/>
+                <br/>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                felis in faucibus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare
+                vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus.
+            </div>
+
+            <hr/>
+
+            <div class="review mt-3">
+
+                <app-rating-sumary [rating] = "rating"></app-rating-sumary>
+
+                <hr/>
+
+                <div *ngFor="let comment of comments">
+                    <app-comment [comment]="comment"></app-comment>
+                </div>
+               
+
+            </div>
+
+            <div class="add-review">
+                <form (submit)="!!onSubmit()">
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea class="form-control" id="comment" rows="3"></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-danger" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-lg-3">
+            <div class="right-side">
+                <div class="relative-post" id="relativePost">
+                    <h5 class="moreReviews">Relative articles</h5>
+                    <div *ngFor="let article of relativeArticles">
+                        <app-relative-article [article]="article"></app-relative-article>
+                    </div>
+
+                </div>
+
+                <hr/>
+
+                <div class="image row" id="image">
+                    <div class="col-4" *ngFor="let img of imgForArticle">
+                        <div (click)="showImage(img.id)">
+                            <a data-toggle="modal" data-target="#modalImage">
+                                <img class="card-img-top" [src]="img.img" alt="{{img.img}}"/>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- TODO: Coi lại khúc này này -->
+<app-modal-image [img]="imgSrc"></app-modal-image>

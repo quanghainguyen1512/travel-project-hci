@@ -1,0 +1,46 @@
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 chooseDestination">
+                <input
+                    type="text"
+                    placeholder="Choose your destination"
+                    [matAutocomplete]="auto"
+                    [formControl]="stateCtrl">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                            <img class="option-img" aria-hidden [src]="state.flag" height="15"/>
+                            <span>{{state.capital}}</span>
+                            |
+                            <small>{{state.name}}</small>
+                        </mat-option>
+                    </mat-autocomplete>
+                    <a routerLink='/pages/overview' routerLinkActive='active'><img id="search" src="../../../../../assets/iconsearch.png" height="25"/></a>
+                </div>
+
+                <div class="col-md-5">
+                    <a routerLink='/pages' routerLinkActive='active'>
+                        <img src="../../../assets/travel.png" title="Logo" alt="Logo"></a>
+                    </div>
+
+                    <div class="col-md-2 user">
+                        <button *ngIf="!isSignIn" (click)="showSignIn()">{{signin}}</button>
+                        <button *ngIf="isSignIn" mat-button [matMenuTriggerFor]="menu">{{name}}</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink='/pages/profile' routerLinkActive='active'>{{profile}}</button>
+                            <button mat-menu-item>{{post}}</button>
+                            <button mat-menu-item (click)="showSignOut()">{{signout}}</button>
+                        </mat-menu>
+                        <!-- <a routerLink='/pages/bookinghome' routerLinkActive='active'>Booking</a> -->
+                        <mat-icon *ngIf="!isSignIn" matBadge="0" matBadgeColor="accent" color='primary'>notifications</mat-icon>
+                        <mat-icon
+                            *ngIf="isSignIn"
+                            matBadge="15"
+                            matBadgeColor="accent"
+                            color='primary'
+                            (click)="openNewsFeed()"
+                            style="cursor: pointer">notifications</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
